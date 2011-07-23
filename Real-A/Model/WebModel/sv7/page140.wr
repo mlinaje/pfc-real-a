@@ -1,0 +1,106 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7#page140" name="Mantenimiento de Usuario" gr:x="407" gr:y="1877">
+  <ContentUnits>
+    <EntryUnit id="sv7#page140#enu45" name="Mantenimiento" linkOrder="sv7#page140#enu45#ln317 sv7#page140#enu45#ln318 sv7#page140#enu45#ln319 sv7#page140#enu45#ln320 sv7#page140#enu45#ln321" gr:x="131" gr:y="223" fieldOrder="sv7#page140#enu45#fld128 sv7#page140#enu45#fld125 sv7#page140#enu45#fld126 sv7#page140#enu45#fld127 sv7#page140#enu45#sfld7">
+      <Field id="sv7#page140#enu45#fld125" name="userName" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv7#page140#enu45#fld126" name="password" type="string" modifiable="false" preloaded="true"/>
+      <Field id="sv7#page140#enu45#fld127" name="email" type="string" modifiable="true" preloaded="true"/>
+      <SelectionField id="sv7#page140#enu45#sfld7" name="Group" type="string"/>
+      <Link id="sv7#page140#enu45#ln317" name="Generar Contrase&#241;a" to="sv7#pwu15" type="normal" validate="true">
+        <LinkParameter id="sv7#page140#enu45#ln317#par1001" name="email_PASSING" source="sv7#page140#enu45#fld127" passing="true"/>
+        <LinkParameter id="sv7#page140#enu45#ln317#par1002" name="Group_PASSING" source="sv7#page140#enu45#sfld7" passing="true"/>
+        <LinkParameter id="sv7#page140#enu45#ln317#par1003" name="oid_PASSING" source="sv7#page140#enu45#fld128" passing="true"/>
+        <LinkParameter id="sv7#page140#enu45#ln317#par1004" name="userName_PASSING" source="sv7#page140#enu45#fld125" passing="true"/>
+      </Link>
+      <Field id="sv7#page140#enu45#fld128" name="oid" type="integer" modifiable="false" preloaded="true"/>
+      <Link id="sv7#page140#enu45#ln318" name="Cancelar" to="sv7#page116" type="normal" automaticCoupling="true" validate="true" preserveForm="true" gr:bendpoints="-171,-35,178,169"/>
+      <Link id="sv7#page140#enu45#ln319" name="Modificar" to="sv7#scu60" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true" gr:bendpoints="102,63,-65,-84">
+        <LinkParameter id="sv7#page140#enu45#ln319#par1005" name="password_contrasenia" source="sv7#page140#enu45#fld126" target="sv7#scu60.contrasenia"/>
+        <LinkParameter id="sv7#page140#enu45#ln319#par1006" name="email_email" source="sv7#page140#enu45#fld127" target="sv7#scu60.email"/>
+        <LinkParameter id="sv7#page140#enu45#ln319#par1007" name="Group_grupo" source="sv7#page140#enu45#sfld7" target="sv7#scu60.grupo"/>
+        <LinkParameter id="sv7#page140#enu45#ln319#par1008" name="oid_id" source="sv7#page140#enu45#fld128" target="sv7#scu60.id"/>
+        <LinkParameter id="sv7#page140#enu45#ln319#par1009" name="password_usuario" source="sv7#page140#enu45#fld125" target="sv7#scu60.usuario"/>
+        <LinkParameter id="sv7#page140#enu45#ln319#par1010" name="email_PASSING_emailAnt" sourceLinkParameter="sv7#page140#seu20#ln322#par1026" target="sv7#scu60.emailAnt"/>
+        <LinkParameter id="sv7#page140#enu45#ln319#par1011" name="defaultGroup.oid_PASSING_grupoAnt" sourceLinkParameter="sv7#page140#seu20#ln322#par1025" target="sv7#scu60.grupoAnt"/>
+        <LinkParameter id="sv7#page140#enu45#ln319#par1012" name="userName_PASSING_usuarioAnt" sourceLinkParameter="sv7#page140#seu20#ln322#par1027" target="sv7#scu60.usuarioAnt"/>
+      </Link>
+      <Link id="sv7#page140#enu45#ln320" name="Crear" to="sv7#scu60" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true" gr:bendpoints="64,85,-103,-62">
+        <LinkParameter id="sv7#page140#enu45#ln320#par1013" name="password_contrasenia" source="sv7#page140#enu45#fld126" target="sv7#scu60.contrasenia"/>
+        <LinkParameter id="sv7#page140#enu45#ln320#par1014" name="email_email" source="sv7#page140#enu45#fld127" target="sv7#scu60.email"/>
+        <LinkParameter id="sv7#page140#enu45#ln320#par1015" name="Group_grupo" source="sv7#page140#enu45#sfld7" target="sv7#scu60.grupo"/>
+        <LinkParameter id="sv7#page140#enu45#ln320#par1016" name="userName_usuario" source="sv7#page140#enu45#fld125" target="sv7#scu60.usuario"/>
+      </Link>
+      <Link id="sv7#page140#enu45#ln321" name="Borrar" to="sv7#scu61" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false" gr:bendpoints="50,-278,-71,101">
+        <LinkParameter id="sv7#page140#enu45#ln321#par1017" name="defaultGroup.oid_PASSING" sourceLinkParameter="sv7#page140#seu20#ln322#par1025" passing="true"/>
+        <LinkParameter id="sv7#page140#enu45#ln321#par1018" name="pregunta.admin.borrar.usuario_mensaje" target="sv7#scu61.mensaje" sourceValue="pregunta.admin.borrar.usuario"/>
+        <LinkParameter id="sv7#page140#enu45#ln321#par1019" name="oid_PASSING" source="sv7#page140#enu45#fld128" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv7#page140#seu20" name="Usuario" gr:x="2" gr:y="96" entity="User">
+      <Selector id="sv7#page140#seu20#su89" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv7#page140#seu20#su89#kcond70" name="UserId" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv7#page140#seu20#ln322" name="pasaDatosUsuario" to="sv7#page140#enu45" type="transport" validate="true">
+        <LinkParameter id="sv7#page140#seu20#ln322#par1020" name="email_email" source="emailArray" target="sv7#page140#enu45#fld127_slot"/>
+        <LinkParameter id="sv7#page140#seu20#ln322#par1021" name="defaultGroup.oid_Group - Preselection" source="User2DefaultGroup_groupOIDArray" target="sv7#page140#enu45#sfld7_presel"/>
+        <LinkParameter id="sv7#page140#seu20#ln322#par1022" name="password_password" target="sv7#page140#enu45#fld126_slot" sourceValue="$$NULL$$"/>
+        <LinkParameter id="sv7#page140#seu20#ln322#par1023" name="userName_userName" source="userNameArray" target="sv7#page140#enu45#fld125_slot"/>
+        <LinkParameter id="sv7#page140#seu20#ln322#par1024" name="oid_oid" source="userOIDArray" target="sv7#page140#enu45#fld128_slot"/>
+        <LinkParameter id="sv7#page140#seu20#ln322#par1025" name="defaultGroup.oid_PASSING" source="User2DefaultGroup_groupOIDArray" passing="true"/>
+        <LinkParameter id="sv7#page140#seu20#ln322#par1026" name="email_PASSING" source="emailArray" passing="true"/>
+        <LinkParameter id="sv7#page140#seu20#ln322#par1027" name="userName_PASSING" source="userNameArray" passing="true"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv7#page140#seu21" name="SeleccionaGrupos" gr:x="0" gr:y="0" entity="Group">
+      <Link id="sv7#page140#seu21#ln323" name="pasaGrupos" to="sv7#page140#enu45" type="transport" validate="true">
+        <LinkParameter id="sv7#page140#seu21#ln323#par1028" name="groupName_Group [label]" source="groupNameArray" target="sv7#page140#enu45#sfld7_label"/>
+        <LinkParameter id="sv7#page140#seu21#ln323#par1029" name="oid_Group [output]" source="groupOIDArray" target="sv7#page140#enu45#sfld7_output"/>
+      </Link>
+      <SortAttribute attribute="groupName" order="ascending"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv7#page140#enu45" manualLinks="true" layout:fieldDisableCondition="sv7#page140#cexpr30">
+          <layout:Field field="sv7#page140#enu45#fld128"/>
+          <layout:Field field="sv7#page140#enu45#fld125"/>
+          <layout:Field field="sv7#page140#enu45#fld126"/>
+          <layout:Field field="sv7#page140#enu45#fld127"/>
+          <layout:Field field="sv7#page140#enu45#sfld7">
+            <layout:LayoutParameter name="selection-field-rendering" value="radio" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page140#enu45" link="sv7#page140#enu45#ln319" layout:linkVisibilityCondition="sv7#page140#cexpr31" layout:linkVisibilityConditionNegated="true" layout:linkDisableCondition="sv7#page140#cexpr30" styleClass="btnAceptar"/>
+              <layout:Link unitId="sv7#page140#enu45" link="sv7#page140#enu45#ln320" layout:linkVisibilityCondition="sv7#page140#cexpr31" layout:linkDisableCondition="sv7#page140#cexpr30" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page140#enu45" link="sv7#page140#enu45#ln318" styleClass="btnCancelar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page140#enu45" link="sv7#page140#enu45#ln321" layout:linkVisibilityCondition="sv7#page140#cexpr31" layout:linkVisibilityConditionNegated="true" layout:linkDisableCondition="sv7#page140#cexpr30" styleClass="btnEliminar"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv7#page140#var24" name="userName" type="string" unitId="sv7#page140#enu45" parameter="sv7#page140#enu45#fld125"/>
+  <ConditionExpression id="sv7#page140#cexpr30" name="esAdmin">
+    <TextValue xml:space="preserve">String a = new String("Admin");
+return ("Admin".equals(userName))</TextValue>
+  </ConditionExpression>
+  <Variable id="sv7#page140#var25" name="userId" type="integer" unitId="sv7#page140#enu45" parameter="sv7#page140#enu45#fld128"/>
+  <ConditionExpression id="sv7#page140#cexpr31" name="estaCreando">
+    <TextValue xml:space="preserve">return (null == userId)</TextValue>
+  </ConditionExpression>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Link unitId="sv7#page140#enu45" link="sv7#page140#enu45#ln317" layout:linkDisableCondition="sv7#page140#cexpr30" styleClass="bthContrasenia"/>
+  </layout:CustomLocation>
+</Page>

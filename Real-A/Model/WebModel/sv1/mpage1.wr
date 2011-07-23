@@ -1,0 +1,14 @@
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#mpage1" name="Usuario" gr:x="-244" gr:y="25">
+  <ContentUnits>
+    <ModuleInstanceUnit id="sv1#mpage1#miu23" name="CambiarIdioma" linkOrder="sv1#mpage1#miu23#ln119" gr:x="0" gr:y="0" moduleId="mov1#ctm2">
+      <Link id="sv1#mpage1#miu23#ln119" name="CambiaIdioma" to="sv1#scu28" type="normal" validate="true">
+        <LinkParameter id="sv1#mpage1#miu23#ln119#par185" name="languageOID_id" source="mov1#ctm2#ocu2#ocp1" target="sv1#scu28.id"/>
+      </Link>
+    </ModuleInstanceUnit>
+  </ContentUnits>
+  <layout:CustomLocation name="zona-idiomas">
+    <layout:Unit unitId="sv1#mpage1#miu23">
+      <layout:Link link="sv1#mpage1#miu23#ln119"/>
+    </layout:Unit>
+  </layout:CustomLocation>
+</MasterPage>

@@ -1,0 +1,37 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#page2" landmark="false" gr:x="265" gr:y="336" name="Contrase&#241;a Olvidada">
+  <ContentUnits>
+    <EntryUnit id="sv1#page2#enu9" name="Contrase&#241;a Olvidada" linkOrder="sv1#page2#enu9#ln12 sv1#page2#enu9#ln2" gr:x="0" gr:y="0" fieldOrder="sv1#page2#enu9#fld18">
+      <Field id="sv1#page2#enu9#fld18" name="Su direcci&#243;n de correo electr&#243;nico" type="string" modifiable="true" preloaded="false"/>
+      <Link id="sv1#page2#enu9#ln12" name="Aceptar" to="sv1#pwu5" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxShowWindowBeforeRequest="false" ajaxCloseWindow="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv1#page2#enu9#ln12#par54" name="e-mail_PASSING" source="sv1#page2#enu9#fld18" passing="true"/>
+      </Link>
+      <Link id="sv1#page2#enu9#ln2" name="Cancelar" to="sv1#page1" automaticCoupling="true" type="normal" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#page2#enu9" manualLinks="true">
+          <layout:Field field="sv1#page2#enu9#fld18">
+            <layout:LayoutParameter name="input-size" value="45" type="field"/>
+            <layout:LayoutParameter name="information-text" value="informacion.recuperar.correo" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv1#page2#enu9" link="sv1#page2#enu9#ln12" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv1#page2#enu9" link="sv1#page2#enu9#ln2" styleClass="btnCancelar"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

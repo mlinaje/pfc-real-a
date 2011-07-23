@@ -1,0 +1,99 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="129" gr:y="1713" id="sv3#page32" name="Mantenimiento de Usuarios" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="45" gr:y="121" id="sv3#page32#enu4" name="Filtro usuarios" linkOrder="sv3#page32#enu4#ln11">
+      <Field id="sv3#page32#enu4#fld4" name="Filtro.Usuario" type="string" modifiable="true"/>
+      <Link id="sv3#page32#enu4#ln11" name="Buscar" to="sv3#page32#pwu3" type="normal" validate="true">
+        <LinkParameter id="sv3#page32#enu4#ln11#par12" name="Filtro.Email_email empieza por" source="sv3#page32#enu4#fld8" target="sv3#page32#pwu3#su5#acond3"/>
+        <LinkParameter id="sv3#page32#enu4#ln11#par25" name="Grupo_RoleCondition3 [oid]" source="sv3#page32#enu4#sfld2" target="sv3#page32#pwu3#su5#rcond3.groupOID"/>
+        <LinkParameter id="sv3#page32#enu4#ln11#par41" name="Filtro.Usuario_usuario empieza por" source="sv3#page32#enu4#fld4" target="sv3#page32#pwu3#su5#acond2"/>
+      </Link>
+      <Field id="sv3#page32#enu4#fld8" name="Filtro.Email" type="string" modifiable="true"/>
+      <SelectionField id="sv3#page32#enu4#sfld2" type="integer" name="Grupo"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="34" gr:y="0" id="sv3#page32#seu1" name="SeleccionaGrupos" entity="Group">
+      <Link id="sv3#page32#seu1#ln19" name="pasaGrupos" to="sv3#page32#enu4" type="transport" validate="true">
+        <LinkParameter id="sv3#page32#seu1#ln19#par28" name="groupName_Grupo [label]" source="groupNameArray" target="sv3#page32#enu4#sfld2_label"/>
+        <LinkParameter id="sv3#page32#seu1#ln19#par40" name="oid_Grupo [output]" source="groupOIDArray" target="sv3#page32#enu4#sfld2_output"/>
+        <LinkParameter id="sv3#page32#seu1#ln19#par101" name="$$NULL$$_Grupo - Preselection" sourceValue="$$NULL$$" target="sv3#page32#enu4#sfld2_presel"/>
+      </Link>
+      <SortAttribute attribute="groupName" order="ascending"/>
+    </SelectorUnit>
+    <NoOpContentUnit gr:x="43" gr:y="387" id="sv3#page32#gctu21" name="CrearUsuario" linkOrder="sv3#page32#gctu21#ln106">
+      <Link id="sv3#page32#gctu21#ln106" name="Crear usuario" to="sv3#page45#enu10" type="normal" validate="true">
+        <LinkParameter id="sv3#page32#gctu21#ln106#par339" name="$$NULL$$_email" sourceValue="$$NULL$$" target="sv3#page45#enu10#fld24_slot"/>
+        <LinkParameter id="sv3#page32#gctu21#ln106#par340" name="$$NULL$$_Group - Preselection" sourceValue="$$NULL$$" target="sv3#page45#enu10#sfld1_presel"/>
+        <LinkParameter id="sv3#page32#gctu21#ln106#par341" name="$$NULL$$_oid" sourceValue="$$NULL$$" target="sv3#page45#enu10#fld26_slot"/>
+        <LinkParameter id="sv3#page32#gctu21#ln106#par342" name="$$NULL$$_password" sourceValue="$$NULL$$" target="sv3#page45#enu10#fld23_slot"/>
+        <LinkParameter id="sv3#page32#gctu21#ln106#par343" name="$$NULL$$_userName" sourceValue="$$NULL$$" target="sv3#page45#enu10#fld21_slot"/>
+      </Link>
+    </NoOpContentUnit>
+    <PowerIndexUnit gr:x="0" gr:y="244" id="sv3#page32#pwu3" name="Usuarios" sortable="true" checkable="false" entity="User" linkOrder="sv3#page32#pwu3#ln34" displayAttributes="userName email" blockFactor="5" blockWindow="5">
+      <Selector id="sv3#page32#pwu3#su5" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#page32#pwu3#su5#acond2" name="usuario empieza por" predicate="beginsWithIgnoreCase" booleanOperator="or" implied="true" attributes="userName"/>
+        <AttributesCondition id="sv3#page32#pwu3#su5#acond3" name="email empieza por" predicate="beginsWithIgnoreCase" booleanOperator="or" implied="true" attributes="email"/>
+        <RelationshipRoleCondition id="sv3#page32#pwu3#su5#rcond3" name="RoleCondition3" predicate="in" implied="true" role="DefaultGroup2User"/>
+      </Selector>
+      <Link id="sv3#page32#pwu3#ln34" name="Mantenimiento" to="sv3#page45#seu2" type="normal" automaticCoupling="true" validate="true"/>
+      <SortAttribute attribute="userName" order="ascending"/>
+      <SortAttribute attribute="email" order="ascending"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page32#enu4" layout:frameLayout="WRDefault/Default">
+          <layout:Link link="sv3#page32#enu4#ln11" styleClass="btnBuscar"/>
+          <layout:Field field="sv3#page32#enu4#fld4"/>
+          <layout:Field field="sv3#page32#enu4#fld8"/>
+          <layout:Field field="sv3#page32#enu4#sfld2">
+            <layout:LayoutParameter name="no-selection-message" value="selectionfield.todos.grupos" type="field"/>
+          </layout:Field>
+          <layout:LayoutParameter name="field-orientation" value="horizontal" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page32#pwu3" layout:frameLayout="WRDefault/Empty">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Link link="sv3#page32#pwu3#ln34">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+            <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="ico_Agregar" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page32#pwu3userName"/>
+          <layout:Link link="sv3#page32#pwu3email"/>
+          <layout:Link link="sv3#page32#pwu3First">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="First" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page32#pwu3Previous">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Previous" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page32#pwu3Block"/>
+          <layout:Link link="sv3#page32#pwu3Next">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Next" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page32#pwu3Last">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Last" type="link"/>
+          </layout:Link>
+          <layout:LayoutParameter name="show-jump-links" value="false" type="unit"/>
+          <layout:LayoutParameter name="use-empty-unit-message" value="true" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Link unitId="sv3#page32#gctu21" link="sv3#page32#gctu21#ln106" styleClass="bthAltaPersona"/>
+  </layout:CustomLocation>
+</Page>

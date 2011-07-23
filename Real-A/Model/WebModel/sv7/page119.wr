@@ -1,0 +1,88 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7#page119" name="Mantenimiento de Descripciones" gr:x="126" gr:y="-23">
+  <ContentUnits>
+    <EntryUnit id="sv7#page119#enu40" name="Descripciones" linkOrder="sv7#page119#enu40#ln273 sv7#page119#enu40#ln274 sv7#page119#enu40#ln275 sv7#page119#enu40#ln276" gr:x="0" gr:y="124">
+      <Link id="sv7#page119#enu40#ln273" name="Cancelar" to="sv7#page139" type="normal" automaticCoupling="true" validate="true" preserveForm="true" gr:bendpoints="90,89,-198,-105"/>
+      <Link id="sv7#page119#enu40#ln274" name="Modificar" to="sv7#scu70" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxCloseWindow="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv7#page119#enu40#ln274#par937" name="descripcion_descripcion" source="sv7#page119#enu40#fld112" target="sv7#scu70.descripcion"/>
+        <LinkParameter id="sv7#page119#enu40#ln274#par938" name="oid_id" source="sv7#page119#enu40#fld111" target="sv7#scu70.id"/>
+        <LinkParameter id="sv7#page119#enu40#ln274#par939" name="Idioma_idioma" source="sv7#page119#enu40#sfld6" target="sv7#scu70.idioma"/>
+        <LinkParameter id="sv7#page119#enu40#ln274#par940" name="Informacion_informacion" source="sv7#page119#enu40#fld113" target="sv7#scu70.informacion"/>
+        <LinkParameter id="sv7#page119#enu40#ln274#par941" name="objeto_oid_PASSING_objeto" source="sv7#page119#enu40#fld114" target="sv7#scu70.objeto"/>
+      </Link>
+      <Link id="sv7#page119#enu40#ln275" name="Crear" to="sv7#scu70" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true" gr:bendpoints="0,95,291,0">
+        <LinkParameter id="sv7#page119#enu40#ln275#par942" name="Descripcion_descripcion" source="sv7#page119#enu40#fld112" target="sv7#scu70.descripcion"/>
+        <LinkParameter id="sv7#page119#enu40#ln275#par943" name="Idioma_idioma" source="sv7#page119#enu40#sfld6" target="sv7#scu70.idioma"/>
+        <LinkParameter id="sv7#page119#enu40#ln275#par944" name="Informacion_informacion" source="sv7#page119#enu40#fld113" target="sv7#scu70.informacion"/>
+        <LinkParameter id="sv7#page119#enu40#ln275#par945" name="objeto_oid_PASSING_objeto" source="sv7#page119#enu40#fld114" target="sv7#scu70.objeto"/>
+      </Link>
+      <Link id="sv7#page119#enu40#ln276" name="Borrar" to="sv7#scu69" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv7#page119#enu40#ln276#par946" name="pregunta.admin.borrar.usuario_mensaje" target="sv7#scu69.mensaje" sourceValue="pregunta.borrar.descripcion"/>
+        <LinkParameter id="sv7#page119#enu40#ln276#par947" name="oid_PASSING" source="sv7#page119#enu40#fld111" passing="true"/>
+      </Link>
+      <Field id="sv7#page119#enu40#fld111" name="oid" type="integer" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="sv7#page119#enu40#fld112" name="Descripcion" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv7#page119#enu40#fld113" name="Informacion" type="text" modifiable="true" preloaded="true" contentType="text/html"/>
+      <SelectionField id="sv7#page119#enu40#sfld6" name="Idioma" type="integer"/>
+      <Field id="sv7#page119#enu40#fld114" name="idObjeto" type="string" modifiable="false" preloaded="true" hidden="true"/>
+    </EntryUnit>
+    <SelectorUnit id="sv7#page119#seu18" name="Idiomas" gr:x="12" gr:y="2" entity="ent10">
+      <SortAttribute attribute="ent10#att25" order="ascending"/>
+      <Link id="sv7#page119#seu18#ln277" name="PasaIdimas" to="sv7#page119#enu40" type="transport" validate="true">
+        <LinkParameter id="sv7#page119#seu18#ln277#par948" name="descripcion_Idioma [label]" source="ent10#att44Array" target="sv7#page119#enu40#sfld6_label"/>
+        <LinkParameter id="sv7#page119#seu18#ln277#par949" name="oid_Idioma [output]" source="ent10#att25Array" target="sv7#page119#enu40#sfld6_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit id="sv7#page119#seu19" name="Descripcion" gr:x="95" gr:y="0" entity="ent9">
+      <Link id="sv7#page119#seu19#ln278" name="Link145" to="sv7#page119#enu40" type="transport" validate="true">
+        <LinkParameter id="sv7#page119#seu19#ln278#par950" name="descripcion_Descripcion" source="ent9#att42Array" target="sv7#page119#enu40#fld112_slot"/>
+        <LinkParameter id="sv7#page119#seu19#ln278#par951" name="DescripcionesToIdiomas.oid_Idioma - Preselection" source="rel11#role13_ent10#att25Array" target="sv7#page119#enu40#sfld6_presel"/>
+        <LinkParameter id="sv7#page119#seu19#ln278#par952" name="DescripcionesToObjeto.oid_idObjeto" source="rel7#role6_ent4#att24Array" target="sv7#page119#enu40#fld114_slot"/>
+        <LinkParameter id="sv7#page119#seu19#ln278#par953" name="informacion_Informacion" source="ent9#att43Array" target="sv7#page119#enu40#fld113_slot"/>
+        <LinkParameter id="sv7#page119#seu19#ln278#par954" name="oid_oid" source="ent9#att38Array" target="sv7#page119#enu40#fld111_slot"/>
+      </Link>
+      <Selector id="sv7#page119#seu19#su86" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv7#page119#seu19#su86#kcond69" name="KeyCondition21" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv7#page119#enu40" manualLinks="true" layout:frameLayout="WRDefault/Empty">
+          <layout:Field field="sv7#page119#enu40#fld112"/>
+          <layout:Field field="sv7#page119#enu40#fld113"/>
+          <layout:Field field="sv7#page119#enu40#sfld6"/>
+          <layout:LayoutParameter name="width" value="80" type="field"/>
+          <layout:LayoutParameter name="height" value="18" type="field"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page119#enu40" link="sv7#page119#enu40#ln275" layout:linkVisibilityCondition="sv7#page119#cexpr24" styleClass="btnAceptar"/>
+              <layout:Link unitId="sv7#page119#enu40" link="sv7#page119#enu40#ln274" layout:linkVisibilityCondition="sv7#page119#cexpr24" layout:linkVisibilityConditionNegated="true" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page119#enu40" link="sv7#page119#enu40#ln273" styleClass="btnCancelar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page119#enu40" link="sv7#page119#enu40#ln276" layout:linkVisibilityCondition="sv7#page119#cexpr24" layout:linkVisibilityConditionNegated="true" styleClass="btnEliminar"/>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <ConditionExpression id="sv7#page119#cexpr24" name="estaCreandoDescrip">
+    <TextValue xml:space="preserve">return (null == descripcionId)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv7#page119#var18" name="descripcionId" type="integer" unitId="sv7#page119#enu40" parameter="sv7#page119#enu40#fld111"/>
+</Page>

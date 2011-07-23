@@ -1,0 +1,48 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="126" gr:y="184" id="sv1#page1" name="Inicio" landmark="true" ajaxEnabled="false">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="2" id="sv1#page1#enu1" name="Login" linkOrder="sv1#page1#enu1#ln59 sv1#page1#enu1#ln8 sv1#page1#enu1#ln15" ajaxEnableExpandedLinks="true">
+      <Field id="sv1#page1#enu1#fld1" name="Usuario" type="string" modifiable="true" ajaxEventEnabled="false" preloaded="false"/>
+      <Field id="sv1#page1#enu1#fld2" name="Contrase&#241;a" type="password" modifiable="true" ajaxEventEnabled="false" preloaded="false"/>
+      <Link id="sv1#page1#enu1#ln59" name="AltaUsuario" to="sv1#page4" automaticCoupling="true" type="normal" validate="true" preserveForm="false"/>
+      <Link id="sv1#page1#enu1#ln8" name="RecuperarClave" to="sv1#page2" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv1#page1#enu1#ln15" name="Aceptar" to="sv1#lgu2" type="normal" validate="true" ajaxEnabled="false" ajaxOpenWindow="false" ajaxShowWindowBeforeRequest="false" ajaxWindowUseTitle="false" ajaxWindowUseLinkAsTitle="false" ajaxWindowAutoResizing="true" ajaxWindowClosable="false" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv1#page1#enu1#ln15#par169" name="Usuario_Username" source="sv1#page1#enu1#fld1" target="sv1#lgu2.username"/>
+        <LinkParameter id="sv1#page1#enu1#ln15#par172" name="Contrase&#241;a_Password" source="sv1#page1#enu1#fld2" target="sv1#lgu2.password"/>
+      </Link>
+    </EntryUnit>
+    <ScriptUnit id="sv1#page1#scu7" name="MostrarErrorLogin" gr:x="98" gr:y="0" script="Localize.groovy"/>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#page1#scu7" layout:frameLayout="WRDefault/Empty" styleClass="error" layout:unitLayout="StyleRealA/Error"/>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv1#page1#enu1" layout:linkDisableConditionNegated="true" manualLinks="true">
+          <layout:Field field="sv1#page1#enu1#fld1">
+            <layout:LayoutParameter name="input-size" value="43" type="field"/>
+          </layout:Field>
+          <layout:Field field="sv1#page1#enu1#fld2">
+            <layout:LayoutParameter name="input-size" value="45" type="field"/>
+            <layout:LayoutParameter name="information-text" value="pedir.acceso.sistema" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Link unitId="sv1#page1#enu1" link="sv1#page1#enu1#ln15" styleClass="btnAceptar"/>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Link unitId="sv1#page1#enu1" link="sv1#page1#enu1#ln59" styleClass="bthAltaPersona" layout:linkLayout="StyleRealA/Default">
+      <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+    </layout:Link>
+    <layout:Link unitId="sv1#page1#enu1" link="sv1#page1#enu1#ln8" styleClass="bthContrasenia" layout:linkLayout="StyleRealA/Default">
+      <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+    </layout:Link>
+  </layout:CustomLocation>
+</Page>

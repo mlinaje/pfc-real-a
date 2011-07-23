@@ -1,0 +1,48 @@
+<ContentModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="52" gr:y="171" id="mov1#ctm2" name="CambiarIdioma">
+  <ContentUnits>
+    <SelectorUnit id="mov1#ctm2#seu6" name="Idiomas" gr:x="20" gr:y="120" entity="ent10">
+      <Link id="mov1#ctm2#seu6#ln113" name="PasaDatosIdiomas" to="mov1#ctm2#enu14" type="transport" validate="true">
+        <LinkParameter id="mov1#ctm2#seu6#ln113#par190" name="flag_Idioma [label]" source="ent10#att47Array" target="mov1#ctm2#enu14#sfld4_label"/>
+        <LinkParameter id="mov1#ctm2#seu6#ln113#par199" name="oid_Idioma [output]" source="ent10#att25Array" target="mov1#ctm2#enu14#sfld4_output"/>
+      </Link>
+      <Selector id="mov1#ctm2#seu6#su25" defaultPolicy="fill" booleanOperator="and"/>
+    </SelectorUnit>
+    <EntryUnit id="mov1#ctm2#enu14" name="Idioma" ajaxComputeAlways="false" ajaxEnableExpandedLinks="true" gr:x="142" gr:y="128" linkOrder="mov1#ctm2#enu14#ln114">
+      <Link id="mov1#ctm2#enu14#ln114" name="Seleccionado" to="mov1#ctm2#ocu2" type="normal" validate="true" ajaxEnabled="false">
+        <LinkParameter id="mov1#ctm2#enu14#ln114#par371" name="Idioma_languageOID" source="mov1#ctm2#enu14#sfld4" target="mov1#ctm2#ocu2#ocp1"/>
+      </Link>
+      <SelectionField id="mov1#ctm2#enu14#sfld4" name="Idioma" ajaxEventEnabled="false" ajaxEventAlwaysFire="true" type="string" ajaxEventLink="mov1#ctm2#enu14#ln114"/>
+    </EntryUnit>
+    <SelectorUnit id="mov1#ctm2#seu7" name="IdiomaActual" gr:x="248" gr:y="108" entity="ent10">
+      <Selector id="mov1#ctm2#seu7#su26" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov1#ctm2#seu7#su26#acond6" name="country" predicate="eq" booleanOperator="or" implied="true" attributes="ent10#att46"/>
+        <AttributesCondition id="mov1#ctm2#seu7#su26#acond7" name="language" predicate="eq" booleanOperator="or" implied="true" attributes="ent10#att45"/>
+      </Selector>
+      <Link id="mov1#ctm2#seu7#ln115" name="PasaIdioma" to="mov1#ctm2#enu14" type="transport" validate="true">
+        <LinkParameter id="mov1#ctm2#seu7#ln115#par327" name="oid_Idioma - Preselection" source="ent10#att25Array" target="mov1#ctm2#enu14#sfld4_presel"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit id="mov1#ctm2#gtu4" name="GetCountryLanguageActual" gr:x="379" gr:y="124" contextParameters="CountryISOCtxParam LanguageISOCtxParam">
+      <Link id="mov1#ctm2#gtu4#ln116" name="pasaPais" to="mov1#ctm2#seu7" type="transport" validate="true">
+        <LinkParameter id="mov1#ctm2#gtu4#ln116#par331" name="CountryISOCtxParam_country" source="mov1#ctm2#gtu4.CountryISOCtxParam" target="mov1#ctm2#seu7#su26#acond6"/>
+        <LinkParameter id="mov1#ctm2#gtu4#ln116#par348" name="LanguageISOCtxParam_language" source="mov1#ctm2#gtu4.LanguageISOCtxParam" target="mov1#ctm2#seu7#su26#acond7"/>
+      </Link>
+    </GetUnit>
+    <OutputCollectorUnit gr:x="144" gr:y="244" id="mov1#ctm2#ocu2" name="Salida">
+      <OutputCollectorParameter id="mov1#ctm2#ocu2#ocp1" name="languageOID"/>
+    </OutputCollectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="mov1#ctm2#enu14" layout:frameLayout="WRDefault/Empty" layout:linkLayout="StyleRealA/BotonesOcultos">
+          <layout:Field field="mov1#ctm2#enu14#sfld4" layout:fieldLayout="StyleRealA/RadioBanderas">
+            <layout:LayoutParameter name="selection-field-rendering" value="radio" type="field"/>
+          </layout:Field>
+          <layout:LayoutParameter name="show-label" value="false" type="unit"/>
+          <layout:Link link="mov1#ctm2#enu14#ln114"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</ContentModule>

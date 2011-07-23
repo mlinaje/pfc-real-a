@@ -1,0 +1,168 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="AccesoUsuario" protected="true" landmarks="sv2#page3 sv2#area7" localized="true" homePage="sv2#page143">
+  <OperationUnits>
+    <LogoutUnit gr:x="810" gr:y="200" id="sv2#lou1" name="Logout" siteView="sv1" landmark="false"/>
+    <DeleteUnit gr:x="436" gr:y="349" id="sv2#dlu2" name="Borrar Usuario" entity="User" customDescriptor="false">
+      <Selector id="sv2#dlu2#su6" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu2#su6#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#dlu2#oln3" name="OKBorrarUsuario" to="sv2#dcnu1">
+        <LinkParameter id="sv2#dlu2#oln3#par235" name="oid_PASSING_KeyCondition7 [oid] [User] [Source]" sourceLinkParameter="sv2#page34#gctu8#ln75#par234" target="sv2#dcnu1#su7#kcond7.userOID"/>
+        <LinkParameter id="sv2#dlu2#oln3#par236" name="defaultGroup.oid_PASSING_KeyCondition8 [oid] [Group] [Target]" sourceLinkParameter="sv2#page34#gctu8#ln75#par233" target="sv2#dcnu1#su8#kcond8.groupOID"/>
+      </OKLink>
+      <KOLink id="sv2#dlu2#kln9" name="errorBorrarUsuario" to="sv2#page13#miu2">
+        <LinkParameter id="sv2#dlu2#kln9#par59" name="error.eliminar.usuario_Mensaje" sourceValue="error.eliminar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </DeleteUnit>
+    <DisconnectUnit gr:x="404" gr:y="190" id="sv2#dcnu1" name="DesconectarUsuarioGrupo" relationship="User2Group">
+      <SourceSelector id="sv2#dcnu1#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dcnu1#su7#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#dcnu1#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dcnu1#su8#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#dcnu1#oln5" name="OKBorradoUsuarioGrupo" to="sv2#page15#miu4">
+        <LinkParameter id="sv2#dcnu1#oln5#par2" name="informacion.usuario.borrado_Mensaje" sourceValue="informacion.usuario.borrado" target="mov1#ctm3#icu3#icp4"/>
+      </OKLink>
+      <KOLink id="sv2#dcnu1#kln12" name="ErrorBorradoUsuarioGrupo" to="sv2#page13#miu2">
+        <LinkParameter id="sv2#dcnu1#kln12#par7" name="error.eliminar.usuario_Mensaje" sourceValue="error.eliminar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </DisconnectUnit>
+    <ModifyUnit gr:x="794" gr:y="712" id="sv2#mfu2" name="modificarUsuario" entity="User">
+      <Selector id="sv2#mfu2#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu2#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="sv2#mfu2#kln2" name="ErrorModificarUsuario" to="sv2#page6#miu7">
+        <LinkParameter id="sv2#mfu2#kln2#par214" name="error.modificar.usuario_Mensaje" sourceValue="error.modificar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+      <OKLink id="sv2#mfu2#oln1" name="OKModificarUsuario" to="sv2#inn2" preserveForm="false" gr:bendpoints="0,102,315,0">
+        <LinkParameter id="sv2#mfu2#oln1#par215" name="email_PASSING" sourceLinkParameter="sv2#scu4#oln7#par125" passing="true"/>
+        <LinkParameter id="sv2#mfu2#oln1#par254" name="email_PASSING_Input" sourceLinkParameter="sv2#scu4#oln7#par125" target="sv2#inn2.isnotnull"/>
+        <LinkParameter id="sv2#mfu2#oln1#par257" name="contrasenia_PASSING" sourceLinkParameter="sv2#scu4#oln7#par256" passing="true"/>
+        <LinkParameter id="sv2#mfu2#oln1#par258" name="usuario_PASSING" sourceLinkParameter="sv2#scu4#oln7#par255" passing="true"/>
+      </OKLink>
+    </ModifyUnit>
+    <ModifyUnit gr:x="401" gr:y="-153" id="sv2#mfu3" name="ModificarImagen" entity="ent1">
+      <Selector id="sv2#mfu3#su11" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu3#su11#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu3#oln8" name="OKModificarImagen" to="sv2#page56#gctu12"/>
+      <KOLink id="sv2#mfu3#kln30" name="KOLink30" to="sv2#page57#miu12">
+        <LinkParameter id="sv2#mfu3#kln30#par373" name="error.modificar.imagen_Mensaje" sourceValue="error.modificar.imagen" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </ModifyUnit>
+    <DeleteUnit gr:x="106" gr:y="-12" id="sv2#dlu3" name="Borrar Imagen" entity="ent1">
+      <Selector id="sv2#dlu3#su13" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu3#su13#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#dlu3#oln12" name="OKBorrarImagen" to="sv2#page56#gctu12"/>
+      <KOLink id="sv2#dlu3#kln11" name="ErrorBorradoImagen" to="sv2#page55#miu11">
+        <LinkParameter id="sv2#dlu3#kln11#par372" name="error.borrar.imagen_Mensaje" sourceValue="error.eliminar.imagen" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </DeleteUnit>
+    <ScriptUnit gr:x="800" gr:y="579" id="sv2#scu4" name="ValidarCampos" script="ValidarCamposMantenimientoUsuario.groovy">
+      <OKLink id="sv2#scu4#oln7" name="OKCamposUsuario" to="sv2#mfu2">
+        <LinkParameter id="sv2#scu4#oln7#par104" name="email_email" source="result(email)" target="sv2#mfu2.email"/>
+        <LinkParameter id="sv2#scu4#oln7#par106" name="usuario_userName" source="result(usuario)" target="sv2#mfu2.userName"/>
+        <LinkParameter id="sv2#scu4#oln7#par131" name="contrasenia_password" source="result(contrasenia)" target="sv2#mfu2.password"/>
+        <LinkParameter id="sv2#scu4#oln7#par125" name="email_PASSING" source="result(email)" passing="true"/>
+        <LinkParameter id="sv2#scu4#oln7#par255" name="usuario_PASSING" source="result(usuario)" passing="true"/>
+        <LinkParameter id="sv2#scu4#oln7#par256" name="contrasenia_PASSING" source="result(contrasenia)" passing="true"/>
+        <LinkParameter id="sv2#scu4#oln7#par311" name="id_KeyCondition1 [oid]" source="result(id)" target="sv2#mfu2#su1#kcond1.userOID"/>
+      </OKLink>
+      <KOLink id="sv2#scu4#kln10" name="KOCamposUsuario" to="sv2#page6#miu7"/>
+    </ScriptUnit>
+    <ScriptUnit id="sv2#scu17" name="controlMensaje" gr:x="94" gr:y="363" script="ControlMensajes.groovy">
+      <OKLink id="sv2#scu17#oln13" name="OKPasaMensaje" to="sv2#page34#gctu8">
+        <LinkParameter id="sv2#scu17#oln13#par226" name="defaultGroup.oid_PASSING" sourceLinkParameter="sv2#page3#dau3#ln9#par57" passing="true"/>
+        <LinkParameter id="sv2#scu17#oln13#par227" name="oid_PASSING" sourceLinkParameter="sv2#page3#dau3#ln9#par55" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <IsNotNullUnit gr:x="489" gr:y="827" id="sv2#inn2" name="CambiaEmail" emptyStringAsNull="true">
+      <KOLink id="sv2#inn2#kln20" name="KOCambioEmail" to="sv2#page21#gctu1"/>
+      <OKLink id="sv2#inn2#oln29" name="OKCambioEmail" to="sv2#mlu4">
+        <LinkParameter id="sv2#inn2#oln29#par237" name="Password Real-A_Subject" sourceValue="Password Real-A" target="sv2#mlu4.subject"/>
+        <LinkParameter id="sv2#inn2#oln29#par238" name="email_PASSING_To" sourceLinkParameter="sv2#mfu2#oln1#par215" target="sv2#mlu4.to"/>
+        <LinkParameter id="sv2#inn2#oln29#par259" name="contrasenia_PASSING_clave" sourceLinkParameter="sv2#mfu2#oln1#par257" target="sv2#mlu4.clave"/>
+        <LinkParameter id="sv2#inn2#oln29#par260" name="usuario_PASSING_usuario" sourceLinkParameter="sv2#mfu2#oln1#par258" target="sv2#mlu4.usuario"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <PasswordUnit id="sv2#pwu8" name="GenerarPassword" gr:x="961" gr:y="579" passwordSize="8">
+      <OKLink id="sv2#pwu8#oln28" name="OKgeneraPass" to="sv2#scu4">
+        <LinkParameter id="sv2#pwu8#oln28#par205" name="Generated Password_confirmarContrasenia" source="password" target="sv2#scu4.confirmarContrasenia"/>
+        <LinkParameter id="sv2#pwu8#oln28#par206" name="Generated Password_contrasenia" source="password" target="sv2#scu4.contrasenia"/>
+        <LinkParameter id="sv2#pwu8#oln28#par207" name="Antigua Contrase&#241;a_PASSING_antiguaContrasenia" sourceLinkParameter="sv2#page12#gctu2#ln51#par196" target="sv2#scu4.antiguaContrasenia"/>
+        <LinkParameter id="sv2#pwu8#oln28#par208" name="Correo_PASSING_email" sourceLinkParameter="sv2#page12#gctu2#ln51#par197" target="sv2#scu4.email"/>
+        <LinkParameter id="sv2#pwu8#oln28#par209" name="email_PASSING_emailAntiguo" sourceLinkParameter="sv2#page12#gctu2#ln51#par201" target="sv2#scu4.emailAntiguo"/>
+        <LinkParameter id="sv2#pwu8#oln28#par210" name="oid_PASSING_id" sourceLinkParameter="sv2#page12#gctu2#ln51#par202" target="sv2#scu4.id"/>
+        <LinkParameter id="sv2#pwu8#oln28#par211" name="Usuario_PASSING_usuario" sourceLinkParameter="sv2#page12#gctu2#ln51#par204" target="sv2#scu4.usuario"/>
+        <LinkParameter id="sv2#pwu8#oln28#par216" name="userName_PASSING_usuarioAntiguo" sourceLinkParameter="sv2#page12#gctu2#ln51#par203" target="sv2#scu4.usuarioAntiguo"/>
+      </OKLink>
+    </PasswordUnit>
+    <MailUnit id="sv2#mlu4" name="EnviarNuevaContrase&#241;a" gr:x="462" gr:y="724" format="html" smtpServer="smtp2" template="MailPassword.mt">
+      <Property id="sv2#mlu4#prop13" name="mail.smtp.starttls.required" value="true"/>
+      <Property id="sv2#mlu4#prop14" name="mail.smtp.starttls.enable" value="true"/>
+      <Property id="sv2#mlu4#prop15" name="mail.smtp.auth" value="true"/>
+      <Property id="sv2#mlu4#prop16" name="mail.smtp.port" value="587"/>
+      <KOLink id="sv2#mlu4#kln27" name="KOEnvioNueva" to="sv2#page6#miu7">
+        <LinkParameter id="sv2#mlu4#kln27#par239" name="Failure Reasons_Mensaje" source="failureReasons" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+      <OKLink id="sv2#mlu4#oln37" name="OKEnvioNueva" to="sv2#page16#miu8" preserveForm="true">
+        <LinkParameter id="sv2#mlu4#oln37#par313" name="informacion.contrasenia.enviada_Mensaje" target="mov1#ctm3#icu3#icp4" sourceValue="informacion.contrasenia.enviada.email"/>
+      </OKLink>
+    </MailUnit>
+    <LogoutUnit id="sv2#lou4" name="Logout" landmark="false" gr:x="173" gr:y="717" siteView="sv1"/>
+    <ScriptUnit id="sv2#scu2" name="controlMensaje" gr:x="802" gr:y="488" script="ControlMensajes.groovy">
+      <OKLink id="sv2#scu2#oln33" name="OKPasaMensaje" to="sv2#page12#gctu2">
+        <LinkParameter id="sv2#scu2#oln33#par180" name="Antigua Contrase&#241;a_PASSING" sourceLinkParameter="sv2#scu8#kln24#par266" passing="true"/>
+        <LinkParameter id="sv2#scu2#oln33#par182" name="Correo_PASSING" sourceLinkParameter="sv2#scu8#kln24#par265" passing="true"/>
+        <LinkParameter id="sv2#scu2#oln33#par184" name="email_PASSING" sourceLinkParameter="sv2#scu8#kln24#par264" passing="true"/>
+        <LinkParameter id="sv2#scu2#oln33#par193" name="oid_PASSING" sourceLinkParameter="sv2#scu8#kln24#par267" passing="true"/>
+        <LinkParameter id="sv2#scu2#oln33#par194" name="userName_PASSING" sourceLinkParameter="sv2#scu8#kln24#par269" passing="true"/>
+        <LinkParameter id="sv2#scu2#oln33#par195" name="Usuario_PASSING" sourceLinkParameter="sv2#scu8#kln24#par263" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit gr:x="587" gr:y="578" id="sv2#scu8" name="comprobarCambioCorreo" script="ComprobarCambioCorreo.groovy">
+      <OKLink id="sv2#scu8#oln40" name="KOBorraUsuario" to="sv2#scu4">
+        <LinkParameter id="sv2#scu8#oln40#par248" name="Confirmar Nueva Contrase&#241;a_PASSING_confirmarContrasenia" sourceLinkParameter="sv2#page3#enu6#ln24#par128" target="sv2#scu4.confirmarContrasenia"/>
+        <LinkParameter id="sv2#scu8#oln40#par249" name="Nueva Contrase&#241;a_PASSING_contrasenia" sourceLinkParameter="sv2#page3#enu6#ln24#par132" target="sv2#scu4.contrasenia"/>
+        <LinkParameter id="sv2#scu8#oln40#par250" name="oid_PASSING_id" sourceLinkParameter="sv2#page3#enu6#ln24#par142" target="sv2#scu4.id"/>
+        <LinkParameter id="sv2#scu8#oln40#par251" name="Antigua Contrase&#241;a_PASSING_antiguaContrasenia" sourceLinkParameter="sv2#page3#enu6#ln24#par127" target="sv2#scu4.antiguaContrasenia"/>
+        <LinkParameter id="sv2#scu8#oln40#par252" name="email_PASSING_emailAntiguo" sourceLinkParameter="sv2#page3#enu6#ln24#par130" target="sv2#scu4.emailAntiguo"/>
+        <LinkParameter id="sv2#scu8#oln40#par253" name="Usuario_PASSING_usuario" sourceLinkParameter="sv2#page3#enu6#ln24#par160" target="sv2#scu4.usuario"/>
+        <LinkParameter id="sv2#scu8#oln40#par261" name="userName_PASSING_usuarioAntiguo" sourceLinkParameter="sv2#page3#enu6#ln24#par143" target="sv2#scu4.usuarioAntiguo"/>
+        <LinkParameter id="sv2#scu8#oln40#par262" name="Correo_PASSING_email" sourceLinkParameter="sv2#page3#enu6#ln24#par183" target="sv2#scu4.email"/>
+      </OKLink>
+      <KOLink id="sv2#scu8#kln24" name="OKBorraUsuario" to="sv2#scu2">
+        <LinkParameter id="sv2#scu8#kln24#par263" name="Usuario_PASSING" sourceLinkParameter="sv2#page3#enu6#ln24#par160" passing="true"/>
+        <LinkParameter id="sv2#scu8#kln24#par264" name="email_PASSING" sourceLinkParameter="sv2#page3#enu6#ln24#par130" passing="true"/>
+        <LinkParameter id="sv2#scu8#kln24#par265" name="Correo_PASSING" sourceLinkParameter="sv2#page3#enu6#ln24#par183" passing="true"/>
+        <LinkParameter id="sv2#scu8#kln24#par266" name="Antigua Contrase&#241;a_PASSING" sourceLinkParameter="sv2#page3#enu6#ln24#par127" passing="true"/>
+        <LinkParameter id="sv2#scu8#kln24#par267" name="oid_PASSING" sourceLinkParameter="sv2#page3#enu6#ln24#par142" passing="true"/>
+        <LinkParameter id="sv2#scu8#kln24#par268" name="pregunta.borrar.usuario_mensaje" target="sv2#scu2.mensaje" sourceValue="pregunta.confirmar.cambio.correo"/>
+        <LinkParameter id="sv2#scu8#kln24#par269" name="userName_PASSING" sourceLinkParameter="sv2#page3#enu6#ln24#par143" passing="true"/>
+      </KOLink>
+    </ScriptUnit>
+    <ScriptUnit id="sv2#scu21" name="controlMensaje" gr:x="-131" gr:y="-315" script="ControlMensajes.groovy">
+      <OKLink id="sv2#scu21#oln44" name="OKPasaMensaje" to="sv2#page54#gctu11">
+        <LinkParameter id="sv2#scu21#oln44#par45" name="oid_PASSING" sourceLinkParameter="sv2#area7#page77#pwu25#ln372#par574" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit id="sv2#scu16" name="controlMensaje" gr:x="599" gr:y="-313" script="ControlMensajes.groovy">
+      <OKLink id="sv2#scu16#oln26" name="OKPasaMensaje" to="sv2#page29#gctu23">
+        <LinkParameter id="sv2#scu16#oln26#par439" name="oid_PASSING" sourceLinkParameter="sv2#area7#page76#enu46#ln366#par565" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <DeleteUnit id="sv2#dlu5" name="Borrar Imagen" gr:x="562" gr:y="23" entity="ent1">
+      <Selector id="sv2#dlu5#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu5#su10#kcond13" name="KeyCondition12" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#dlu5#oln31" name="OKBorrarImagen" to="sv2#page56#gctu12"/>
+      <KOLink id="sv2#dlu5#kln4" name="ErrorBorradoImagen" to="sv2#page57#miu12">
+        <LinkParameter id="sv2#dlu5#kln4#par282" name="error.eliminar.imagen_Mensaje" sourceValue="error.eliminar.imagen" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </DeleteUnit>
+    <ScriptUnit id="sv2#scu26" name="CambiarIdioma" gr:x="1059" gr:y="-85" script="CambiarIdioma.groovy">
+      <OKLink id="sv2#scu26#oln48" name="OKLink48" to="sv2#mpage3" automaticCoupling="true" preserveForm="true"/>
+    </ScriptUnit>
+  </OperationUnits>
+</SiteView>

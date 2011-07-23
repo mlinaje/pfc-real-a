@@ -1,0 +1,89 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page25" name="Mantenimiento de Descripciones" gr:x="126" gr:y="-23">
+  <ContentUnits>
+    <EntryUnit id="sv3#page25#enu12" name="Descripciones" linkOrder="sv3#page25#enu12#ln124 sv3#page25#enu12#ln125 sv3#page25#enu12#ln130 sv3#page25#enu12#ln131" gr:x="0" gr:y="124">
+      <Link id="sv3#page25#enu12#ln124" name="Cancelar" to="sv3#page44" type="normal" automaticCoupling="true" validate="true" preserveForm="true" gr:bendpoints="90,89,-198,-105"/>
+      <Link id="sv3#page25#enu12#ln125" name="Modificar" to="sv3#scu25" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxCloseWindow="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv3#page25#enu12#ln125#par100" name="descripcion_descripcion" source="sv3#page25#enu12#fld52" target="sv3#scu25.descripcion"/>
+        <LinkParameter id="sv3#page25#enu12#ln125#par115" name="oid_id" source="sv3#page25#enu12#fld51" target="sv3#scu25.id"/>
+        <LinkParameter id="sv3#page25#enu12#ln125#par436" name="Idioma_idioma" source="sv3#page25#enu12#sfld3" target="sv3#scu25.idioma"/>
+        <LinkParameter id="sv3#page25#enu12#ln125#par437" name="Informacion_informacion" source="sv3#page25#enu12#fld53" target="sv3#scu25.informacion"/>
+        <LinkParameter id="sv3#page25#enu12#ln125#par478" name="objeto_oid_PASSING_objeto" target="sv3#scu25.objeto" source="sv3#page25#enu12#fld54"/>
+      </Link>
+      <Link id="sv3#page25#enu12#ln130" name="Crear" to="sv3#scu25" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true" gr:bendpoints="0,95,291,0">
+        <LinkParameter id="sv3#page25#enu12#ln130#par464" name="Descripcion_descripcion" source="sv3#page25#enu12#fld52" target="sv3#scu25.descripcion"/>
+        <LinkParameter id="sv3#page25#enu12#ln130#par465" name="Idioma_idioma" source="sv3#page25#enu12#sfld3" target="sv3#scu25.idioma"/>
+        <LinkParameter id="sv3#page25#enu12#ln130#par466" name="Informacion_informacion" source="sv3#page25#enu12#fld53" target="sv3#scu25.informacion"/>
+        <LinkParameter id="sv3#page25#enu12#ln130#par479" name="objeto_oid_PASSING_objeto" target="sv3#scu25.objeto" source="sv3#page25#enu12#fld54"/>
+      </Link>
+      <Link id="sv3#page25#enu12#ln131" name="Borrar" to="sv3#scu12" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv3#page25#enu12#ln131#par121" name="pregunta.admin.borrar.usuario_mensaje" target="sv3#scu12.mensaje" sourceValue="pregunta.borrar.descripcion"/>
+        <LinkParameter id="sv3#page25#enu12#ln131#par475" name="oid_PASSING" source="sv3#page25#enu12#fld51" passing="true"/>
+      </Link>
+      <Field id="sv3#page25#enu12#fld51" name="oid" type="integer" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="sv3#page25#enu12#fld52" name="Descripcion" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv3#page25#enu12#fld53" name="Informacion" type="text" modifiable="true" preloaded="true" contentType="text/html"/>
+      <SelectionField id="sv3#page25#enu12#sfld3" name="Idioma" type="integer"/>
+      <Field id="sv3#page25#enu12#fld54" name="idObjeto" type="string" modifiable="false" preloaded="true" hidden="true"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="12" gr:y="2" id="sv3#page25#seu3" name="Idiomas" entity="ent10">
+      <SortAttribute attribute="ent10#att25" order="ascending"/>
+      <Link id="sv3#page25#seu3#ln142" name="PasaIdimas" to="sv3#page25#enu12" type="transport" validate="true">
+        <LinkParameter id="sv3#page25#seu3#ln142#par434" name="descripcion_Idioma [label]" source="ent10#att44Array" target="sv3#page25#enu12#sfld3_label"/>
+        <LinkParameter id="sv3#page25#seu3#ln142#par435" name="oid_Idioma [output]" source="ent10#att25Array" target="sv3#page25#enu12#sfld3_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="95" gr:y="0" id="sv3#page25#seu5" name="Descripcion" entity="ent9">
+      <Link id="sv3#page25#seu5#ln145" name="Link145" to="sv3#page25#enu12" type="transport" validate="true">
+        <LinkParameter id="sv3#page25#seu5#ln145#par488" name="descripcion_Descripcion" source="ent9#att42Array" target="sv3#page25#enu12#fld52_slot"/>
+        <LinkParameter id="sv3#page25#seu5#ln145#par489" name="DescripcionesToIdiomas.oid_Idioma - Preselection" source="rel11#role13_ent10#att25Array" target="sv3#page25#enu12#sfld3_presel"/>
+        <LinkParameter id="sv3#page25#seu5#ln145#par490" name="DescripcionesToObjeto.oid_idObjeto" source="rel7#role6_ent4#att24Array" target="sv3#page25#enu12#fld54_slot"/>
+        <LinkParameter id="sv3#page25#seu5#ln145#par491" name="informacion_Informacion" source="ent9#att43Array" target="sv3#page25#enu12#fld53_slot"/>
+        <LinkParameter id="sv3#page25#seu5#ln145#par492" name="oid_oid" source="ent9#att38Array" target="sv3#page25#enu12#fld51_slot"/>
+      </Link>
+      <Selector id="sv3#page25#seu5#su37" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#page25#seu5#su37#kcond21" name="KeyCondition21" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page25#enu12" manualLinks="true" layout:frameLayout="WRDefault/Empty">
+          <layout:Field field="sv3#page25#enu12#fld52"/>
+          <layout:Field field="sv3#page25#enu12#fld53"/>
+          <layout:Field field="sv3#page25#enu12#sfld3"/>
+          <layout:LayoutParameter name="fck-toolbar" value="RealA" type="field"/>
+          <layout:LayoutParameter name="width" value="80" type="field"/>
+          <layout:LayoutParameter name="height" value="18" type="field"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page25#enu12" link="sv3#page25#enu12#ln130" layout:linkVisibilityCondition="sv3#page25#cexpr6" styleClass="btnAceptar"/>
+              <layout:Link unitId="sv3#page25#enu12" link="sv3#page25#enu12#ln125" layout:linkVisibilityCondition="sv3#page25#cexpr6" layout:linkVisibilityConditionNegated="true" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page25#enu12" link="sv3#page25#enu12#ln124" styleClass="btnCancelar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page25#enu12" link="sv3#page25#enu12#ln131" layout:linkVisibilityCondition="sv3#page25#cexpr6" layout:linkVisibilityConditionNegated="true" styleClass="btnEliminar"/>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <ConditionExpression id="sv3#page25#cexpr6" name="estaCreandoDescrip">
+    <TextValue xml:space="preserve">return (null == descripcionId)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv3#page25#var11" name="descripcionId" type="integer" unitId="sv3#page25#enu12" parameter="sv3#page25#enu12#fld51"/>
+</Page>

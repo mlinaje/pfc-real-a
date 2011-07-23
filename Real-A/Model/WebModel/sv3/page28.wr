@@ -1,0 +1,39 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page28" name="Pregunta" layout:pageLayout="WRDefault/Empty" gr:x="-28" gr:y="-276" layout:frameLayout="WRDefault/Empty">
+  <ContentUnits>
+    <NoOpContentUnit id="sv3#page28#gctu14" name="Botones" linkOrder="sv3#page28#gctu14#ln134 sv3#page28#gctu14#ln135" gr:x="20" gr:y="106">
+      <Link id="sv3#page28#gctu14#ln134" name="Cancelar" to="sv3#page25" type="normal" validate="true" preserveForm="true" ajaxEnabled="true" ajaxCloseWindow="true"/>
+      <Link id="sv3#page28#gctu14#ln135" name="Aceptar" to="sv3#dlu4" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxCloseWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv3#page28#gctu14#ln135#par477" name="oid_PASSING_KeyCondition14 [oid]" sourceLinkParameter="sv3#scu12#oln60#par476" target="sv3#dlu4#su36#kcond20.ent9#att38"/>
+      </Link>
+    </NoOpContentUnit>
+    <IndexUnit id="sv3#page28#inu11" name="Mensaje" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att33">
+      <SortAttribute attribute="ent8#att32" order="ascending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page28#inu11" layout:frameLayout="WRDefault/Empty" layout:unitLayout="StyleRealA/MensajesError">
+          <layout:Attribute attribute="ent8#att33"/>
+          <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page28#gctu14" link="sv3#page28#gctu14#ln135" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page28#gctu14" link="sv3#page28#gctu14#ln134" styleClass="btnCancelar"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

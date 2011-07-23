@@ -1,0 +1,67 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7#page135" name="Mantenimiento de Objetos" landmark="true" gr:x="387" gr:y="-27">
+  <ContentUnits>
+    <HierarchicalIndexUnit id="sv7#page135#hinu2" name="Objetos" linkOrder="sv7#page135#hinu2#ln300" gr:x="0" gr:y="0" sortable="false" entity="ent4" displayAttributes="ent4#att30" blockFactor="2" blockWindow="2">
+      <HierarchicalIndexLevel id="sv7#page135#hinu2#hiulvl2" name="Imagenes" entity="ent2" role="rel6#role3" displayAttributes="ent2#att28">
+        <SortAttribute attribute="ent2#att5" order="ascending"/>
+      </HierarchicalIndexLevel>
+      <SortAttribute attribute="ent4#att24" order="ascending"/>
+      <Link id="sv7#page135#hinu2#ln300" name="Modificar" to="sv7#page139#enu44" type="normal" validate="true">
+        <LinkParameter id="sv7#page135#hinu2#ln300#par977" name="descripcion_Descripci&#243;n" source="data[].ent4#att30" target="sv7#page139#enu44#fld124_slot"/>
+        <LinkParameter id="sv7#page135#hinu2#ln300#par978" name="oid_oid" source="data[].ent4#att24" target="sv7#page139#enu44#fld123_slot"/>
+      </Link>
+    </HierarchicalIndexUnit>
+    <NoOpContentUnit id="sv7#page135#gctu68" name="BotonCrear" linkOrder="sv7#page135#gctu68#ln301" gr:x="100" gr:y="10">
+      <Link id="sv7#page135#gctu68#ln301" name="Crear nuevo objeto" to="sv7#page139#enu44" type="normal" validate="true">
+        <LinkParameter id="sv7#page135#gctu68#ln301#par979" name="$$NULL$$_Descripci&#243;n" target="sv7#page139#enu44#fld124_slot" sourceValue="$$NULL$$"/>
+        <LinkParameter id="sv7#page135#gctu68#ln301#par980" name="$$NULL$$_oid" target="sv7#page139#enu44#fld123_slot" sourceValue="$$NULL$$"/>
+      </Link>
+    </NoOpContentUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv7#page135#hinu2">
+          <layout:LayoutParameter name="show-first-attribute-name" value="top" type="unit"/>
+          <layout:LayoutParameter name="show-branch-attribute-name" value="none" type="unit"/>
+          <layout:LayoutParameter name="image-width" value="50" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="50" type="attribute"/>
+          <layout:Link link="sv7#page135#hinu2#ln300">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+            <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="ico_Agregar" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv7#page135#hinu2First">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="First" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv7#page135#hinu2Previous">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Previous" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv7#page135#hinu2Block"/>
+          <layout:Link link="sv7#page135#hinu2Next">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Next" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv7#page135#hinu2Last">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Last" type="link"/>
+          </layout:Link>
+          <layout:LayoutParameter name="link-style" value="button" type="link"/>
+          <layout:LayoutParameter name="show" value="icon &amp; text" type="link"/>
+          <layout:Attribute attribute="ent4#att30"/>
+          <layout:Attribute attribute="ent2#att28"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Link unitId="sv7#page135#gctu68" link="sv7#page135#gctu68#ln301" styleClass="bthNuevo"/>
+  </layout:CustomLocation>
+</Page>

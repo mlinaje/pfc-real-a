@@ -1,0 +1,219 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page100" name="Real-A" landmark="true" layout:linkDisableConditionNegated="true" ajaxEnabled="false" gr:x="279" gr:y="-1576">
+  <ContentUnits/>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:SubPage pageId="sv6#page100#alt3#page101">
+          <layout:Grid>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv6#page100#alt3#page101#enu35" layout:frameLayout="WRDefault/Empty" layout:unitLayout="StyleRealAMobile/CameraLayout">
+                  <layout:Link link="sv6#page100#alt3#page101#enu35#ln234"/>
+                  <layout:LayoutParameter name="pelicula-flash" value="TomarFoto.swf" type="unit"/>
+                  <layout:LayoutParameter name="ruta-upload" value="upload/" type="unit"/>
+                  <layout:LayoutParameter name="url-upload" value="http://192.168.2.1:8080/Real-A/UploadFileServlet" type="unit"/>
+                  <layout:LayoutParameter name="idUsuario" value="fld57" type="unit"/>
+                  <layout:LayoutParameter name="idUsuarioSonido" value="fld58" type="unit"/>
+                  <layout:LayoutParameter name="idFichero" value="fld96" type="unit"/>
+                  <layout:LayoutParameter name="idNombreFichero" value="fld97" type="unit"/>
+                  <layout:LayoutParameter name="idFicheroSonido" value="fld106" type="unit"/>
+                  <layout:LayoutParameter name="idLinkSonidoObtenido" value="ln239" type="unit"/>
+                  <layout:LayoutParameter name="idSoundFile" value="fld108" type="unit"/>
+                  <layout:LayoutParameter name="idNombreFicheroSonido" value="fld107" type="unit"/>
+                  <layout:LayoutParameter name="idLinkImagenObtenida" value="ln234" type="unit"/>
+                  <layout:LayoutParameter name="error-position" value="bottom" type="unit"/>
+                </layout:Unit>
+              </layout:Cell>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:SubPage pageId="sv6#page100#alt3#page102">
+          <layout:Grid>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv6#page100#alt3#page102#enu48" manualLinks="true" layout:unitLayout="StyleRealAMobile/ImagenUnit" layout:frameLayout="WRDefault/Empty">
+                  <layout:LayoutParameter name="idImagen" value="fld94" type="unit"/>
+                  <layout:LayoutParameter name="show-label" value="top" type="unit"/>
+                </layout:Unit>
+              </layout:Cell>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv6#page100#alt3#page102#dau25" layout:frameLayout="WRDefault/Empty">
+                  <layout:Attribute attribute="ent9#att42"/>
+                  <layout:Attribute attribute="ent9#att43"/>
+                  <layout:LayoutParameter name="attribute-orientation" value="top" type="unit"/>
+                </layout:Unit>
+              </layout:Cell>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv6#page100#alt3#page102#enu36" manualLinks="true" layout:frameLayout="WRDefault/Empty">
+                  <layout:Field field="sv6#page100#alt3#page102#enu36#fld100">
+                    <layout:LayoutParameter name="information-text" value="informacion.campo.anotacion" type="field"/>
+                  </layout:Field>
+                </layout:Unit>
+              </layout:Cell>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Unit unitId="sv6#page100#alt3#page102#enu37" layout:unitLayout="StyleRealAMobile/SoundLayout" layout:unitVisibilityCondition="sv6#page100#cexpr21" layout:unitVisibilityConditionNegated="true" layout:frameLayout="WRDefault/Empty">
+                  <layout:Link link="sv6#page100#alt3#page102#enu37#ln239"/>
+                  <layout:LayoutParameter name="pelicula-flash" value="GrabarSonido.swf" type="unit"/>
+                  <layout:LayoutParameter name="ruta-upload" value="upload/" type="unit"/>
+                  <layout:LayoutParameter name="idUsuario" value="fld58" type="unit"/>
+                  <layout:LayoutParameter name="idLinkSonidoObtenido" value="ln239" type="unit"/>
+                  <layout:LayoutParameter name="idFicheroSonido" value="fld106" type="unit"/>
+                  <layout:LayoutParameter name="idNombreFicheroSonido" value="fld107" type="unit"/>
+                  <layout:LayoutParameter name="nombreBoton" value="obtener.sonido" type="unit"/>
+                  <layout:LayoutParameter name="error-position" value="bottom" type="unit"/>
+                </layout:Unit>
+                <layout:Unit unitId="sv6#page100#alt3#page102#enu38" manualLinks="true" layout:unitLayout="StyleRealAMobile/ReproductorSonido" layout:unitVisibilityCondition="sv6#page100#cexpr21" layout:frameLayout="WRDefault/Empty">
+                  <layout:LayoutParameter name="idSoundFile" value="fld108" type="unit"/>
+                </layout:Unit>
+              </layout:Cell>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Grid>
+                  <layout:Row>
+                    <layout:Cell>
+                      <layout:Link unitId="sv6#page100#alt3#page102#gctu49" link="sv6#page100#alt3#page102#gctu49#ln240" layout:linkVisibilityCondition="sv6#page100#cexpr21" styleClass="btnGrabar"/>
+                    </layout:Cell>
+                    <layout:Cell/>
+                  </layout:Row>
+                </layout:Grid>
+              </layout:Cell>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell>
+                <layout:Grid>
+                  <layout:Row>
+                    <layout:Cell>
+                      <layout:Link unitId="sv6#page100#alt3#page102#enu36" link="sv6#page100#alt3#page102#enu36#ln236" styleClass="btnGuardar"/>
+                    </layout:Cell>
+                    <layout:Cell>
+                      <layout:Link unitId="sv6#page100#alt3#page102#enu36" link="sv6#page100#alt3#page102#enu36#ln237" styleClass="btnFoto"/>
+                    </layout:Cell>
+                  </layout:Row>
+                </layout:Grid>
+              </layout:Cell>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="link-style" value="button" type="link"/>
+  <Alternative id="sv6#page100#alt3" name="Real-A" defaultPage="sv6#page100#alt3#page101" gr:x="0" gr:y="0">
+    <Page id="sv6#page100#alt3#page101" name="Real-A" gr:x="0" gr:y="0">
+      <ContentUnits>
+        <EntryUnit id="sv6#page100#alt3#page101#enu35" name="Obtener Foto" linkOrder="sv6#page100#alt3#page101#enu35#ln234" gr:x="0" gr:y="114">
+          <Field id="sv6#page100#alt3#page101#enu35#fld96" name="Imagen" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Field id="sv6#page100#alt3#page101#enu35#fld97" name="Nombre imagen" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Link id="sv6#page100#alt3#page101#enu35#ln234" name="FotoObtenida" to="sv6#scu51" type="normal" validate="true" preserveForm="true" ajaxEnabled="true" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="buscando.coincidencias">
+            <LinkParameter id="sv6#page100#alt3#page101#enu35#ln234#par777" name="Imagen_imagen" source="sv6#page100#alt3#page101#enu35#fld96" target="sv6#scu51.imagen"/>
+            <LinkParameter id="sv6#page100#alt3#page101#enu35#ln234#par778" name="Nombre imagen_nombreImagen" source="sv6#page100#alt3#page101#enu35#fld97" target="sv6#scu51.nombreImagen"/>
+          </Link>
+          <Field id="sv6#page100#alt3#page101#enu35#fld57" name="usuario" type="integer" modifiable="false" preloaded="true" hidden="true"/>
+        </EntryUnit>
+        <GetUnit id="sv6#page100#alt3#page101#gtu8" name="Usuario" gr:x="7" gr:y="0" contextParameters="UserCtxParam">
+          <Link id="sv6#page100#alt3#page101#gtu8#ln159" name="Link156" to="sv6#page100#alt3#page101#enu35" type="transport" validate="true">
+            <LinkParameter id="sv6#page100#alt3#page101#gtu8#ln159#par470" name="UserCtxParam.oid_usuario" source="sv6#page100#alt3#page101#gtu8.UserCtxParam" target="sv6#page100#alt3#page101#enu35#fld57_slot"/>
+          </Link>
+        </GetUnit>
+      </ContentUnits>
+    </Page>
+    <Page id="sv6#page100#alt3#page102" name="Informacion" gr:x="8" gr:y="310">
+      <ContentUnits>
+        <GetUnit id="sv6#page100#alt3#page102#gtu13" name="ObtenerIdUsuario" gr:x="10" gr:y="270" contextParameters="UserCtxParam">
+          <Link id="sv6#page100#alt3#page102#gtu13#ln235" name="PasarIdUsuarioCrear" to="sv6#page100#alt3#page102#enu36" type="transport" validate="true">
+            <LinkParameter id="sv6#page100#alt3#page102#gtu13#ln235#par779" name="UserCtxParam.oid_PASSING" source="sv6#page100#alt3#page102#gtu13.UserCtxParam" passing="true"/>
+          </Link>
+        </GetUnit>
+        <EntryUnit id="sv6#page100#alt3#page102#enu36" name="Anotacion" linkOrder="sv6#page100#alt3#page102#enu36#ln236 sv6#page100#alt3#page102#enu36#ln237" gr:x="0" gr:y="158" fieldOrder="sv6#page100#alt3#page102#enu36#fld100">
+          <Field id="sv6#page100#alt3#page102#enu36#fld98" name="Imagen" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Field id="sv6#page100#alt3#page102#enu36#fld100" name="Anotacion" type="text" modifiable="true"/>
+          <Link id="sv6#page100#alt3#page102#enu36#ln236" name="Guardar en Album" to="sv6#scu52" type="normal" validate="true" preserveForm="false" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln236#par780" name="nombreImagen_PASSING_nombreImagen" source="sv6#page100#alt3#page102#enu36#fld103" target="sv6#scu52.nombreImagen"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln236#par781" name="Anotacion_anotacion" source="sv6#page100#alt3#page102#enu36#fld100" target="sv6#scu52.anotacion"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln236#par782" name="Imagen_imagen" source="sv6#page100#alt3#page102#enu36#fld98" target="sv6#scu52.imagen"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln236#par783" name="UserCtxParam.oid_PASSING_userid" sourceLinkParameter="sv6#page100#alt3#page102#gtu13#ln235#par779" target="sv6#scu52.userid"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln236#par784" name="fecha_PASSING_fecha" source="sv6#page100#alt3#page102#enu36#fld105" target="sv6#scu52.fecha"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln236#par785" name="NombreSonido_nombreSonido" source="sv6#page100#alt3#page102#enu36#fld104" target="sv6#scu52.nombreSonido"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln236#par786" name="Sonido_sonido" source="sv6#page100#alt3#page102#enu36#fld102" target="sv6#scu52.sonido"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln236#par21" name="idObjeto_PASSING_idObjeto" sourceLinkParameter="sv6#page100#alt3#page102#dau25#ln381#par20" target="sv6#scu52.idObjeto"/>
+          </Link>
+          <Link id="sv6#page100#alt3#page102#enu36#ln237" name="Nueva Foto" to="sv6#page100#alt3#page101#enu35" type="normal" validate="true">
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln237#par788" name="$$NULL$$_Imagen" target="sv6#page100#alt3#page101#enu35#fld96_slot" sourceValue="$$NULL$$"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln237#par789" name="$$NULL$$_Nombre imagen" target="sv6#page100#alt3#page101#enu35#fld97_slot" sourceValue="$$NULL$$"/>
+          </Link>
+          <Field id="sv6#page100#alt3#page102#enu36#fld102" name="Sonido" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Field id="sv6#page100#alt3#page102#enu36#fld103" name="NombreImagen" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Field id="sv6#page100#alt3#page102#enu36#fld104" name="NombreSonido" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Field id="sv6#page100#alt3#page102#enu36#fld105" name="fecha" type="timestamp" modifiable="false" preloaded="true" hidden="true"/>
+          <Link id="sv6#page100#alt3#page102#enu36#ln238" name="reproducir" to="sv6#page100#alt3#page102#enu38" type="transport" validate="true" ajaxEnabled="false" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide">
+            <LinkParameter id="sv6#page100#alt3#page102#enu36#ln238#par790" name="sonido_sonido" source="sv6#page100#alt3#page102#enu36#fld102" target="sv6#page100#alt3#page102#enu38#fld108_slot"/>
+          </Link>
+        </EntryUnit>
+        <EntryUnit id="sv6#page100#alt3#page102#enu37" name="ObtenerSonido" linkOrder="sv6#page100#alt3#page102#enu37#ln239" gr:x="261" gr:y="116">
+          <Field id="sv6#page100#alt3#page102#enu37#fld106" name="Sonido" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Field id="sv6#page100#alt3#page102#enu37#fld107" name="Nombre Sonido" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Link id="sv6#page100#alt3#page102#enu37#ln239" name="SonidoObtenido" to="sv6#page100#alt3#page102#enu36" type="normal" validate="true" preserveForm="true" ajaxEnabled="false" ajaxOpenWaitingDialog="true" ajaxWaitingDialogMessage="buscando.coincidencias">
+            <LinkParameter id="sv6#page100#alt3#page102#enu37#ln239#par791" name="Nombre Sonido_sonido" source="sv6#page100#alt3#page102#enu37#fld106" target="sv6#page100#alt3#page102#enu36#fld102_slot"/>
+            <LinkParameter id="sv6#page100#alt3#page102#enu37#ln239#par792" name="Nombre Sonido_NombreSonido" source="sv6#page100#alt3#page102#enu37#fld107" target="sv6#page100#alt3#page102#enu36#fld104_slot"/>
+          </Link>
+          <Field id="sv6#page100#alt3#page102#enu37#fld58" name="usuario" type="string" modifiable="false" preloaded="true" hidden="true"/>
+        </EntryUnit>
+        <NoOpContentUnit id="sv6#page100#alt3#page102#gctu49" name="resetImagen" linkOrder="sv6#page100#alt3#page102#gctu49#ln240" gr:x="267" gr:y="220">
+          <Link id="sv6#page100#alt3#page102#gctu49#ln240" name="nueva Grabaci&#243;n" to="sv6#page100#alt3#page102#enu36" type="normal" validate="true">
+            <LinkParameter id="sv6#page100#alt3#page102#gctu49#ln240#par793" name="$$NULL$$_NombreSonido" target="sv6#page100#alt3#page102#enu36#fld104_slot" sourceValue="$$NULL$$"/>
+            <LinkParameter id="sv6#page100#alt3#page102#gctu49#ln240#par794" name="$$NULL$$_Sonido" target="sv6#page100#alt3#page102#enu36#fld102_slot" sourceValue="$$NULL$$"/>
+          </Link>
+          <Link id="sv6#page100#alt3#page102#gctu49#ln241" name="resetCampos" to="sv6#page100#alt3#page102#enu37" type="transport" validate="true">
+            <LinkParameter id="sv6#page100#alt3#page102#gctu49#ln241#par795" name="$$NULL$$_Nombre Sonido" target="sv6#page100#alt3#page102#enu37#fld107_slot" sourceValue="$$NULL$$"/>
+            <LinkParameter id="sv6#page100#alt3#page102#gctu49#ln241#par796" name="$$NULL$$_Sonido" target="sv6#page100#alt3#page102#enu37#fld106_slot" sourceValue="$$NULL$$"/>
+          </Link>
+        </NoOpContentUnit>
+        <EntryUnit id="sv6#page100#alt3#page102#enu38" name="Reproductor" gr:x="159" gr:y="281">
+          <Field id="sv6#page100#alt3#page102#enu38#fld108" name="sonido" type="string" modifiable="false" preloaded="true" hidden="true"/>
+        </EntryUnit>
+        <GetUnit id="sv6#page100#alt3#page102#gtu10" name="Usuario" gr:x="273" gr:y="10" contextParameters="UserCtxParam">
+          <Link id="sv6#page100#alt3#page102#gtu10#ln160" name="Link156" to="sv6#page100#alt3#page102#enu37" type="transport" validate="true">
+            <LinkParameter id="sv6#page100#alt3#page102#gtu10#ln160#par471" name="UserCtxParam.oid_usuario" source="sv6#page100#alt3#page102#gtu10.UserCtxParam" target="sv6#page100#alt3#page102#enu37#fld58_slot"/>
+          </Link>
+        </GetUnit>
+        <DataUnit gr:x="138" gr:y="0" id="sv6#page100#alt3#page102#dau25" name="Informacion" entity="ent9" displayAttributes="ent9#att42 ent9#att43">
+          <Selector id="sv6#page100#alt3#page102#dau25#su102" defaultPolicy="fill" booleanOperator="and">
+            <RelationshipRoleCondition id="sv6#page100#alt3#page102#dau25#su102#rcond36" name="IdiomasToDescripciones" predicate="in" implied="false" role="rel11#role14"/>
+            <RelationshipRoleCondition id="sv6#page100#alt3#page102#dau25#su102#rcond37" name="ObjetoToDescripciones" predicate="in" implied="false" role="rel7#role5"/>
+          </Selector>
+          <Link id="sv6#page100#alt3#page102#dau25#ln381" name="Link381" to="sv6#page100#alt3#page102#enu36" type="transport" validate="true">
+            <LinkParameter id="sv6#page100#alt3#page102#dau25#ln381#par583" name="imagen_PASSING_Imagen" sourceLinkParameter="sv6#scu56#oln119#par720" target="sv6#page100#alt3#page102#enu36#fld98_slot"/>
+            <LinkParameter id="sv6#page100#alt3#page102#dau25#ln381#par584" name="nombreImagen_PASSING_NombreImagen" sourceLinkParameter="sv6#scu56#oln119#par721" target="sv6#page100#alt3#page102#enu36#fld103_slot"/>
+            <LinkParameter id="sv6#page100#alt3#page102#dau25#ln381#par585" name="$$NULL$$_NombreSonido" sourceValue="$$NULL$$" target="sv6#page100#alt3#page102#enu36#fld104_slot"/>
+            <LinkParameter id="sv6#page100#alt3#page102#dau25#ln381#par586" name="$$NULL$$_Sonido" sourceValue="$$NULL$$" target="sv6#page100#alt3#page102#enu36#fld102_slot"/>
+            <LinkParameter id="sv6#page100#alt3#page102#dau25#ln381#par623" name="fecha_PASSING_fecha" sourceLinkParameter="sv6#scu56#oln119#par622" target="sv6#page100#alt3#page102#enu36#fld105_slot"/>
+            <LinkParameter id="sv6#page100#alt3#page102#dau25#ln381#par20" name="idObjeto_PASSING" sourceLinkParameter="sv6#scu56#oln119#par18" passing="true"/>
+          </Link>
+          <Link id="sv6#page100#alt3#page102#dau25#ln389" name="Link389" to="sv6#page100#alt3#page102#enu48" type="transport" validate="true">
+            <LinkParameter id="sv6#page100#alt3#page102#dau25#ln389#par607" name="imagen_PASSING_Imagen" sourceLinkParameter="sv6#scu56#oln119#par720" target="sv6#page100#alt3#page102#enu48#fld94_slot"/>
+            <LinkParameter id="sv6#page100#alt3#page102#dau25#ln389#par608" name="nombreImagen_PASSING_NombreImagen" sourceLinkParameter="sv6#scu56#oln119#par721" target="sv6#page100#alt3#page102#enu48#fld101_slot"/>
+          </Link>
+        </DataUnit>
+        <EntryUnit id="sv6#page100#alt3#page102#enu48" name="imagen" gr:x="46" gr:y="28">
+          <Field id="sv6#page100#alt3#page102#enu48#fld94" name="Imagen" type="string" modifiable="false" preloaded="true" hidden="true"/>
+          <Field id="sv6#page100#alt3#page102#enu48#fld101" name="NombreImagen" type="string" modifiable="false" preloaded="true" hidden="true"/>
+        </EntryUnit>
+      </ContentUnits>
+    </Page>
+  </Alternative>
+  <Variable id="sv6#page100#var16" name="ficheroSonido" unitId="sv6#page100#alt3#page102#enu36" parameter="sv6#page100#alt3#page102#enu36#fld102"/>
+  <ConditionExpression id="sv6#page100#cexpr21" name="hayFicheroSonido">
+    <TextValue xml:space="preserve">return(null != ficheroSonido)</TextValue>
+  </ConditionExpression>
+</Page>

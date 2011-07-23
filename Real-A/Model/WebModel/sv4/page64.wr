@@ -1,0 +1,37 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page64" name="Contrase&#241;a Olvidada" landmark="false" gr:x="265" gr:y="336">
+  <ContentUnits>
+    <EntryUnit id="sv4#page64#enu18" name="Contrase&#241;a Olvidada" linkOrder="sv4#page64#enu18#ln148 sv4#page64#enu18#ln149" gr:x="0" gr:y="0" fieldOrder="sv4#page64#enu18#fld50">
+      <Field id="sv4#page64#enu18#fld50" name="Su direcci&#243;n de correo electr&#243;nico" type="string" modifiable="true" preloaded="false"/>
+      <Link id="sv4#page64#enu18#ln148" name="Aceptar" to="sv4#pwu9" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxShowWindowBeforeRequest="false" ajaxCloseWindow="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv4#page64#enu18#ln148#par460" name="e-mail_PASSING" source="sv4#page64#enu18#fld50" passing="true"/>
+      </Link>
+      <Link id="sv4#page64#enu18#ln149" name="Cancelar" to="sv4#page66" type="normal" automaticCoupling="true" validate="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#page64#enu18" manualLinks="true">
+          <layout:Field field="sv4#page64#enu18#fld50">
+            <layout:LayoutParameter name="input-size" value="30" type="field"/>
+            <layout:LayoutParameter name="information-text" value="informacion.recuperar.correo" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv4#page64#enu18" link="sv4#page64#enu18#ln148" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv4#page64#enu18" link="sv4#page64#enu18#ln149" styleClass="btnCancelar"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

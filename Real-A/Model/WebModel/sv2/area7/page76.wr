@@ -1,0 +1,109 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area7#page76" name="Mantenimiento de Imagen" landmark="false" layout:frameLayout="WRDefault/Empty" gr:x="148" gr:y="0">
+  <ContentUnits>
+    <EntryUnit id="sv2#area7#page76#enu46" name="Manteminiento Imagen" linkOrder="sv2#area7#page76#enu46#ln364 sv2#area7#page76#enu46#ln365 sv2#area7#page76#enu46#ln366" gr:x="136" gr:y="305" fieldOrder="sv2#area7#page76#enu46#fld79">
+      <Field id="sv2#area7#page76#enu46#fld79" name="Anotaci&#243;n" type="text" modifiable="true" preloaded="true"/>
+      <Link id="sv2#area7#page76#enu46#ln364" name="Modificar" to="sv2#mfu3" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv2#area7#page76#enu46#ln364#par560" name="anotacion_anotacion" source="sv2#area7#page76#enu46#fld79" target="sv2#mfu3.ent1#att4"/>
+        <LinkParameter id="sv2#area7#page76#enu46#ln364#par561" name="Sonido_sonido" source="sv2#area7#page76#enu46#fld80" target="sv2#mfu3.ent1#att35"/>
+        <LinkParameter id="sv2#area7#page76#enu46#ln364#par562" name="NombreSonido_sonido [file name]" source="sv2#area7#page76#enu46#fld81" target="sv2#mfu3.ent1#att35_name"/>
+        <LinkParameter id="sv2#area7#page76#enu46#ln364#par563" name="oid_PASSING_KeyCondition10 [oid]" sourceLinkParameter="sv2#area7#page76#seu23#ln367#par569" target="sv2#mfu3#su11#kcond10.ent1#att1"/>
+      </Link>
+      <Link id="sv2#area7#page76#enu46#ln365" name="Cancelar" to="sv2#area7#page77#pwu25" type="normal" validate="true"/>
+      <Field id="sv2#area7#page76#enu46#fld80" name="Sonido" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="sv2#area7#page76#enu46#fld81" name="NombreSonido" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="sv2#area7#page76#enu46#ln366" name="Borrar Imagen" to="sv2#scu16" type="normal" customDescriptor="false" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxShowWindowBeforeRequest="false" ajaxCloseWindow="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv2#area7#page76#enu46#ln366#par564" name="pregunta.borrar.usuario_mensaje" target="sv2#scu16.mensaje" sourceValue="pregunta.borrar.usuario"/>
+        <LinkParameter id="sv2#area7#page76#enu46#ln366#par565" name="oid_PASSING" sourceLinkParameter="sv2#area7#page76#seu23#ln367#par569" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit id="sv2#area7#page76#seu23" name="SeleccionaImagen" gr:x="8" gr:y="0" entity="ent1">
+      <Selector id="sv2#area7#page76#seu23#su98" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area7#page76#seu23#su98#kcond75" name="KeyCondition33" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area7#page76#seu23#ln367" name="PasarAnotacion" to="sv2#area7#page76#enu46" type="transport" validate="true">
+        <LinkParameter id="sv2#area7#page76#seu23#ln367#par566" name="anotacion_anotacion" source="ent1#att4Array" target="sv2#area7#page76#enu46#fld79_slot"/>
+        <LinkParameter id="sv2#area7#page76#seu23#ln367#par567" name="sonido_Sonido" source="ent1#att35Array" target="sv2#area7#page76#enu46#fld80_slot"/>
+        <LinkParameter id="sv2#area7#page76#seu23#ln367#par568" name="sonido_NombreSonido" source="ent1#att35Array" target="sv2#area7#page76#enu46#fld81_slot"/>
+        <LinkParameter id="sv2#area7#page76#seu23#ln367#par569" name="oid_PASSING" source="ent1#att1Array" passing="true"/>
+      </Link>
+      <Link id="sv2#area7#page76#seu23#ln368" name="Link140" to="sv2#area7#page76#dau24" type="transport" validate="true">
+        <LinkParameter id="sv2#area7#page76#seu23#ln368#par570" name="ImagenToObjeto.oid_ObjetoToDescripciones [oid]" source="rel12#role15_ent4#att24Array" target="sv2#area7#page76#dau24#su100#rcond34.ent4#att24"/>
+      </Link>
+      <Link id="sv2#area7#page76#seu23#ln369" name="Link157" to="sv2#area7#page76#dau23" type="transport" automaticCoupling="true" validate="true"/>
+    </SelectorUnit>
+    <DataUnit id="sv2#area7#page76#dau23" name="Imagen" gr:x="0" gr:y="204" entity="ent1" displayAttributes="ent1#att2">
+      <Selector id="sv2#area7#page76#dau23#su99" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area7#page76#dau23#su99#kcond76" name="KeyCondition34" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <ScriptUnit id="sv2#area7#page76#scu39" name="ObtenerIdiomaActual" gr:x="169" gr:y="14" script="ObtenerIdiomaActual.groovy">
+      <Link id="sv2#area7#page76#scu39#ln370" name="Link7" to="sv2#area7#page76#dau24" type="transport" validate="true">
+        <LinkParameter id="sv2#area7#page76#scu39#ln370#par571" name="idIdioma_IdiomasToDescripciones [oid]" source="result(idIdioma)" target="sv2#area7#page76#dau24#su100#rcond33.ent10#att25"/>
+      </Link>
+    </ScriptUnit>
+    <DataUnit id="sv2#area7#page76#dau24" name="Descripcion" gr:x="173" gr:y="116" entity="ent9" displayAttributes="ent9#att42 ent9#att43">
+      <Selector id="sv2#area7#page76#dau24#su100" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area7#page76#dau24#su100#rcond33" name="IdiomasToDescripciones" predicate="in" implied="false" role="rel11#role14"/>
+        <RelationshipRoleCondition id="sv2#area7#page76#dau24#su100#rcond34" name="ObjetoToDescripciones" predicate="in" implied="false" role="rel7#role5"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area7#page76#dau23">
+                <layout:Attribute attribute="ent1#att2"/>
+                <layout:LayoutParameter name="image-width" value="300" type="attribute"/>
+                <layout:LayoutParameter name="attribute-orientation" value="top" type="unit"/>
+                <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area7#page76#dau24">
+                <layout:Attribute attribute="ent9#att42"/>
+                <layout:Attribute attribute="ent9#att43"/>
+                <layout:LayoutParameter name="attribute-orientation" value="top" type="unit"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area7#page76#enu46" manualLinks="true">
+                <layout:Field field="sv2#area7#page76#enu46#fld79">
+                  <layout:LayoutParameter name="input-size" value="50" type="field"/>
+                  <layout:LayoutParameter name="information-text" value="informacion.campo.anotacion" type="field"/>
+                </layout:Field>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Grid>
+                <layout:Row>
+                  <layout:Cell>
+                    <layout:Link unitId="sv2#area7#page76#enu46" link="sv2#area7#page76#enu46#ln364" styleClass="btnAceptar"/>
+                  </layout:Cell>
+                  <layout:Cell>
+                    <layout:Link unitId="sv2#area7#page76#enu46" link="sv2#area7#page76#enu46#ln365" styleClass="btnCancelar"/>
+                  </layout:Cell>
+                </layout:Row>
+              </layout:Grid>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv2#area7#page76#var31" name="ficheroSonido" unitId="sv2#area7#page76#enu46" parameter="sv2#area7#page76#enu46#fld80"/>
+  <ConditionExpression id="sv2#area7#page76#cexpr38" name="hayFicheroSonido">
+    <TextValue xml:space="preserve">return(null != ficheroSonido)</TextValue>
+  </ConditionExpression>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Link unitId="sv2#area7#page76#enu46" link="sv2#area7#page76#enu46#ln366" styleClass="bthEliminar"/>
+  </layout:CustomLocation>
+</Page>

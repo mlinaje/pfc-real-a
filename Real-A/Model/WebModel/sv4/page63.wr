@@ -1,0 +1,42 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4#page63" name="Crear Usuario" landmark="false" gr:x="116" gr:y="349">
+  <ContentUnits>
+    <EntryUnit id="sv4#page63#enu15" name="Crear Usuario" linkOrder="sv4#page63#enu15#ln138 sv4#page63#enu15#ln147" gr:x="0" gr:y="1" fieldOrder="sv4#page63#enu15#fld28 sv4#page63#enu15#fld32">
+      <Field id="sv4#page63#enu15#fld28" name="Elija su nombre de usuario" type="string" modifiable="true" preloaded="false"/>
+      <Field id="sv4#page63#enu15#fld32" name="Su direcci&#243;n de correo electr&#243;nico" type="string" modifiable="true" preloaded="false"/>
+      <Link id="sv4#page63#enu15#ln138" name="Aceptar" to="sv4#pwu6" type="normal" validate="true" preserveForm="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv4#page63#enu15#ln138#par458" name="Elija su nombre de usuario_PASSING" source="sv4#page63#enu15#fld28" passing="true"/>
+        <LinkParameter id="sv4#page63#enu15#ln138#par459" name="Su direcci&#243;n de correo electr&#243;nico_PASSING" source="sv4#page63#enu15#fld32" passing="true"/>
+      </Link>
+      <Link id="sv4#page63#enu15#ln147" name="Cancelar" to="sv4#page66" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-37,-98,-170,74"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv4#page63#enu15" manualLinks="true">
+          <layout:Field field="sv4#page63#enu15#fld28">
+            <layout:LayoutParameter name="input-size" value="30" type="field"/>
+          </layout:Field>
+          <layout:Field field="sv4#page63#enu15#fld32">
+            <layout:LayoutParameter name="input-size" value="30" type="field"/>
+            <layout:LayoutParameter name="information-text" value="informacion.crear.correo" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv4#page63#enu15" link="sv4#page63#enu15#ln138" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv4#page63#enu15" link="sv4#page63#enu15#ln147" styleClass="btnCancelar"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

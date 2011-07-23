@@ -1,0 +1,33 @@
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#mpage3" name="Usuario" gr:x="951" gr:y="19">
+  <ContentUnits>
+    <DataUnit id="sv2#mpage3#dau5" name="Usuario" linkOrder="sv2#mpage3#dau5#ln63" gr:x="3" gr:y="144" entity="User" displayAttributes="userName">
+      <Selector id="sv2#mpage3#dau5#su18" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mpage3#dau5#su18#kcond16" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#mpage3#dau5#ln63" name="Logout" to="sv2#lou1" type="normal" validate="true"/>
+    </DataUnit>
+    <GetUnit id="sv2#mpage3#gtu9" name="Usuario" gr:x="0" gr:y="7" contextParameters="UserCtxParam">
+      <Link id="sv2#mpage3#gtu9#ln64" name="pasaOidUsuario" to="sv2#mpage3#dau5" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+    <ModuleInstanceUnit id="sv2#mpage3#miu22" name="CambiarIdioma" gr:x="98" gr:y="0" moduleId="mov1#ctm2" linkOrder="sv2#mpage3#miu22#ln108">
+      <Link id="sv2#mpage3#miu22#ln108" name="CambiaIdioma" to="sv2#scu26" type="normal" validate="true">
+        <LinkParameter id="sv2#mpage3#miu22#ln108#par181" name="languageOID_id" source="mov1#ctm2#ocu2#ocp1" target="sv2#scu26.id"/>
+      </Link>
+    </ModuleInstanceUnit>
+  </ContentUnits>
+  <layout:CustomLocation name="zona-usuario" layout:frameLayout="WRDefault/Empty">
+    <layout:Attribute unitId="sv2#mpage3#dau5" attribute="userName" mode="value"/>
+  </layout:CustomLocation>
+  <layout:CustomLocation name="zona-logout">
+    <layout:Link unitId="sv2#mpage3#dau5" link="sv2#mpage3#dau5#ln63" styleClass="desconecta" layout:linkLayout="StyleRealA/BotonSalir">
+      <layout:LayoutParameter name="icon-folder" value="StyleRealA/images/" type="link"/>
+      <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+      <layout:LayoutParameter name="icon-name" value="btnSalirI" type="link"/>
+    </layout:Link>
+  </layout:CustomLocation>
+  <layout:CustomLocation name="zona-idiomas">
+    <layout:Unit unitId="sv2#mpage3#miu22">
+      <layout:Link link="sv2#mpage3#miu22#ln108"/>
+    </layout:Unit>
+  </layout:CustomLocation>
+</MasterPage>

@@ -1,0 +1,41 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page51" name="Pregunta" layout:pageLayout="WRDefault/Empty" gr:x="821" gr:y="1576" layout:frameLayout="WRDefault/Empty">
+  <ContentUnits>
+    <NoOpContentUnit id="sv3#page51#gctu24" name="Botones" gr:x="19" gr:y="91" linkOrder="sv3#page51#gctu24#ln111 sv3#page51#gctu24#ln112">
+      <Link id="sv3#page51#gctu24#ln111" name="Cancelar" to="sv3#page45" type="normal" validate="true" preserveForm="true" ajaxEnabled="true" ajaxCloseWindow="true"/>
+      <Link id="sv3#page51#gctu24#ln112" name="Aceptar" to="sv3#dlu6" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true" ajaxWindowModal="true" ajaxCloseWindow="true">
+        <LinkParameter id="sv3#page51#gctu24#ln112#par398" name="oid_PASSING_KeyCondition30 [oid]" sourceLinkParameter="sv3#scu24#oln57#par397" target="sv3#dlu6#su35#kcond30.userOID"/>
+        <LinkParameter id="sv3#page51#gctu24#ln112#par399" name="defaultGroup.oid_PASSING" sourceLinkParameter="sv3#scu24#oln57#par396" passing="true"/>
+        <LinkParameter id="sv3#page51#gctu24#ln112#par401" name="oid_PASSING" sourceLinkParameter="sv3#scu24#oln57#par397" passing="true"/>
+      </Link>
+    </NoOpContentUnit>
+    <IndexUnit id="sv3#page51#inu9" name="Mensaje" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att33">
+      <SortAttribute attribute="ent8#att32" order="ascending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page51#inu9" layout:unitLayout="StyleRealA/MensajesError" layout:frameLayout="WRDefault/Empty">
+          <layout:Attribute attribute="ent8#att33"/>
+          <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page51#gctu24" link="sv3#page51#gctu24#ln112" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page51#gctu24" link="sv3#page51#gctu24#ln111" styleClass="btnCancelar"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,31 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7#page120" name="cerrarAjax" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" layout:frameLayout="WRDefault/Empty" layout:linkLayout="StyleRealAMobile/CerrarAjax" gr:x="324" gr:y="591">
+  <ContentUnits>
+    <NoOpContentUnit id="sv7#page120#gctu59" name="cerrarAjax" linkOrder="sv7#page120#gctu59#ln279" gr:x="0" gr:y="0">
+      <Link id="sv7#page120#gctu59#ln279" name="Aceptar" to="sv7#page139#enu43" type="normal" validate="true" preserveForm="true" ajaxEnabled="false" ajaxCloseWindow="true">
+        <LinkParameter id="sv7#page120#gctu59#ln279#par955" name="$$NULL$$_oid" target="sv7#page139#enu43#fld122_slot" sourceValue="$$NULL$$"/>
+      </Link>
+    </NoOpContentUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv7#page120#gctu59">
+          <layout:Link link="sv7#page120#gctu59#ln279"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+</Page>
