@@ -1,0 +1,10 @@
+#?delimiters [%, %], [%=, %]
+[%
+setHTMLOutput()
+
+%]
+<wr:Frame>
+	<td align="left" class="error">
+		<c:out value="${<wr:UnitId/>.result}" escapeXml="false"/>
+	</td>
+</wr:Frame>
