@@ -1,0 +1,7 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="redireccion" name="redireccion" type="enum" values="usuario.htm|admin.htm|publico.htm" default="publico.htm">
+</wr:LayoutParameter>
+[%
+def redireccion = params["redireccion"]
+%]
+<jsp:forward page="/[%=redireccion%]"></jsp:forward>

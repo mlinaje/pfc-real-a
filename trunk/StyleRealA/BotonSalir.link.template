@@ -1,0 +1,40 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="Icon Folder" name="icon-folder" type="string" default="Resources">
+Defines the path to the folder containing the icon used to render links if you choose icon, icon & text or text & icon in the "Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Extension" name="icon-extension" type="string" default="png">
+Defines the extension of the icon used to render links if you choose icon, icon & text or text & icon in the "Show" parameter.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Icon Name" name="icon-name" type="string">
+Defines the name of the image to use. If omitted the name of the link is used.
+</wr:LayoutParameter>
+[%
+	import org.apache.commons.lang.StringUtils
+
+	def folder = params["icon-folder"] + "/"
+	def extension = "." + params["icon-extension"]
+
+	def getAlternativeText() {
+		if (isLocalizedAncestorOrSelf(link)) {
+   			return "<bean:message key=\"" + getJSPTagValue(getTitle(link)) +  "\"/>"
+		} else { 
+		  return getTitle(link)
+		} 
+	}
+	
+	def getIconName() {
+		def iconName = StringUtils.defaultIfEmpty(params["icon-name"], "")
+		if (iconName != "") {
+			return iconName
+		}
+		return link["name"]
+	}
+	
+%]
+<a title="[%= getAlternativeText() %]" id="[%= getLinkId(link) %]" class="[%=styleClass%]" href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>"[%if (link["newWindow"] == "true") { %][%if (newWindowType == "normal") { %]target="_blank" [% } else { %] onclick="window.open('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>' ,'', '[%= newWindowOptions %]'); return false; [% } %][% } else { %]onclick="return confirm('<c:out value="${_wr_message}"/>')" [% } %]>
+	<img title="[%= getAlternativeText() %]" alt="[%= getAlternativeText() %]" src="[%=folder%][%= getIconName() %][%=extension%]" border="0"/>
+</a>
+ 
+
+ 
+ 
