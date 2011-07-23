@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Layout pageLayout="Default" gridLayout="Default" linkLayout="Default" fieldLayout="Default"> 
+  <UnitConfiguration unitType="HierarchicalIndexUnit" unitLayout="Horizontal"> 
+    <LayoutParameter name="use-empty-unit-message" value="true" type="unit"/> 
+  </UnitConfiguration>  
+  <UnitConfiguration unitType="EntryUnit" unitLayout="Normal"/>  
+  <UnitConfiguration unitType="PowerIndexUnit" unitLayout="Default"> 
+    <LayoutParameter name="use-empty-unit-message" value="true" type="unit"/> 
+  </UnitConfiguration>  
+  <UnitConfiguration unitType="MultiChoiceIndexUnit" unitLayout="Default"> 
+    <LayoutParameter name="use-empty-unit-message" value="true" type="unit"/> 
+  </UnitConfiguration>  
+  <UnitConfiguration unitType="QueryUnit" unitLayout="Default"/>  
+  <LinkedResource path="StyleRealAMobile/cssEscritorio/default.css"/>
+  <LinkedResource path="StyleRealAMobile/cssEscritorio/escritorio.css"/>
+  <LinkedResource path="StyleRealAMobile/cssEscritorio/informacion-usuario.css"/>
+</Layout>

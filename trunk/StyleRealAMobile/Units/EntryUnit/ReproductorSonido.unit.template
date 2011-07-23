@@ -1,0 +1,161 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="swf" name="pelicula-flash" type="string" default="ReproducirSonido.swf">
+nombre de la pelicula flash.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idSoundFile" name="idSoundFile" type="string" default="fld28">
+id del campo fichero Sonido a reproducir
+</wr:LayoutParameter>
+
+[%
+
+def nombrePeliculaFlash = params["pelicula-flash"]
+def idSoundFile = params["idSoundFile"]
+
+def link = unit.selectSingleNode("layout:Link")
+
+%]
+<wr:Frame>
+	<div class="plain <wr:StyleClass/>">
+		<div class="plain EntryUnit">
+			<table>
+			[%
+				// prints hidden fields, which do not have associated layout:Field elements
+				for (hiddenField in getById(unit["id"])?.selectNodes("Field[@hidden = 'true']")) {%]
+					<html:hidden property="[%=hiddenField["id"]%]" styleId="[%=hiddenField["id"]%]"/>
+			[%	}%]
+			
+				<tr class="row">
+					<td valign="middle" nowrap="nowrap" class=" value">
+						<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1" height="1" id="ReproducirSonido" align="middle">
+							<param name="allowScriptAccess" value="sameDomain" />
+							<param name="movie" value="[%= nombrePeliculaFlash %]" />
+							<param name="quality" value="high" />
+							<param name="bgcolor" value=#F6F6F6" />
+							<embed id="PeliculaReproducirSonido" src="[%= nombrePeliculaFlash %]" quality="high" bgcolor="#F6F6F6"" width="1" height="1" name="ReproducirSonido" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+						</object>
+					</td>
+				</tr>
+				<tr class="row">		
+					<td valign="middle" nowrap="nowrap" class=" value">
+						<input class="btnPlay" title="<bean:message key="boton.play"/>" id="botonplay" class=""  type="button" value="<bean:message key="boton.play"/>" onclick="play();">
+						<input class="btnStop" title="<bean:message key="boton.stop"/>" id="botonstop" class=""  type="button" value="<bean:message key="boton.stop"/>" onclick="stop();">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>	
+	<script type="text/javascript">
+		/******* Funciones que tratan la comunicación entre javascript y flash ********/
+		var CONSTANTE_PLAY = "PLAY";
+		var CONSTANTE_STOP = "STOP";
+
+		//Funcion play para reproducir sonido.
+		function play(){
+		    try {
+		       	mostrarPeliculasFlash();
+		    
+		        //Pasa la ruta del sonido
+		        window.document.ReproducirSonido.SetVariable("nombreFichero", $('[%= idSoundFile %]').value);
+		        //Indica que es play
+		        window.document.ReproducirSonido.SetVariable("operacion", CONSTANTE_PLAY);
+		        //Se modifica el valor de testValue para que la pelicula lance el sonido
+		        window.document.ReproducirSonido.SetVariable("testValue", "ReproducirSonido");        
+		    } catch (e) {
+		        var error = e.toString();
+		        alert(error);
+		    }
+		}
+		
+		//Funcion Stop para reproducir sonido.
+		function stop(){
+		    try {
+		        //Indica que es Stop
+		        window.document.ReproducirSonido.SetVariable("operacion", CONSTANTE_STOP);
+		        //Se modifica el valor de testValue para que la pelicula lance el sonido
+		        window.document.ReproducirSonido.SetVariable("testValue", "ReproducirSonido");    
+		        
+		        ocultarPeliculasFlash();    		        
+		    } catch (e) {
+		        var error = e.toString();
+		        alert(error);
+		    }
+		}
+		
+		//Oculta los div con los objetos flash
+		function ocultarPeliculasFlash(){
+			objetoTomarFoto = document.getElementById("TomarFoto");
+			objetoGrabarSonido = document.getElementById("GrabarSonido");
+			objetoReproducirSonido = document.getElementById("ReproducirSonido");
+					
+		    objetoPeliculaTomarFoto = document.getElementById("PeliculaTomarFoto");
+			objetoPeliculaGrabarSonido = document.getElementById("PeliculaGrabarSonido");
+			objetoPeliculaReproducirSonido = document.getElementById("PeliculaReproducirSonido");
+		
+			if(null != objetoTomarFoto){
+		        objetoTomarFoto.width = 1;
+		        objetoTomarFoto.height = 1;
+		    }
+			if(null != objetoGrabarSonido){
+		        objetoGrabarSonido.width = 1;
+		        objetoGrabarSonido.height = 1;
+		    }
+			if(null != objetoReproducirSonido){
+		        objetoReproducirSonido.width = 1;
+		        objetoReproducirSonido.height = 1;
+		    }
+		
+			if(null != objetoPeliculaTomarFoto){
+		        objetoPeliculaTomarFoto.width = 1;
+		        objetoPeliculaTomarFoto.height = 1;
+		    }
+			if(null != objetoPeliculaGrabarSonido){
+		        objetoPeliculaGrabarSonido.width = 1;
+		        objetoPeliculaGrabarSonido.height = 1;
+		    }
+			if(null != objetoPeliculaReproducirSonido){
+				objetoPeliculaReproducirSonido.width = 1;
+				objetoPeliculaReproducirSonido.height = 1;
+			}
+		}
+		//Muestra los div con los objetos flash
+		function mostrarPeliculasFlash(){
+			objetoTomarFoto = document.getElementById("TomarFoto");
+			objetoGrabarSonido = document.getElementById("GrabarSonido");
+			objetoReproducirSonido = document.getElementById("ReproducirSonido");
+			
+			objetoPeliculaTomarFoto = document.getElementById("PeliculaTomarFoto");
+			objetoPeliculaGrabarSonido = document.getElementById("PeliculaGrabarSonido");
+			objetoPeliculaReproducirSonido = document.getElementById("PeliculaReproducirSonido");
+		
+			if(null != objetoTomarFoto){
+		        objetoTomarFoto.width = 300;
+		    	objetoTomarFoto.height = 30;
+		  	}
+			if(null != objetoGrabarSonido){
+		        objetoGrabarSonido.width = 300;
+		        objetoGrabarSonido.height = 30;
+		    }
+			if(null != objetoReproducirSonido){
+		        objetoReproducirSonido.width = 300;
+		        objetoReproducirSonido.height = 30;
+		    }
+		
+			if(null != objetoPeliculaTomarFoto){
+		        objetoPeliculaTomarFoto.width = 300;
+		        objetoPeliculaTomarFoto.height = 30;
+		    }
+			if(null != objetoPeliculaGrabarSonido){
+		        objetoPeliculaGrabarSonido.width = 300;
+		        objetoPeliculaGrabarSonido.height = 30;
+		    }
+			if(null != objetoPeliculaReproducirSonido){
+		        objetoPeliculaReproducirSonido.width = 300;
+		       	objetoPeliculaReproducirSonido.height = 30;
+		    }
+		}
+
+		/******* FIN Funciones que tratan la comunicación entre javascript y flash *****/
+
+		
+	</script>
+</wr:Frame>

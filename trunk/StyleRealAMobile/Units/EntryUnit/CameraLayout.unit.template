@@ -1,0 +1,502 @@
+#?delimiters [%, %], [%=, %]
+<wr:LayoutParameter label="swf" name="pelicula-flash" type="string" default="TomarFoto.swf">
+nombre de la pelicula flash.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Ruta Upload" name="ruta-upload" type="string" default="upload/">
+ruta donde se descarga el fichero
+UploadFotos/
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Url Upload" name="url-upload" type="string" default="http://192.168.2.1:8080/Real-A/UploadFileServlet">
+ruta para realizar el upload.
+http://192.168.2.1:8080/Real-A/UploadFileServlet
+</wr:LayoutParameter>
+
+<wr:LayoutParameter label="idUsuario" name="idUsuario" type="string" default="fld57">
+id del campo usuario
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idUsuarioSonido" name="idUsuarioSonido" type="string" default="fld58">
+id del campo usuario grabación sonido
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idFichero" name="idFichero" type="string" default="fld15">
+id del campo fichero
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idNombreFichero" name="idNombreFichero" type="string" default="fld16">
+id del campo con el nombre del fichero
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idFicheroSonido" name="idFicheroSonido" type="string" default="fld17">
+id del campo fichero Sonido
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idLinkSonidoObtenido" name="idLinkSonidoObtenido" type="string" default="ln6">
+id link sonido obtenido
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idSoundFile" name="idSoundFile" type="string" default="fld28">
+id del campo fichero Sonido a reproducir
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idNombreFicheroSonido" name="idNombreFicheroSonido" type="string" default="fld25">
+id del campo con el nombre del fichero Sonido
+</wr:LayoutParameter>
+<wr:LayoutParameter label="idLinkImagenObtenida" name="idLinkImagenObtenida" type="string" default="ln17">
+id del botón para enviar fichero imagen
+</wr:LayoutParameter>
+
+<wr:LayoutParameter label="nombreBoton" name="nombreBoton" type="string" default="obtener.foto">
+nombre del botón
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Fields Name" name="show-label" type="enum" values="top|left|false" default="top">
+Defines the rendition of the fields names.
+Allowed values are:
+- left (default): places the fields name on the left
+- top: places the fields name at the top
+- false: the fields name are not shown
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Fields Orientation" name="field-orientation" type="enum" values="horizontal|vertical" default="vertical">
+Defines the orientation of the fields.
+Allowed values are:
+- vertical(default): places one field per line
+- horizontal : places the field on the
+same line one next to the other
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Use Alternate Rows" name="use-alternate" type="boolean" default="false">
+Defines the usage of alternates colours for each line.
+Allowed values are: true(default) or false.
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Show Mandatory Fields" name="mandatory-fields" type="boolean" default="false">
+Defines whether to show a '*' for mandatory fields or not.
+Allowed values are: true or false(default).
+</wr:LayoutParameter>
+<wr:LayoutParameter label="Error Messages Position" name="error-position" type="enum" values="right|bottom" default="right">
+Defines the rendition of the field error messages.
+Allowed values are:
+- bottom: places the error messages under the specific field
+- right (default): places the error messages on the right of the specific field
+</wr:LayoutParameter>
+
+[%
+import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang.math.NumberUtils
+
+setHTMLOutput()
+
+def nombrePeliculaFlash = params["pelicula-flash"]
+def urlUpload = params["url-upload"]
+def rutaUpload = params["ruta-upload"]
+
+def idUsuario = params["idUsuario"] 
+def idUsuarioSonido = params["idUsuarioSonido"] 
+
+def idFichero = params["idFichero"] 
+def idNombreFichero = params["idNombreFichero"]
+
+def idFicheroSonido = params["idFicheroSonido"] 
+def idNombreFicheroSonido = params["idNombreFicheroSonido"]
+
+def idLinkImagenObtenida = params["idLinkImagenObtenida"]
+def idLinkSonidoObtenido = params["idLinkSonidoObtenido"]
+
+def idSoundFile = params["idSoundFile"]
+
+def nombreBoton = params["nombreBoton"]
+
+def link = unit.selectSingleNode("layout:Link")
+
+def unitId = unit["id"]
+def fields = unit.selectNodes("layout:Field")
+def showLabel = params["show-label"]
+def fieldOrientation = params["field-orientation"]
+
+def useAlternate = params["use-alternate"]
+def showMandatoryFields = params["mandatory-fields"]
+def errorPosition = params["error-position"]
+
+def baseColSpan = 0 
+if(showLabel == "left") {
+	baseColSpan = 3
+} else {
+	baseColSpan = 2
+}
+	
+def colSpan = 0
+if(fieldOrientation == "horizontal") {
+	colSpan = baseColSpan * fields.size()
+} else {
+	colSpan = baseColSpan
+}
+%]
+<wr:Frame>
+	<div style="display:none">
+    	<input onclick="<wr:AjaxURL context="link" type="button"/>" type="submit" 
+    		id="button#<wr:Id context="link"/>" name="button#<wr:Id context="link"/>"/>
+	</div>
+	
+	<div class="plain <wr:StyleClass/>">
+		<div class="plain EntryUnit">
+			<table>
+				<tr class="row">
+					<td valign="middle" nowrap="nowrap" class=" value">
+						<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1" height="1" id="TomarFoto" align="middle">
+							<param name="allowScriptAccess" value="sameDomain" />
+							<param name="movie" value="[%= nombrePeliculaFlash %]" />
+							<param name="quality" value="high" />
+							<param name="bgcolor" value=#F6F6F6" />
+							<embed id="PeliculaTomarFoto" src="[%= nombrePeliculaFlash %]" quality="high" bgcolor="#F6F6F6"" width="1" height="1" name="TomarFoto" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+						</object>
+					</td>
+				</tr>
+				<tr class="row">		
+					<td valign="middle" nowrap="nowrap" class=" value">
+						<input title="<bean:message key="[%= nombreBoton %]"/>" id="miu8ln97" class="btnFoto" type="button" value="<bean:message key="[%= nombreBoton %]"/>" onclick="obtenerFoto();">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	 <div class="plain <wr:StyleClass/>">
+		<div class="plain EntryUnit">
+				<table>
+					<tr>
+						<td colspan="[%=colSpan%]" class="error">
+							<html:errors property="<wr:UnitId/>" />
+						</td>
+					</tr>
+			[% if ((showLabel != "top") || (fieldOrientation != "horizontal")) {
+				if (fieldOrientation == "horizontal") { %]
+					<tr>
+						<wr:Iterate var="field" context="unit" select="layout:Field">
+						    <wr:Visible>
+	         			    [% def fieldType = getById(field["field"])?.name 
+						       def isMandatory = field.selectNodes("ValidationRule|CheckValidation").find{it["predicate"] == "notNull" || it["predicate"] == "minChecked"}
+						    %]
+						    [% if(errorPosition == "bottom") { %]
+								<td><table><tr>
+							[% } %]
+							[%if (showLabel != "false") { %]
+							<th valign="middle" class="<wr:StyleClass/> header">
+								<wr:Label/>[% if (showMandatoryFields =="true" && isMandatory) {%] * [% } %]
+							</th>
+							[% } %]
+							<td valign="middle" nowrap="nowrap" class="<wr:StyleClass/> value">
+								[% if (fieldType == "Field") { %]
+									<wr:Value class="field"/>
+								[% } else if (fieldType == "SelectionField") { %]
+									<wr:Value class="selectionfield"/>
+								[% } else if (fieldType == "MultiSelectionField") { %]
+									<wr:Value class="multiselectionfield"/>
+								[% } %]
+							</td> 
+							[% if(errorPosition == "bottom") { %]
+								</tr><tr><td></td>
+							[% } %]
+									<td class="error"><wr:FieldError/></td>
+							[% if(errorPosition == "bottom") { %]
+								</tr></table></td>
+							[% } %]								
+			                </wr:Visible>
+			            </wr:Iterate> 
+					</tr>
+				[% } %]
+				[% if (fieldOrientation == "vertical") { %]
+				  <wr:Iterate var="field" context="unit" select="layout:Field">
+					<wr:Visible>
+     				[% def fieldType = getById(field["field"])?.name 
+					   def isMandatory = field.selectNodes("ValidationRule|CheckValidation").find{it["predicate"] == "notNull" || it["predicate"] == "minChecked"}
+					%]
+					<tr class="row[% if (useAlternate == "true" && (index+1).mod(2)==0){%]Alternate[%} %]">
+						[%if (showLabel != "false") { %]
+							<th valign="middle" class="<wr:StyleClass/> header">
+								<wr:Label/>[% if (showMandatoryFields == "true" && isMandatory) {%] * [% } %]
+							</th>
+						   [% if (showLabel == "top") {%]
+						   </tr><tr class="row[% if (useAlternate == "true" && (index+1).mod(2)==0){%]Alternate[%} %]">		
+						   [% } %]
+						[% } %]
+						<td valign="middle" nowrap="nowrap" class="<wr:StyleClass/> value">
+							[% if (fieldType == "Field") { %]
+								<wr:Value class="field"/>
+							[% } else if (fieldType == "SelectionField") { %]
+								<wr:Value class="selectionfield"/>
+							[% } else if (fieldType == "MultiSelectionField") { %]
+								<wr:Value class="multiselectionfield"/>
+							 [% } %]
+						</td>
+						[% if(errorPosition == "bottom") { %]
+						    </tr>
+							<tr><td></td>
+						[% } %]
+								<td class="error"><wr:FieldError/></td>
+
+					 	</tr>
+	                 </wr:Visible>
+	               </wr:Iterate> 
+				[% } %]
+			[% } 
+			if ((showLabel == "top") && (fieldOrientation == "horizontal")) { 
+			//the combination show-label=='top' and field-orientation='horizontal' requires 2 iterations
+			//one for the row of labels and another for the row of fields %]
+			<tr>
+			<wr:Iterate var="field" context="unit" select="layout:Field">
+	  		  <wr:Visible>
+    			[% def isMandatory = field.selectNodes("ValidationRule|CheckValidation").find{it["predicate"] == "notNull" || it["predicate"] == "minChecked"}%]
+				<th valign="middle" [% if(errorPosition == "right") { %]colspan="2"[% } %] class="<wr:StyleClass/> header">
+					<wr:Label/>[% if (showMandatoryFields == "true" && isMandatory) {%] * [% } %]
+				</th>
+	          </wr:Visible>
+			</wr:Iterate>
+			</tr>
+			<tr>
+				<wr:Iterate var="field" context="unit" select="layout:Field">
+				  <wr:Visible>
+					[% def fieldType = getById(field["field"])?.name %]
+				    <td valign="middle" nowrap="nowrap" class="<wr:StyleClass/> value">
+						[% if (fieldType == "Field") { %]
+							<wr:Value class="field"/>
+						[% } else if (fieldType == "SelectionField") { %]
+							<wr:Value class="selectionfield"/>
+						[% } else if (fieldType == "MultiSelectionField") { %]
+							<wr:Value class="multiselectionfield"/>
+						 [% } %]
+					</td>
+					[% if(errorPosition == "right") { %]
+						<td class="error"><wr:FieldError/></td>
+					[% } %]	
+				  </wr:Visible>	
+				</wr:Iterate>
+			</tr>
+			[% if(errorPosition == "bottom") { %]
+				<tr>
+					<wr:Iterate var="field" context="unit" select="layout:Field">
+					  <wr:Visible>
+						<td class="error"><wr:FieldError/></td>
+					  </wr:Visible>	
+					</wr:Iterate>
+				</tr>
+			[% } %]	
+		  [% } %]
+		  [%
+			// prints hidden fields, which do not have associated layout:Field elements
+			for (hiddenField in getById(unit["id"])?.selectNodes("Field[@hidden = 'true']")) {
+			  def type = hiddenField["type"]
+			  if (type == "blob") { %]
+			<html:hidden property="[%=hiddenField["id"]%]_preload"/>
+			  [% } else { %]
+			<html:hidden property="[%=hiddenField["id"]%]" styleId="[%=hiddenField["id"]%]"/>
+			  [% }
+			} 
+			%]
+		  	
+		  </table>
+		</div>
+	</div>
+
+<script type="text/javascript">
+
+/******* Funciones que tratan la comunicación entre javascript y flash ********/
+var CONSTANTE_INICIO_RUTA_IMAGEN = "file:///";
+var CONSTANTE_ERROR = "ERROR";
+var CONSTANTE_INICIO_RUTA_SONIDO = "file:///";
+var CONSTANTE_ERROR_SONIDO = "ERROR";
+
+/*
+  Funcion que llama a la pelicula flash para que obtenga la foto.
+ */
+function obtenerFoto(){
+    try {
+        mostrarPeliculasFlash();
+        
+        //Pasa la ruta del upload a flash
+        window.document.TomarFoto.SetVariable("rutaDelServidor", "[%= urlUpload %]");
+        
+        //identificador de usuario
+        window.document.TomarFoto.SetVariable("usuario", $('[%= idUsuario %]').value);
+        
+        //Se modifica el valor de testValue para que la pelicula lance la camara
+        window.document.TomarFoto.SetVariable("testValue", "ObtenerFoto");
+
+    } catch (e) {
+        var error = e.toString();
+        alert(error);
+    }
+}
+
+/*
+  Función que se llamada desde la pelicula flash una vez obtenida la foto. 
+*/
+function pasarEstadoAJavaScript(outPut){
+    try {
+      if(outPut != CONSTANTE_ERROR){
+        pathFotoObtenida = CONSTANTE_INICIO_RUTA_IMAGEN + outPut;
+      	nombreFotoSubida = obtenerNombreFichero(pathFotoObtenida);
+        pathFotoSubida = "[%= rutaUpload %]" + $('[%= idUsuario %]').value + "/" + nombreFotoSubida;
+        
+        $('[%= idFichero %]').value = pathFotoSubida;
+        $('[%= idNombreFichero %]').value = nombreFotoSubida;
+ 		$('button#<wr:Id context="link"/>').click();
+		ocultarPeliculasFlash();
+      }
+    } catch (e) {
+        var error = e.toString();
+        alert(error);
+    }   
+}
+
+/*
+  Funcion que llama a la pelicula flash para que obtenga el sonido.
+ */
+function obtenerSonido(){
+    try {
+        mostrarPeliculasFlash();
+        
+        //Pasa la ruta del upload a flash
+        window.document.GrabarSonido.SetVariable("rutaDelServidor", "[%= urlUpload %]");
+        
+        //identificador de usuario
+        window.document.GrabarSonido.SetVariable("usuario", $('[%= idUsuarioSonido %]').value);
+        
+        //Se modifica el valor de testValue para que la pelicula lance la camara
+        window.document.GrabarSonido.SetVariable("testValue", "ObtenerFoto");
+
+    } catch (e) {
+        var error = e.toString();
+        alert(error);
+    }
+}
+
+/*
+  Función que se llamada desde la pelicula flash una vez obtenido el sonido. 
+*/
+function pasarEstadoSonidoAJavaScript(outPut){
+    try {
+      if(outPut != CONSTANTE_ERROR_SONIDO){
+        pathSonidoObtenida = CONSTANTE_INICIO_RUTA_SONIDO + outPut;
+      	nombreSonidoSubida = obtenerNombreFichero(pathSonidoObtenida);
+        pathSonidoSubida = "[%= rutaUpload %]" + $('[%= idUsuarioSonido %]').value + "/" + nombreSonidoSubida;
+        $('[%= idFicheroSonido %]').value = pathSonidoSubida;
+        $('[%= idNombreFicheroSonido %]').value = nombreSonidoSubida;
+ 		$('button#[%= idLinkSonidoObtenido %]').click();
+ 		ocultarPeliculasFlash();
+      }
+    } catch (e) {
+        var error = e.toString();
+        alert(error);
+    }   
+}
+
+/*
+  Función que extrae el nombre del fichero
+*/
+function obtenerNombreFichero(rutaFoto){
+    archivo = rutaFoto.split("/");
+    nArchivo = archivo[archivo.length-1];
+    return(nArchivo)  
+}
+
+var CONSTANTE_PLAY = "PLAY";
+var CONSTANTE_STOP = "STOP";
+
+//Funcion play para reproducir sonido.
+function play(){
+    try {
+    	mostrarPeliculasFlash();
+        //Pasa la ruta del sonido
+        window.document.ReproducirSonido.SetVariable("nombreFichero", $('[%= idSoundFile %]').value);
+        //Indica que es play
+        window.document.ReproducirSonido.SetVariable("operacion", CONSTANTE_PLAY);
+        //Se modifica el valor de testValue para que la pelicula lance el sonido
+        window.document.ReproducirSonido.SetVariable("testValue", "ReproducirSonido");        
+    } catch (e) {
+        var error = e.toString();
+        alert(error);
+    }
+}
+
+//Funcion Stop para reproducir sonido.
+function stop(){
+    try {
+        //Indica que es Stop
+        window.document.ReproducirSonido.SetVariable("operacion", CONSTANTE_STOP);
+        //Se modifica el valor de testValue para que la pelicula lance el sonido
+        window.document.ReproducirSonido.SetVariable("testValue", "ReproducirSonido");
+        ocultarPeliculasFlash();    
+    } catch (e) {
+        var error = e.toString();
+        alert(error);
+    }
+}
+
+//Oculta los div con los objetos flash
+function ocultarPeliculasFlash(){
+	objetoTomarFoto = document.getElementById("TomarFoto");
+	objetoGrabarSonido = document.getElementById("GrabarSonido");
+	objetoReproducirSonido = document.getElementById("ReproducirSonido");
+			
+    objetoPeliculaTomarFoto = document.getElementById("PeliculaTomarFoto");
+	objetoPeliculaGrabarSonido = document.getElementById("PeliculaGrabarSonido");
+	objetoPeliculaReproducirSonido = document.getElementById("PeliculaReproducirSonido");
+
+	if(null != objetoTomarFoto){
+        objetoTomarFoto.width = 1;
+        objetoTomarFoto.height = 1;
+    }
+	if(null != objetoGrabarSonido){
+        objetoGrabarSonido.width = 1;
+        objetoGrabarSonido.height = 1;
+    }
+	if(null != objetoReproducirSonido){
+        objetoReproducirSonido.width = 1;
+        objetoReproducirSonido.height = 1;
+    }
+
+	if(null != objetoPeliculaTomarFoto){
+        objetoPeliculaTomarFoto.width = 1;
+        objetoPeliculaTomarFoto.height = 1;
+    }
+	if(null != objetoPeliculaGrabarSonido){
+        objetoPeliculaGrabarSonido.width = 1;
+        objetoPeliculaGrabarSonido.height = 1;
+    }
+	if(null != objetoPeliculaReproducirSonido){
+		objetoPeliculaReproducirSonido.width = 1;
+		objetoPeliculaReproducirSonido.height = 1;
+	}
+}
+//Muestra los div con los objetos flash
+function mostrarPeliculasFlash(){
+	objetoTomarFoto = document.getElementById("TomarFoto");
+	objetoGrabarSonido = document.getElementById("GrabarSonido");
+	objetoReproducirSonido = document.getElementById("ReproducirSonido");
+	
+	objetoPeliculaTomarFoto = document.getElementById("PeliculaTomarFoto");
+	objetoPeliculaGrabarSonido = document.getElementById("PeliculaGrabarSonido");
+	objetoPeliculaReproducirSonido = document.getElementById("PeliculaReproducirSonido");
+
+	if(null != objetoTomarFoto){
+        objetoTomarFoto.width = 300;
+    	objetoTomarFoto.height = 30;
+  	}
+	if(null != objetoGrabarSonido){
+        objetoGrabarSonido.width = 300;
+        objetoGrabarSonido.height = 30;
+    }
+	if(null != objetoReproducirSonido){
+        objetoReproducirSonido.width = 300;
+        objetoReproducirSonido.height = 30;
+    }
+
+	if(null != objetoPeliculaTomarFoto){
+        objetoPeliculaTomarFoto.width = 300;
+        objetoPeliculaTomarFoto.height = 30;
+    }
+	if(null != objetoPeliculaGrabarSonido){
+        objetoPeliculaGrabarSonido.width = 300;
+        objetoPeliculaGrabarSonido.height = 30;
+    }
+	if(null != objetoPeliculaReproducirSonido){
+        objetoPeliculaReproducirSonido.width = 300;
+       	objetoPeliculaReproducirSonido.height = 30;
+    }
+}
+
+/******* FIN Funciones que tratan la comunicación entre javascript y flash *****/
+</script>
+
+</wr:Frame>
