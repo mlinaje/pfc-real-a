@@ -1,0 +1,208 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7#page139" name="Mantenimiento Imagenes" linkVisibilityPolicy="hide" landmark="false" gr:x="345" gr:y="166">
+  <ContentUnits>
+    <EntryUnit id="sv7#page139#enu43" name="Nueva Imagen:" linkOrder="sv7#page139#enu43#ln305" gr:x="2" gr:y="277">
+      <Field id="sv7#page139#enu43#fld121" name="imagen" ajaxEventEnabled="false" ajaxEventLink="sv7#page139#enu43#ln305" ajaxUploadEnabled="false" type="blob" modifiable="true" contentType="image" preloaded="true"/>
+      <Link id="sv7#page139#enu43#ln305" name="Guardar" to="sv7#scu64" type="normal" validate="true" preserveForm="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv7#page139#enu43#ln305#par981" name="imagen_PASSING" source="sv7#page139#enu43#fld121" passing="true"/>
+        <LinkParameter id="sv7#page139#enu43#ln305#par982" name="oid_PASSING" source="sv7#page139#enu43#fld122" passing="true"/>
+      </Link>
+      <Field id="sv7#page139#enu43#fld122" name="oid" type="integer" modifiable="false" preloaded="true" hidden="true"/>
+    </EntryUnit>
+    <EntryUnit id="sv7#page139#enu44" name="Objeto" linkOrder="sv7#page139#enu44#ln306 sv7#page139#enu44#ln307 sv7#page139#enu44#ln309 sv7#page139#enu44#ln310" gr:x="146" gr:y="1" fieldOrder="sv7#page139#enu44#fld124">
+      <Field id="sv7#page139#enu44#fld123" name="oid" type="integer" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="sv7#page139#enu44#fld124" name="Descripci&#243;n" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv7#page139#enu44#ln306" name="Aceptar" to="sv7#inn9" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxCloseWindow="false" ajaxWindowUseTitle="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv7#page139#enu44#ln306#par983" name="oid_Input" source="sv7#page139#enu44#fld123" target="sv7#inn9.isnotnull"/>
+        <LinkParameter id="sv7#page139#enu44#ln306#par984" name="Descripci&#243;n_PASSING" source="sv7#page139#enu44#fld124" passing="true"/>
+      </Link>
+      <Link id="sv7#page139#enu44#ln307" name="Crear nueva imagen" to="sv7#page139#enu43" type="normal" validate="true">
+        <LinkParameter id="sv7#page139#enu44#ln307#par985" name="oid_oid" source="sv7#page139#enu44#fld123" target="sv7#page139#enu43#fld122_slot"/>
+        <LinkParameter id="sv7#page139#enu44#ln307#par986" name="$$NULL$$_imagen" target="sv7#page139#enu43#fld121_slot" sourceValue="$$NULL$$"/>
+      </Link>
+      <Link id="sv7#page139#enu44#ln308" name="Ver imagenes" to="sv7#page139#pwu22" type="transport" validate="true">
+        <LinkParameter id="sv7#page139#enu44#ln308#par987" name="oid_RoleCondition3 [oid]" source="sv7#page139#enu44#fld123" target="sv7#page139#pwu22#su88#rcond23.ent4#att24"/>
+      </Link>
+      <Link id="sv7#page139#enu44#ln309" name="Eliminar" to="sv7#scu63" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv7#page139#enu44#ln309#par988" name="oid_PASSING" source="sv7#page139#enu44#fld123" passing="true"/>
+        <LinkParameter id="sv7#page139#enu44#ln309#par989" name="pregunta.borrar.imagen_mensaje" target="sv7#scu63.mensaje" sourceValue="pregunta.borrar.objeto"/>
+      </Link>
+      <Link id="sv7#page139#enu44#ln310" name="Cancelar" to="sv7#page135" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv7#page139#enu44#ln311" name="pasarIdObjeto" to="sv7#page139#qu2" type="transport" validate="true">
+        <LinkParameter id="sv7#page139#enu44#ln311#par990" name="oid_descripcionId" source="sv7#page139#enu44#fld123" target="sv7#page139#qu2.sv7#page139#qu2#qi2"/>
+      </Link>
+      <Link id="sv7#page139#enu44#ln312" name="pasarIdObjeto" to="sv7#page139#gctu72" type="transport" validate="true">
+        <LinkParameter id="sv7#page139#enu44#ln312#par991" name="oid_PASSING" source="sv7#page139#enu44#fld123" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit id="sv7#page139#pwu22" name="Imagenes" linkOrder="sv7#page139#pwu22#ln313" gr:x="140" gr:y="248" sortable="false" checkable="false" entity="ent2" displayAttributes="ent2#att28" blockFactor="5" blockWindow="5">
+      <SortAttribute attribute="ent2#att5" order="ascending"/>
+      <Selector id="sv7#page139#pwu22#su88" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv7#page139#pwu22#su88#rcond23" name="RoleCondition3" predicate="in" implied="false" role="rel6#role3"/>
+      </Selector>
+      <Link id="sv7#page139#pwu22#ln313" name="Borrar" to="sv7#scu62" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv7#page139#pwu22#ln313#par992" name="oid_PASSING" source="data[].ent2#att5" passing="true"/>
+        <LinkParameter id="sv7#page139#pwu22#ln313#par993" name="pregunta.borrar.imagen_mensaje" target="sv7#scu62.mensaje" sourceValue="pregunta.borrar.imagen"/>
+      </Link>
+    </PowerIndexUnit>
+    <NoOpContentUnit id="sv7#page139#gctu71" name="BotonCancelar" linkOrder="sv7#page139#gctu71#ln314" gr:x="2" gr:y="146">
+      <Link id="sv7#page139#gctu71#ln314" name="Cancelar" to="sv7#page139#enu43" type="normal" validate="true">
+        <LinkParameter id="sv7#page139#gctu71#ln314#par994" name="$$NULL$$_oid" target="sv7#page139#enu43#fld122_slot" sourceValue="$$NULL$$"/>
+      </Link>
+    </NoOpContentUnit>
+    <QueryUnit id="sv7#page139#qu2" name="Descripciones" linkOrder="sv7#page139#qu2#ln315" gr:x="8" gr:y="0" mode="select" language="HQL" db="db1" outputsOrder="sv7#page139#qu2#qo6 sv7#page139#qu2#qo3 sv7#page139#qu2#qo4">
+      <QueryInput id="sv7#page139#qu2#qi2" name="objetoId" required="true" type="integer"/>
+      <QueryText xml:space="preserve">Select d.oid as descripcionOid, 
+	   i.descripcion as Idioma,
+       d.descripcion as Descripcion
+  from Objeto o
+inner join o.objetoToDescripciones d 
+inner join d.descripcionesToIdiomas i
+where o.id = :objetoId  </QueryText>
+      <QueryOutput id="sv7#page139#qu2#qo3" name="Idioma" type="string"/>
+      <QueryOutput id="sv7#page139#qu2#qo4" name="Descripcion" type="string"/>
+      <Link id="sv7#page139#qu2#ln315" name="Modificar" to="sv7#page119#seu19" type="normal" validate="true">
+        <LinkParameter id="sv7#page139#qu2#ln315#par995" name="descripcionOid_KeyCondition21 [oid]" source="data[].descripcionOid" target="sv7#page119#seu19#su86#kcond69.ent9#att38"/>
+      </Link>
+      <QueryOutput id="sv7#page139#qu2#qo6" name="descripcionOid" type="integer"/>
+    </QueryUnit>
+    <NoOpContentUnit id="sv7#page139#gctu72" name="CrearDescripcion" linkOrder="sv7#page139#gctu72#ln316" gr:x="0" gr:y="74">
+      <Link id="sv7#page139#gctu72#ln316" name="CrearDescripcion" to="sv7#page119#enu40" type="normal" validate="true">
+        <LinkParameter id="sv7#page139#gctu72#ln316#par996" name="$$NULL$$_Descripcion" target="sv7#page119#enu40#fld112_slot" sourceValue="$$NULL$$"/>
+        <LinkParameter id="sv7#page139#gctu72#ln316#par997" name="$$NULL$$_Idioma - Preselection" target="sv7#page119#enu40#sfld6_presel" sourceValue="$$NULL$$"/>
+        <LinkParameter id="sv7#page139#gctu72#ln316#par998" name="$$NULL$$_Informacion" target="sv7#page119#enu40#fld113_slot" sourceValue="$$NULL$$"/>
+        <LinkParameter id="sv7#page139#gctu72#ln316#par999" name="$$NULL$$_oid" target="sv7#page119#enu40#fld111_slot" sourceValue="$$NULL$$"/>
+        <LinkParameter id="sv7#page139#gctu72#ln316#par1000" name="oid_PASSING_idObjeto" sourceLinkParameter="sv7#page139#enu44#ln312#par991" target="sv7#page119#enu40#fld114_slot"/>
+      </Link>
+    </NoOpContentUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv7#page139#enu44" manualLinks="true">
+                <layout:Field field="sv7#page139#enu44#fld124"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Grid>
+                <layout:Row>
+                  <layout:Cell>
+                    <layout:Link unitId="sv7#page139#enu44" link="sv7#page139#enu44#ln306" styleClass="btnAceptar"/>
+                  </layout:Cell>
+                  <layout:Cell>
+                    <layout:Link unitId="sv7#page139#enu44" link="sv7#page139#enu44#ln310" styleClass="btnCancelar"/>
+                  </layout:Cell>
+                  <layout:Cell>
+                    <layout:Link unitId="sv7#page139#enu44" link="sv7#page139#enu44#ln309" layout:linkDisableCondition="sv7#page139#cexpr26" styleClass="btnEliminar"/>
+                  </layout:Cell>
+                  <layout:Cell>
+                    <layout:Link unitId="sv7#page139#enu44" link="sv7#page139#enu44#ln307" layout:linkDisableCondition="sv7#page139#cexpr26" styleClass="btnFoto"/>
+                  </layout:Cell>
+                </layout:Row>
+              </layout:Grid>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv7#page139#enu43" manualLinks="true" layout:frameLayout="WRDefault/Empty" layout:unitVisibilityCondition="sv7#page139#cexpr27" layout:unitVisibilityConditionNegated="true">
+                <layout:Field field="sv7#page139#enu43#fld121">
+                  <layout:LayoutParameter name="input-size" value="60" type="field"/>
+                </layout:Field>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Grid>
+                <layout:Row>
+                  <layout:Cell>
+                    <layout:Link unitId="sv7#page139#enu43" link="sv7#page139#enu43#ln305" layout:linkVisibilityCondition="sv7#page139#cexpr27" layout:linkVisibilityConditionNegated="true" styleClass="btnAceptar"/>
+                  </layout:Cell>
+                  <layout:Cell>
+                    <layout:Link unitId="sv7#page139#gctu71" link="sv7#page139#gctu71#ln314" layout:linkVisibilityCondition="sv7#page139#cexpr27" layout:linkVisibilityConditionNegated="true" styleClass="btnCancelar"/>
+                  </layout:Cell>
+                </layout:Row>
+              </layout:Grid>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv7#page139#qu2">
+                <layout:Link link="sv7#page139#qu2#ln315">
+                  <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+                  <layout:LayoutParameter name="show" value="icon" type="link"/>
+                  <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+                  <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+                  <layout:LayoutParameter name="icon-name" value="ico_Agregar" type="link"/>
+                </layout:Link>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell>
+        <layout:Unit unitId="sv7#page139#pwu22">
+          <layout:Attribute attribute="ent2#att28"/>
+          <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+          <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
+          <layout:LayoutParameter name="button-position" value="bottom" type="unit"/>
+          <layout:LayoutParameter name="image-width" value="50" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="50" type="attribute"/>
+          <layout:Link link="sv7#page139#pwu22#ln313">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+            <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="ico_Eliminar" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv7#page139#pwu22First">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="First" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv7#page139#pwu22Previous">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Previous" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv7#page139#pwu22Block"/>
+          <layout:Link link="sv7#page139#pwu22Next">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Next" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv7#page139#pwu22Last">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Last" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv7#page139#var20" name="idImagenPasada" type="integer" unitId="sv7#page139#enu44" parameter="sv7#page139#enu44#fld123"/>
+  <ConditionExpression id="sv7#page139#cexpr26" name="idEsNull">
+    <TextValue xml:space="preserve">return (null == idImagenPasada)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv7#page139#var21" name="idImagenNueva" type="integer" unitId="sv7#page139#enu43" parameter="sv7#page139#enu43#fld122"/>
+  <ConditionExpression id="sv7#page139#cexpr27" name="idNuevaEsNull">
+    <TextValue xml:space="preserve">return (null == idImagenNueva)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv7#page139#var22" name="imagenCargada" type="blob" unitId="sv7#page139#enu43" parameter="sv7#page139#enu43#fld121"/>
+  <ConditionExpression id="sv7#page139#cexpr28" name="hayImagenCargada">
+    <TextValue xml:space="preserve">return (null != imagenCargada)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv7#page139#var23" name="imagenSeleccionada" type="integer"/>
+  <ConditionExpression id="sv7#page139#cexpr29" name="hayImagenSeleccionada">
+    <TextValue xml:space="preserve">return (null != imagenSeleccionada)</TextValue>
+  </ConditionExpression>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Link unitId="sv7#page139#gctu72" link="sv7#page139#gctu72#ln316" layout:linkDisableCondition="sv7#page139#cexpr26" styleClass="bthNuevo"/>
+  </layout:CustomLocation>
+</Page>

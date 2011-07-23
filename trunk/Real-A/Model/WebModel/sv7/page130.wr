@@ -1,0 +1,31 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7#page130" name="Informaci&#243;n" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="82" gr:y="878">
+  <ContentUnits>
+    <NoOpContentUnit id="sv7#page130#gctu66" name="Volver" linkOrder="sv7#page130#gctu66#ln292" gr:x="134" gr:y="17">
+      <Link id="sv7#page130#gctu66#ln292" name="Cerrar" to="sv7#page128" type="normal" automaticCoupling="true" validate="true" preserveForm="true" ajaxEnabled="true" ajaxCloseWindow="true"/>
+    </NoOpContentUnit>
+    <DataUnit id="sv7#page130#dau10" name="Informacion" gr:x="0" gr:y="0" entity="ent9" displayAttributes="ent9#att42 ent9#att43">
+      <Selector id="sv7#page130#dau10#su87" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv7#page130#dau10#su87#rcond21" name="condicionIdioma" predicate="in" implied="false" role="rel11#role14"/>
+        <RelationshipRoleCondition id="sv7#page130#dau10#su87#rcond22" name="condicionObjeto" predicate="in" implied="false" role="rel7#role5"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv7#page130#dau10">
+          <layout:Attribute attribute="ent9#att42"/>
+          <layout:Attribute attribute="ent9#att43"/>
+          <layout:LayoutParameter name="attribute-orientation" value="top" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv7#page130#gctu66" layout:frameLayout="WRDefault/Empty">
+          <layout:Link link="sv7#page130#gctu66#ln292" styleClass="btnAceptar"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

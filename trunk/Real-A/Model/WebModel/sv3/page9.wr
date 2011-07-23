@@ -1,0 +1,69 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="883" gr:y="764" id="sv3#page9" name="Mantenimieto de Idiomas" landmark="true">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="10" gr:y="0" id="sv3#page9#pwu4" name="Idiomas" sortable="true" checkable="false" entity="ent10" displayAttributes="ent10#att44 ent10#att45 ent10#att46 ent10#att47" blockFactor="10" blockWindow="10" linkOrder="sv3#page9#pwu4#ln4">
+      <SortAttribute attribute="ent10#att25" order="ascending"/>
+      <Link id="sv3#page9#pwu4#ln4" name="Modificar" to="sv3#page10#enu11" type="normal" validate="true">
+        <LinkParameter id="sv3#page9#pwu4#ln4#par1" name="country_country" source="data[].ent10#att46" target="sv3#page10#enu11#fld13_slot"/>
+        <LinkParameter id="sv3#page9#pwu4#ln4#par3" name="descripcion_descripcion" source="data[].ent10#att44" target="sv3#page10#enu11#fld11_slot"/>
+        <LinkParameter id="sv3#page9#pwu4#ln4#par5" name="flag_flag" source="data[].ent10#att47" target="sv3#page10#enu11#fld14_slot"/>
+        <LinkParameter id="sv3#page9#pwu4#ln4#par6" name="language_language" source="data[].ent10#att45" target="sv3#page10#enu11#fld12_slot"/>
+        <LinkParameter id="sv3#page9#pwu4#ln4#par26" name="oid_oid" source="data[].ent10#att25" target="sv3#page10#enu11#fld10_slot"/>
+      </Link>
+    </PowerIndexUnit>
+    <NoOpContentUnit gr:x="0" gr:y="110" id="sv3#page9#gctu3" name="CrearIdioma" linkOrder="sv3#page9#gctu3#ln21">
+      <Link id="sv3#page9#gctu3#ln21" name="Crear Idioma" to="sv3#page10#enu11" type="normal" validate="true">
+        <LinkParameter id="sv3#page9#gctu3#ln21#par27" name="$$NULL$$_country" sourceValue="$$NULL$$" target="sv3#page10#enu11#fld13_slot"/>
+        <LinkParameter id="sv3#page9#gctu3#ln21#par29" name="$$NULL$$_descripcion" sourceValue="$$NULL$$" target="sv3#page10#enu11#fld11_slot"/>
+        <LinkParameter id="sv3#page9#gctu3#ln21#par30" name="$$NULL$$_flag" sourceValue="$$NULL$$" target="sv3#page10#enu11#fld14_slot"/>
+        <LinkParameter id="sv3#page9#gctu3#ln21#par31" name="$$NULL$$_language" sourceValue="$$NULL$$" target="sv3#page10#enu11#fld12_slot"/>
+        <LinkParameter id="sv3#page9#gctu3#ln21#par33" name="$$NULL$$_oid" sourceValue="$$NULL$$" target="sv3#page10#enu11#fld10_slot"/>
+      </Link>
+    </NoOpContentUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page9#pwu4">
+          <layout:Attribute attribute="ent10#att44"/>
+          <layout:Attribute attribute="ent10#att45">
+            <layout:LayoutParameter name="image-width" value="26" type="attribute"/>
+            <layout:LayoutParameter name="image-height" value="20" type="attribute"/>
+          </layout:Attribute>
+          <layout:Attribute attribute="ent10#att46"/>
+          <layout:Attribute attribute="ent10#att47"/>
+          <layout:Link link="sv3#page9#pwu4#ln4">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+            <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="ico_Agregar" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page9#pwu4First">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Next" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page9#pwu4Previous">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Previous" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page9#pwu4Block"/>
+          <layout:Link link="sv3#page9#pwu4Next">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Next" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page9#pwu4Last">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Last" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Link unitId="sv3#page9#gctu3" link="sv3#page9#gctu3#ln21" styleClass="bthCrearIdioma"/>
+  </layout:CustomLocation>
+</Page>

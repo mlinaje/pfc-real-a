@@ -1,0 +1,55 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area7#page77" name="Album" landmark="false" gr:x="0" gr:y="169">
+  <ContentUnits>
+    <PowerIndexUnit id="sv2#area7#page77#pwu25" name="Album" linkOrder="sv2#area7#page77#pwu25#ln371 sv2#area7#page77#pwu25#ln372" gr:x="10" gr:y="122" sortable="false" checkable="false" entity="ent1" displayAttributes="ent1#att2 ent1#att8">
+      <Selector id="sv2#area7#page77#pwu25#su101" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#area7#page77#pwu25#su101#rcond35" name="IdUsuario" role="rel5#role1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area7#page77#pwu25#ln371" name="Mantenimiento" to="sv2#area7#page76#seu23" type="normal" validate="true" preserveForm="false">
+        <LinkParameter id="sv2#area7#page77#pwu25#ln371#par572" name="oid_KeyCondition33 [oid]" source="data[].ent1#att1" target="sv2#area7#page76#seu23#su98#kcond75.ent1#att1"/>
+      </Link>
+      <SortAttribute attribute="ent1#att8" order="descending"/>
+      <Link id="sv2#area7#page77#pwu25#ln372" name="Borrar Imagen" to="sv2#scu21" type="normal" customDescriptor="false" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxShowWindowBeforeRequest="false" ajaxCloseWindow="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv2#area7#page77#pwu25#ln372#par573" name="pregunta.borrar.usuario_mensaje" target="sv2#scu21.mensaje" sourceValue="pregunta.borrar.imagen"/>
+        <LinkParameter id="sv2#area7#page77#pwu25#ln372#par574" name="oid_PASSING" source="data[].ent1#att1" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+    <GetUnit id="sv2#area7#page77#gtu21" name="ObtenerUsuario" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv2#area7#page77#gtu21#ln373" name="PasoIdUsuario" to="sv2#area7#page77#pwu25" type="transport" validate="true">
+        <LinkParameter id="sv2#area7#page77#gtu21#ln373#par575" name="UserCtxParam.oid_IdUsuario [oid]" source="sv2#area7#page77#gtu21.UserCtxParam" target="sv2#area7#page77#pwu25#su101#rcond35.userOID"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv2#area7#page77#pwu25">
+          <layout:LayoutParameter name="image-width" value="50" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="50" type="attribute"/>
+          <layout:Link link="sv2#area7#page77#pwu25#ln371">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+            <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="ico_Agregar" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv2#area7#page77#pwu25#ln372">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+            <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="ico_Eliminar" type="link"/>
+          </layout:Link>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att8"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <ConditionExpression id="sv2#area7#page77#cexpr39" name="hayFicheroSonido">
+    <TextValue xml:space="preserve">return(null != ficheroSonido)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv2#area7#page77#var32" name="ficheroSonido" unitId="sv2#area7#page77#pwu25" parameter="data[].ent1#att35"/>
+  <ConditionExpression id="sv2#area7#page77#cexpr40" name="ocultarColumnaSonido">
+    <TextValue xml:space="preserve">return true</TextValue>
+  </ConditionExpression>
+</Page>

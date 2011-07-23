@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?webml version="4.1.2"?>
+
+<WebProject xmlns:bpm="http://www.webratio.com/2009/WebML/BPM" xmlns:gr="http://www.webratio.com/2006/WebML/Graph" outputPath="${webapps_loc}/${project_name}" gr:showUnitContent="true" gr:showTooltip="true" httpPort="8080" httpsPort="8443" sample="true" bpm:bpmBased="false">
+  <ServiceDataProviders>
+    <SMTPServer id="smtp2" name="Gmail" defaultFrom="pfc.real.a@gmail.com" url="smtp.gmail.com" username="pfc.real.a" password="T2xpdmVudGlubzEzMTc=" cryptedPassword="true"/>
+  </ServiceDataProviders>
+  <BundleKey name="informacion.crear.correo"/>
+  <BundleKey name="informacion.crear.captcha"/>
+  <BundleKey name="error.contrasenia.usuario.obligatorio"/>
+  <BundleKey name="error.contrasenia.confirmacion.distintas"/>
+  <BundleKey name="error.codigo.usuario.obligatorio"/>
+  <BundleKey name="error.email.usuario.valido"/>
+  <BundleKey name="error.nombre.usuario.existe"/>
+  <BundleKey name="error.cuenta.correo.existe"/>
+  <BundleKey name="error.email.usuario.obligatorio"/>
+  <BundleKey name="error.crear.usuario"/>
+  <BundleKey name="error.usuario.o.contrasenia"/>
+  <BundleKey name="informacion.recuperar.correo"/>
+  <BundleKey name="error.modificar.usuario.contrase&#241;a"/>
+  <BundleKey name="error.cuenta.correo.no.existe"/>
+  <BundleKey name="error.usuario.contrasenia.invalidos"/>
+  <BundleKey name="informacion.contrasenia.enviada"/>
+  <BundleKey name="informacion.usuario.creado"/>
+  <BundleKey name="error.eliminar.usuario"/>
+  <BundleKey name="error.campo.contrasenia.obligatorio"/>
+  <BundleKey name="error.campo.contrasenia.confirmacion.no.coinciden"/>
+  <BundleKey name="error.modificar.usuario"/>
+  <BundleKey name="informacion.usuario.borrado"/>
+  <BundleKey name="pregunta.borrar.usuario"/>
+  <BundleKey name="error.campo.contrasenia.antigua.no.coinciden"/>
+  <BundleKey name="error.campo.contrasenia.antigua.obligatoria.password"/>
+  <BundleKey name="error.campo.contrasenia.antigua.obligatoria.email"/>
+  <BundleKey name="info.confirmar.contrase&#241;a"/>
+  <BundleKey name="info.antigua.contrasenia"/>
+  <BundleKey name="info.cambio.email"/>
+  <BundleKey name="pregunta.confirmar.cambio.correo"/>
+  <BundleKey name="informacion.contrasenia.enviada.email"/>
+  <BundleKey name="error.crear.imagen.album"/>
+  <BundleKey name="obtener.foto"/>
+  <BundleKey name="buscando.coincidencias"/>
+  <BundleKey name="pregunta.borrar.imagen"/>
+  <BundleKey name="error.eliminar.imagen"/>
+  <BundleKey name="error.modificar.imagen"/>
+  <BundleKey name="informacion.campo.anotacion"/>
+  <BundleKey name="pregunta.borrar.objeto"/>
+  <BundleKey name="error.crear.imagen"/>
+  <BundleKey name="error.modificar.objeto"/>
+  <BundleKey name="error.crear.objeto"/>
+  <BundleKey name="error.eliminar.objeto"/>
+  <BundleKey name="selectionfield.todos.grupos"/>
+  <BundleKey name="pregunta.admin.borrar.usuario"/>
+  <BundleKey name="error.codigo.grupo.obligatorio"/>
+  <BundleKey name="obtener.sonido"/>
+  <BundleKey name="error.primero.obtener.imagen"/>
+  <BundleKey name="boton.play"/>
+  <BundleKey name="boton.stop"/>
+  <BundleKey name="pedir.acceso.sistema"/>
+  <BundleKey name="texto.pie.pagina"/>
+  <BundleKey name="nombre.aplicacion"/>
+  <BundleKey name="texto.cabecera.usuario"/>
+  <BundleKey name="error.crear.idioma"/>
+  <BundleKey name="error.Language.lenguaje.obligatorio"/>
+  <BundleKey name="error.modificar.idioma"/>
+  <BundleKey name="error.descripcion.lenguaje.obligatorio"/>
+  <BundleKey name="error.Country.lenguaje.obligatorio"/>
+  <BundleKey name="error.flag.lenguaje.obligatorio"/>
+  <BundleKey name="pregunta.borrar.idioma"/>
+  <BundleKey name="error.borrar.idioma"/>
+  <BundleKey name="descripcionOid"/>
+  <BundleKey name="idiomaOid"/>
+  <BundleKey name="error.descripcion.descripcion.obligatorio"/>
+  <BundleKey name="error.idioma.descripcion.existe"/>
+  <BundleKey name="error.idioma.descripcion.obligatorio"/>
+  <BundleKey name="error.informacion.descripcion.obligatorio"/>
+  <BundleKey name="error.modificar.descripcion"/>
+  <BundleKey name="error.crear.descripcion"/>
+  <BundleKey name="pregunta.borrar.descripcion"/>
+  <BundleKey name="error.borrar.descripcion"/>
+</WebProject>

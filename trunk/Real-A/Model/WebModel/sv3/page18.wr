@@ -1,0 +1,29 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="327" gr:y="1296" id="sv3#page18" name="Comparacion de Imagenes" layout:pageLayout="WRDefault/Empty" ignoreMasterPage="true">
+  <ContentUnits>
+    <PowerIndexUnit id="sv3#page18#pwu1" name="Comparaci&#243;n Imagenes" gr:x="0" gr:y="85" sortable="true" checkable="false" entity="ent7" displayAttributes="ent7#att31">
+      <SortAttribute attribute="ent7#att27" order="ascending"/>
+      <SortAttribute attribute="ent7#att29" order="ascending"/>
+    </PowerIndexUnit>
+    <NoOpContentUnit gr:x="37" gr:y="0" id="sv3#page18#gctu18" name="Volver" linkOrder="sv3#page18#gctu18#ln28">
+      <Link id="sv3#page18#gctu18#ln28" name="Cerrar" to="sv3#page7" type="normal" automaticCoupling="true" validate="true" ajaxEnabled="true" ajaxCloseWindow="true" preserveForm="true"/>
+    </NoOpContentUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page18#pwu1">
+          <layout:Attribute attribute="ent7#att31"/>
+          <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page18#gctu18" layout:frameLayout="WRDefault/Empty">
+          <layout:Link link="sv3#page18#gctu18#ln28" styleClass="btnAceptar"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

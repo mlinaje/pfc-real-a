@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7#page132" name="Mantenimiento de Idioma" gr:x="1209" gr:y="810">
+  <ContentUnits>
+    <EntryUnit id="sv7#page132#enu42" name="Idioma" linkOrder="sv7#page132#enu42#ln294 sv7#page132#enu42#ln295 sv7#page132#enu42#ln296 sv7#page132#enu42#ln297" gr:x="0" gr:y="0" fieldOrder="sv7#page132#enu42#fld117 sv7#page132#enu42#fld118 sv7#page132#enu42#fld119 sv7#page132#enu42#fld120">
+      <Field id="sv7#page132#enu42#fld116" name="oid" type="integer" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="sv7#page132#enu42#fld117" name="descripcion" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv7#page132#enu42#fld118" name="language" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv7#page132#enu42#fld119" name="country" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv7#page132#enu42#fld120" name="flag" type="blob" modifiable="true" preloaded="true" contentType="image"/>
+      <Link id="sv7#page132#enu42#ln294" name="Cancelar" to="sv7#page117" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv7#page132#enu42#ln295" name="Modificar" to="sv7#scu66" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxCloseWindow="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv7#page132#enu42#ln295#par966" name="country_Country" source="sv7#page132#enu42#fld119" target="sv7#scu66.Country"/>
+        <LinkParameter id="sv7#page132#enu42#ln295#par967" name="descripcion_descripcion" source="sv7#page132#enu42#fld117" target="sv7#scu66.descripcion"/>
+        <LinkParameter id="sv7#page132#enu42#ln295#par968" name="flag_flag" source="sv7#page132#enu42#fld120" target="sv7#scu66.flag"/>
+        <LinkParameter id="sv7#page132#enu42#ln295#par969" name="oid_id" source="sv7#page132#enu42#fld116" target="sv7#scu66.id"/>
+        <LinkParameter id="sv7#page132#enu42#ln295#par970" name="language_Language" source="sv7#page132#enu42#fld118" target="sv7#scu66.Language"/>
+      </Link>
+      <Link id="sv7#page132#enu42#ln296" name="Crear" to="sv7#scu66" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true" gr:bendpoints="50,94,-86,-63">
+        <LinkParameter id="sv7#page132#enu42#ln296#par971" name="country_Country" source="sv7#page132#enu42#fld119" target="sv7#scu66.Country"/>
+        <LinkParameter id="sv7#page132#enu42#ln296#par972" name="descripcion_descripcion" source="sv7#page132#enu42#fld117" target="sv7#scu66.descripcion"/>
+        <LinkParameter id="sv7#page132#enu42#ln296#par973" name="flag_flag" source="sv7#page132#enu42#fld120" target="sv7#scu66.flag"/>
+        <LinkParameter id="sv7#page132#enu42#ln296#par974" name="language_Language" source="sv7#page132#enu42#fld118" target="sv7#scu66.Language"/>
+      </Link>
+      <Link id="sv7#page132#enu42#ln297" name="Borrar" to="sv7#scu67" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv7#page132#enu42#ln297#par975" name="pregunta.admin.borrar.usuario_mensaje" target="sv7#scu67.mensaje" sourceValue="pregunta.borrar.idioma"/>
+        <LinkParameter id="sv7#page132#enu42#ln297#par976" name="oid_PASSING" source="sv7#page132#enu42#fld116" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv7#page132#enu42" manualLinks="true">
+          <layout:Field field="sv7#page132#enu42#fld117"/>
+          <layout:Field field="sv7#page132#enu42#fld118"/>
+          <layout:Field field="sv7#page132#enu42#fld119"/>
+          <layout:Field field="sv7#page132#enu42#fld120" layout:fieldLayout="StyleRealAMobile/CampoBandera">
+            <layout:LayoutParameter name="input-size" value="50" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page132#enu42" link="sv7#page132#enu42#ln296" layout:linkVisibilityCondition="sv7#page132#cexpr25" styleClass="btnAceptar"/>
+              <layout:Link unitId="sv7#page132#enu42" link="sv7#page132#enu42#ln295" layout:linkVisibilityCondition="sv7#page132#cexpr25" layout:linkVisibilityConditionNegated="true" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page132#enu42" link="sv7#page132#enu42#ln294" styleClass="btnCancelar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv7#page132#enu42" link="sv7#page132#enu42#ln297" layout:linkVisibilityCondition="sv7#page132#cexpr25" layout:linkVisibilityConditionNegated="true" styleClass="btnEliminar"/>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <ConditionExpression id="sv7#page132#cexpr25" name="estaCreando">
+    <TextValue xml:space="preserve">return (null == imagenId)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv7#page132#var19" name="imagenId" type="integer" unitId="sv7#page132#enu42" parameter="sv7#page132#enu42#fld116"/>
+</Page>

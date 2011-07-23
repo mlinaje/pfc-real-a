@@ -1,0 +1,161 @@
+<DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+  <Entity id="User" name="User" duration="persistent" gr:x="23" gr:y="9" gr:hideAttributes="false" attributeOrder="userOID userName password email" db:table="user" db:database="db1">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="userName" id="userName" type="string" db:column="username"/>
+    <Attribute name="password" id="password" type="password" db:cryptAlgorithm="com.webratio.rtx.core.DES3UnicodeCryptImplementation" db:column="password"/>
+    <Attribute name="email" id="email" type="string" db:column="email"/>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="253" gr:y="34" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:table="group" db:database="db1">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="460" gr:y="21" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:table="module" db:database="db1">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
+  </Entity>
+  <Relationship id="rel1" name="User_Group" sourceEntity="User" targetEntity="Group" db:table="user_group" db:database="db1">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel2" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44" db:table="user" db:database="db1">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel3" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:table="group" db:database="db1">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
+      <db:JoinColumn attribute="groupOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel4" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41" db:table="group_module" db:database="db1">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <db:Database id="db1" name="Real-A" type="PostgreSQL 8" url="jdbc:postgresql://localhost:5432/Real-A" username="postgres" cryptedPassword="true" password="ZmFycmFwYQ==" schema="public"/>
+  <Entity gr:x="32" gr:y="213" id="ent1" name="Imagen" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att4 ent1#att8 ent1#att35" db:table="imagen" db:database="db1">
+    <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent1#att2" name="imagen" type="blob" contentType="image" deletePolicy="delete" storageType="file" uploadPolicy="managed" db:column="imagen"/>
+    <Attribute id="ent1#att4" name="anotacion" type="string" db:column="anotacion"/>
+    <Attribute id="ent1#att8" name="hora" type="timestamp" db:column="hora"/>
+    <Attribute id="ent1#att35" name="sonido" type="blob" db:column="sonido"/>
+  </Entity>
+  <Relationship id="rel5" name="User_Imagen" sourceEntity="User" targetEntity="ent1" db:table="imagen" db:database="db1">
+    <RelationshipRole1 id="rel5#role1" name="UserToImagen" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel5#role2" name="ImagenToUser" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity id="ent2" name="Plantilla" gr:x="438" gr:y="239" attributeOrder="ent2#att5 ent2#att26 ent2#att28" db:table="plantilla" db:database="db1">
+    <Attribute id="ent2#att5" name="oid" type="integer" key="true" db:column="oid"/>
+    <Attribute id="ent2#att26" name="ruta" type="string" db:column="ruta"/>
+    <Attribute id="ent2#att28" name="imagen" type="blob" contentType="image" db:column="imagen"/>
+  </Entity>
+  <Entity id="ent6" name="Puntoscaracteristicos" gr:x="638" gr:y="177" db:table="puntoscaracteristicos" db:database="db1">
+    <Attribute id="ent6#att6" name="oid" type="integer" key="true" db:idGenerator="identity" db:column="oid"/>
+    <Attribute id="ent6#att9" name="x" type="float" key="false" db:column="x"/>
+    <Attribute id="ent6#att10" name="y" type="float" key="false" db:column="y"/>
+    <Attribute id="ent6#att11" name="escala" type="integer" key="false" db:column="escala"/>
+    <Attribute id="ent6#att12" name="orientacion" type="float" key="false" db:column="orientacion"/>
+    <Attribute id="ent6#att13" name="laplacian" type="integer" key="false" db:column="laplacian"/>
+    <Attribute id="ent6#att14" name="hessian" type="float" key="false" db:column="hessian"/>
+    <Attribute id="ent6#att15" name="descriptores" type="string" key="false" db:column="descriptores"/>
+  </Entity>
+  <Relationship id="rel9" name="PuntoscaracteristicosPlantilla" sourceEntity="ent6" targetEntity="ent2" db:table="puntoscaracteristicos" db:database="db1">
+    <RelationshipRole1 id="rel9#role9" name="PuntoscaracteristicosToPlantilla" maxCard="1" cascadeDelete="true">
+      <db:JoinColumn attribute="ent6#att6" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel9#role10" name="PlantillaToPuntoscaracteristicos" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="ent2#att5" name="plantilla_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="224" gr:y="251" id="ent4" name="Objeto" duration="persistent" attributeOrder="ent4#att24 ent4#att30" db:table="objeto" db:database="db1">
+    <Attribute id="ent4#att24" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent4#att30" name="descripcion" type="string" db:column="descripcion"/>
+  </Entity>
+  <Relationship id="rel6" name="Objeto_Plantilla" sourceEntity="ent4" targetEntity="ent2" db:table="plantilla" db:database="db1">
+    <RelationshipRole1 id="rel6#role3" name="ObjetoToPlantilla" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="ent4#att24" name="objeto_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel6#role4" name="PlantillaToObjeto" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="ent2#att5" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity id="ent3" name="Tmpimagen" attributeOrder="ent3#att7 ent3#att16 ent3#att17" gr:x="700" gr:y="11" duration="volatile" db:table="plantilla" db:database="db1">
+    <Attribute id="ent3#att7" name="oid" key="true" type="integer" db:column="oid"/>
+    <Attribute id="ent3#att16" name="ruta" type="string" db:column="ruta"/>
+    <Attribute id="ent3#att17" name="imagen" type="blob" contentType="image" uploadPath="ImagenTemporal" deletePolicy="delete" db:column="imagen"/>
+  </Entity>
+  <Entity gr:x="824" gr:y="234" id="ent5" name="TmpBusqueda" duration="volatile" attributeOrder="ent5#att23 ent5#att20 ent5#att18 ent5#att21 ent5#att22 ent5#att37 ent5#att39">
+    <Attribute id="ent5#att20" name="descripcion" type="string" db:column="descripcion"/>
+    <Attribute id="ent5#att21" name="imagen" type="blob" contentType="image" deletePolicy="none" db:column="imagen"/>
+    <Attribute id="ent5#att22" name="coincidencias" type="integer"/>
+    <Attribute id="ent5#att23" name="oid" key="true" type="integer" db:column="oid"/>
+    <Attribute id="ent5#att18" name="ruta" type="string" db:column="ruta"/>
+    <Attribute id="ent5#att37" name="imagenquery" type="blob" contentType="image" deletePolicy="none" db:column="imagen"/>
+    <Attribute id="ent5#att39" name="rutaquery" type="string" db:column="ruta"/>
+    <Attribute id="ent5#att3" name="idobjeto" key="false" type="integer" db:column="oid"/>
+  </Entity>
+  <Entity id="ent7" name="TmpComparacion" duration="volatile" attributeOrder="ent7#att27 ent7#att29 ent7#att31" gr:x="824" gr:y="9" db:table="plantilla" db:database="db1">
+    <Attribute id="ent7#att27" name="oid" key="true" type="integer" db:column="oid"/>
+    <Attribute id="ent7#att29" name="ruta" type="string" db:column="ruta"/>
+    <Attribute id="ent7#att31" name="imagen" type="blob" contentType="image" uploadPath="ImagenTemporal" deletePolicy="delete" db:column="imagen"/>
+  </Entity>
+  <Entity gr:x="824" gr:y="120" id="ent8" name="TmpControlMensaje" duration="volatile" attributeOrder="ent8#att32 ent8#att33 ent8#att34">
+    <Attribute id="ent8#att32" key="true" name="oid" type="integer"/>
+    <Attribute id="ent8#att33" name="mensaje" type="string"/>
+    <Attribute id="ent8#att34" name="timeStamp" type="timestamp"/>
+  </Entity>
+  <Entity gr:x="223" gr:y="403" id="ent9" name="Descripciones" duration="persistent" attributeOrder="ent9#att38 ent9#att42 ent9#att43" db:database="db1" db:table="descripciones">
+    <Attribute id="ent9#att38" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent9#att42" name="descripcion" type="string" db:column="descripcion"/>
+    <Attribute id="ent9#att43" name="informacion" type="text" contentType="text/html" db:column="informacion"/>
+  </Entity>
+  <Relationship id="rel7" name="Objeto_Descripciones" sourceEntity="ent4" targetEntity="ent9" db:database="db1" db:table="descripciones">
+    <RelationshipRole1 id="rel7#role5" name="ObjetoToDescripciones" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="ent4#att24" name="objeto_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel7#role6" name="DescripcionesToObjeto" maxCard="1">
+      <db:JoinColumn attribute="ent9#att38" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity id="ent10" name="Idioma" duration="persistent" attributeOrder="ent10#att25 ent10#att44 ent10#att45 ent10#att46 ent10#att47" gr:x="438" gr:y="378" db:database="db1" db:table="idioma">
+    <Attribute id="ent10#att25" name="oid" key="true" type="integer" db:column="oid"/>
+    <Attribute id="ent10#att44" name="descripcion" type="string" db:column="descripcion"/>
+    <Attribute id="ent10#att45" name="language" type="string" db:column="language"/>
+    <Attribute id="ent10#att46" name="country" type="string" db:column="country"/>
+    <Attribute id="ent10#att47" name="flag" type="blob" contentType="image" db:column="flag"/>
+  </Entity>
+  <Relationship id="rel11" name="Descripciones_Idiomas" sourceEntity="ent9" targetEntity="ent10" db:database="db1" db:table="descripciones">
+    <RelationshipRole1 id="rel11#role13" name="DescripcionesToIdiomas" maxCard="1" cascadeDelete="false">
+      <db:JoinColumn attribute="ent9#att38" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role14" name="IdiomasToDescripciones" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="ent10#att25" name="idioma_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel12" name="Imagen_Objeto" sourceEntity="ent1" targetEntity="ent4" db:database="db1" db:table="imagen">
+    <RelationshipRole1 id="rel12#role15" name="ImagenToObjeto" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel12#role16" name="ObjetoToImagen" maxCard="N" cascadeDelete="true">
+      <db:JoinColumn attribute="ent4#att24" name="objeto_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+</DataModel>

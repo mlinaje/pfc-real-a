@@ -1,0 +1,39 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page108" name="Pregunta" layout:pageLayout="WRDefault/Empty" gr:x="885" gr:y="-237" layout:frameLayout="WRDefault/Empty">
+  <ContentUnits>
+    <NoOpContentUnit id="sv6#page108#gctu51" name="Botones" linkOrder="sv6#page108#gctu51#ln250 sv6#page108#gctu51#ln158" gr:x="4" gr:y="0">
+      <Link id="sv6#page108#gctu51#ln250" name="Aceptar" to="sv6#dlu14" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxCloseWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv6#page108#gctu51#ln250#par620" name="oid_PASSING_KeyCondition12 [oid]" sourceLinkParameter="sv6#scu54#oln116#par619" target="sv6#dlu14#su62#kcond49.ent1#att1"/>
+      </Link>
+      <Link id="sv6#page108#gctu51#ln158" name="Cancelar" to="sv6#area1#page36" type="normal" automaticCoupling="true" validate="true" preserveForm="true" ajaxEnabled="true" ajaxCloseWindow="true"/>
+    </NoOpContentUnit>
+    <IndexUnit id="sv6#page108#inu19" name="Mensaje" gr:x="0" gr:y="91" entity="ent8" displayAttributes="ent8#att33">
+      <SortAttribute attribute="ent8#att32" order="ascending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv6#page108#inu19" layout:unitLayout="StyleRealAMobile/MensajesError">
+          <layout:Attribute attribute="ent8#att33"/>
+          <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv6#page108#gctu51" link="sv6#page108#gctu51#ln250" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv6#page108#gctu51" link="sv6#page108#gctu51#ln158" styleClass="btnCancelar"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

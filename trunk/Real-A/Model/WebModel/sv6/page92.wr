@@ -1,0 +1,83 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page92" name="Mantenimiento de Usuario" landmark="true" customDescriptor="false" gr:x="80" gr:y="528">
+  <ContentUnits>
+    <DataUnit id="sv6#page92#dau8" name="Datos de Usuario" linkOrder="sv6#page92#dau8#ln211" gr:x="134" gr:y="0" entity="User" displayAttributes="userName email">
+      <Selector id="sv6#page92#dau8#su64" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv6#page92#dau8#su64#kcond51" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv6#page92#dau8#ln211" name="Borrar usuario" to="sv6#scu48" type="normal" customDescriptor="false" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxShowWindowBeforeRequest="false" ajaxCloseWindow="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv6#page92#dau8#ln211#par728" name="oid_PASSING" source="data.userOID" passing="true"/>
+        <LinkParameter id="sv6#page92#dau8#ln211#par729" name="defaultGroup.oid_PASSING" source="data.User2DefaultGroup_groupOID" passing="true"/>
+        <LinkParameter id="sv6#page92#dau8#ln211#par730" name="pregunta.borrar.usuario_mensaje" target="sv6#scu48.mensaje" sourceValue="pregunta.borrar.usuario"/>
+      </Link>
+      <Link id="sv6#page92#dau8#ln212" name="Modificar Usuario" to="sv6#page92#enu31" type="transport" validate="true">
+        <LinkParameter id="sv6#page92#dau8#ln212#par731" name="userName_Usuario" source="data.userName" target="sv6#page92#enu31#fld83_slot"/>
+        <LinkParameter id="sv6#page92#dau8#ln212#par732" name="email_e-mail" source="data.email" target="sv6#page92#enu31#fld84_slot"/>
+        <LinkParameter id="sv6#page92#dau8#ln212#par733" name="oid_PASSING" source="data.userOID" passing="true"/>
+        <LinkParameter id="sv6#page92#dau8#ln212#par734" name="userName_PASSING" source="data.userName" passing="true"/>
+        <LinkParameter id="sv6#page92#dau8#ln212#par735" name="email_PASSING" source="data.email" passing="true"/>
+      </Link>
+    </DataUnit>
+    <GetUnit id="sv6#page92#gtu12" name="ObtenerIdUsuario" gr:x="0" gr:y="7" contextParameters="UserCtxParam">
+      <Link id="sv6#page92#gtu12#ln213" name="PasoIdUsuario" to="sv6#page92#dau8" type="transport" validate="true">
+        <LinkParameter id="sv6#page92#gtu12#ln213#par736" name="UserCtxParam.oid_KeyCondition5 [oid]" source="sv6#page92#gtu12.UserCtxParam" target="sv6#page92#dau8#su64#kcond51.userOID"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit id="sv6#page92#enu31" name="Mantenimiento de Usuario" linkOrder="sv6#page92#enu31#ln214" gr:x="283" gr:y="14" fieldOrder="sv6#page92#enu31#fld83 sv6#page92#enu31#fld84 sv6#page92#enu31#fld85 sv6#page92#enu31#fld87 sv6#page92#enu31#fld86">
+      <Field id="sv6#page92#enu31#fld83" name="Usuario" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv6#page92#enu31#fld84" name="Correo" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv6#page92#enu31#ln214" name="Aceptar" to="sv6#scu50" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxShowWindowBeforeRequest="false" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv6#page92#enu31#ln214#par737" name="Antigua Contrase&#241;a_PASSING" source="sv6#page92#enu31#fld85" passing="true"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par738" name="Confirmar Nueva Contrase&#241;a_PASSING" source="sv6#page92#enu31#fld86" passing="true"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par739" name="email_PASSING" sourceLinkParameter="sv6#page92#dau8#ln212#par735" passing="true"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par740" name="Nueva Contrase&#241;a_PASSING" source="sv6#page92#enu31#fld87" passing="true"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par741" name="oid_PASSING" sourceLinkParameter="sv6#page92#dau8#ln212#par733" passing="true"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par742" name="userName_PASSING" sourceLinkParameter="sv6#page92#dau8#ln212#par734" passing="true"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par743" name="Usuario_PASSING" source="sv6#page92#enu31#fld83" passing="true"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par744" name="Correo_PASSING" source="sv6#page92#enu31#fld84" passing="true"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par745" name="Correo_email" source="sv6#page92#enu31#fld84" target="sv6#scu50.email"/>
+        <LinkParameter id="sv6#page92#enu31#ln214#par746" name="email_PASSING_emailAntiguo" sourceLinkParameter="sv6#page92#dau8#ln212#par735" target="sv6#scu50.emailAntiguo"/>
+      </Link>
+      <Field id="sv6#page92#enu31#fld85" name="Antigua Contrase&#241;a" type="password" modifiable="true" preloaded="false"/>
+      <Field id="sv6#page92#enu31#fld86" name="Confirmar Nueva Contrase&#241;a" type="password" modifiable="true"/>
+      <Field id="sv6#page92#enu31#fld87" name="Nueva Contrase&#241;a" type="password" modifiable="true" preloaded="false"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv6#page92#dau8" manualLinks="true" layout:unitVisibilityCondition="sv6#page92#cexpr19">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="email"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv6#page92#enu31" manualLinks="true" layout:frameLayout="WRDefault/Empty">
+          <layout:Field field="sv6#page92#enu31#fld83">
+            <layout:LayoutParameter name="input-size" value="40" type="field"/>
+          </layout:Field>
+          <layout:Field field="sv6#page92#enu31#fld84">
+            <layout:LayoutParameter name="input-size" value="40" type="field"/>
+            <layout:LayoutParameter name="information-text" value="info.cambio.email" type="field"/>
+          </layout:Field>
+          <layout:Field field="sv6#page92#enu31#fld85">
+            <layout:LayoutParameter name="input-size" value="40" type="field"/>
+            <layout:LayoutParameter name="information-text" value="info.antigua.contrasenia" type="field"/>
+          </layout:Field>
+          <layout:Field field="sv6#page92#enu31#fld87">
+            <layout:LayoutParameter name="input-size" value="40" type="field"/>
+          </layout:Field>
+          <layout:Field field="sv6#page92#enu31#fld86">
+            <layout:LayoutParameter name="input-size" value="40" type="field"/>
+            <layout:LayoutParameter name="information-text" value="info.confirmar.contrase&#241;a" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+        <layout:Link unitId="sv6#page92#enu31" link="sv6#page92#enu31#ln214" layout:linkDisableConditionNegated="true" styleClass="btnAceptar"/>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <layout:LayoutParameter name="link-style" value="button" type="link"/>
+  <ConditionExpression id="sv6#page92#cexpr19" name="mostrarDatosUsuario">
+    <TextValue xml:space="preserve">return false</TextValue>
+  </ConditionExpression>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Link unitId="sv6#page92#dau8" link="sv6#page92#dau8#ln211" styleClass="bthEliminar"/>
+  </layout:CustomLocation>
+</Page>

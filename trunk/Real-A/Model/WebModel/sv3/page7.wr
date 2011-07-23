@@ -1,0 +1,92 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page7" name="Queryes" landmark="true" gr:x="360" gr:y="983">
+  <ContentUnits>
+    <EntryUnit id="sv3#page7#enu2" name="Busqueda" linkOrder="sv3#page7#enu2#ln3" gr:x="0" gr:y="0">
+      <Field id="sv3#page7#enu2#fld3" name="imagen" ajaxEventEnabled="false" ajaxUploadEnabled="false" type="blob" modifiable="true" contentType="image"/>
+      <Link id="sv3#page7#enu2#ln3" name="Buscar" to="sv3#scu5" type="normal" validate="true" preserveForm="false" ajaxEnabled="true" ajaxOpenWindow="false" ajaxWindowWidth="325" ajaxWindowHeight="220" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv3#page7#enu2#ln3#par15" name="imagen_PASSING" source="sv3#page7#enu2#fld3" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit id="sv3#page7#pwu14" name="Query" linkOrder="sv3#page7#pwu14#ln5 sv3#page7#pwu14#ln10" gr:x="3" gr:y="143" sortable="true" checkable="false" entity="ent5" displayAttributes="ent5#att20 ent5#att22 ent5#att37 ent5#att21" blockFactor="1" blockWindow="1">
+      <SortAttribute attribute="ent5#att22" order="descending"/>
+      <Link id="sv3#page7#pwu14#ln5" name="Comparar Imagenes" to="sv3#scu9" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true" ajaxWindowModal="true">
+        <LinkParameter id="sv3#page7#pwu14#ln5#par8" name="imagen_nombreImagen1" source="data[].ent5#att21" target="sv3#scu9.nombreImagen1"/>
+        <LinkParameter id="sv3#page7#pwu14#ln5#par10" name="ruta_rutaImagen1" source="data[].ent5#att18" target="sv3#scu9.rutaImagen1"/>
+        <LinkParameter id="sv3#page7#pwu14#ln5#par16" name="imagenquery_nombreImagen2" source="data[].ent5#att37" target="sv3#scu9.nombreImagen2"/>
+        <LinkParameter id="sv3#page7#pwu14#ln5#par17" name="rutaquery_rutaImagen2" source="data[].ent5#att39" target="sv3#scu9.rutaImagen2"/>
+      </Link>
+      <Link id="sv3#page7#pwu14#ln10" name="verInformacion" to="sv3#scu29" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv3#page7#pwu14#ln10#par118" name="idobjeto_PASSING" source="data[].ent5#att3" passing="true"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page7#enu2" manualLinks="true" layout:frameLayout="WRDefault/Empty">
+          <layout:Field field="sv3#page7#enu2#fld3">
+            <layout:LayoutParameter name="input-size" value="60" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Link unitId="sv3#page7#enu2" link="sv3#page7#enu2#ln3" styleClass="btnBuscar"/>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page7#pwu14" layout:frameLayout="WRDefault/Empty">
+          <layout:LayoutParameter name="image-width" value="320" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="240" type="attribute"/>
+          <layout:LayoutParameter name="link-style" value="button" type="link"/>
+          <layout:LayoutParameter name="show-header" value="true" type="unit"/>
+          <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+          <layout:LayoutParameter name="button-position" value="bottom" type="unit"/>
+          <layout:LayoutParameter name="show-jump-links" value="false" type="unit"/>
+          <layout:LayoutParameter name="use-empty-unit-message" value="false" type="unit"/>
+          <layout:Attribute attribute="ent5#att20"/>
+          <layout:Attribute attribute="ent5#att22"/>
+          <layout:Attribute attribute="ent5#att37"/>
+          <layout:Attribute attribute="ent5#att21"/>
+          <layout:Link link="sv3#page7#pwu14#ln5">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+            <layout:LayoutParameter name="icon-extension" value="jpg" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="ico_actualizar_on" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page7#pwu14#ln10">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-folder" value="StyleRealA\images\" type="link"/>
+            <layout:LayoutParameter name="icon-extension" value="jpg" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="ico_informacion" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page7#pwu14ent5#att22"/>
+          <layout:Link link="sv3#page7#pwu14First">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="First" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page7#pwu14Previous">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Previous" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page7#pwu14Block"/>
+          <layout:Link link="sv3#page7#pwu14Next">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Next" type="link"/>
+          </layout:Link>
+          <layout:Link link="sv3#page7#pwu14Last">
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+            <layout:LayoutParameter name="show" value="icon" type="link"/>
+            <layout:LayoutParameter name="icon-name" value="Last" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

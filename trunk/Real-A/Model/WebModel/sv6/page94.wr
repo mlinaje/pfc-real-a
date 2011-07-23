@@ -1,0 +1,44 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page94" name="Pregunta" layout:pageLayout="WRDefault/Empty" gr:x="949" gr:y="300" layout:frameLayout="WRDefault/Empty">
+  <ContentUnits>
+    <NoOpContentUnit id="sv6#page94#gctu44" name="Botones" linkOrder="sv6#page94#gctu44#ln216 sv6#page94#gctu44#ln217" gr:x="16" gr:y="97">
+      <Link id="sv6#page94#gctu44#ln216" name="Cancelar" to="sv6#page92" type="normal" automaticCoupling="true" validate="true" preserveForm="false" ajaxEnabled="true" ajaxCloseWindow="true" gr:bendpoints="-283,-1,364,-136"/>
+      <Link id="sv6#page94#gctu44#ln217" name="Aceptar" to="sv6#pwu12" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxCloseWindow="true" ajaxWindowResizable="true" ajaxWindowModal="true" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv6#page94#gctu44#ln217#par747" name="Antigua Contrase&#241;a_PASSING" sourceLinkParameter="sv6#scu49#oln110#par681" passing="true"/>
+        <LinkParameter id="sv6#page94#gctu44#ln217#par748" name="Correo_PASSING" sourceLinkParameter="sv6#scu49#oln110#par682" passing="true"/>
+        <LinkParameter id="sv6#page94#gctu44#ln217#par749" name="email_PASSING" sourceLinkParameter="sv6#scu49#oln110#par683" passing="true"/>
+        <LinkParameter id="sv6#page94#gctu44#ln217#par750" name="oid_PASSING" sourceLinkParameter="sv6#scu49#oln110#par684" passing="true"/>
+        <LinkParameter id="sv6#page94#gctu44#ln217#par751" name="userName_PASSING" sourceLinkParameter="sv6#scu49#oln110#par685" passing="true"/>
+        <LinkParameter id="sv6#page94#gctu44#ln217#par752" name="Usuario_PASSING" sourceLinkParameter="sv6#scu49#oln110#par686" passing="true"/>
+      </Link>
+    </NoOpContentUnit>
+    <IndexUnit id="sv6#page94#inu17" name="Mensaje" gr:x="0" gr:y="0" entity="ent8" displayAttributes="ent8#att33">
+      <SortAttribute attribute="ent8#att32" order="ascending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv6#page94#inu17" layout:unitLayout="StyleRealAMobile/MensajesError">
+          <layout:Attribute attribute="ent8#att33"/>
+          <layout:LayoutParameter name="show-header" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-attribute-name" value="false" type="unit"/>
+          <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv6#page94#gctu44" link="sv6#page94#gctu44#ln217" styleClass="btnAceptar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv6#page94#gctu44" link="sv6#page94#gctu44#ln216" styleClass="btnCancelar"/>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+</Page>

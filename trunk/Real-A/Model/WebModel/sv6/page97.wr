@@ -1,0 +1,28 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page97" name="Error" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="115" gr:y="-1171">
+  <ContentUnits>
+    <ModuleInstanceUnit id="sv6#page97#miu41" name="Error" linkOrder="sv6#page97#miu41#ln221" gr:x="0" gr:y="0" moduleId="mov1#ctm1">
+      <Link id="sv6#page97#miu41#ln221" name="Aceptar" to="sv6#page100#alt3#page102" type="normal" automaticCoupling="true" validate="true" preserveForm="true"/>
+    </ModuleInstanceUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv6#page97#miu41">
+          <layout:Link link="sv6#page97#miu41#ln221"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

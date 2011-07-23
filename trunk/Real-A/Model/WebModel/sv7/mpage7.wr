@@ -1,0 +1,35 @@
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv7#mpage7" name="Usuario" gr:x="-290" gr:y="-278">
+  <ContentUnits>
+    <DataUnit id="sv7#mpage7#dau9" name="Usuario" linkOrder="sv7#mpage7#dau9#ln268" gr:x="4" gr:y="113" entity="User" displayAttributes="userName">
+      <Selector id="sv7#mpage7#dau9#su85" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv7#mpage7#dau9#su85#kcond68" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv7#mpage7#dau9#ln268" name="Logout" to="sv7#lou8" type="normal" validate="true"/>
+    </DataUnit>
+    <GetUnit id="sv7#mpage7#gtu15" name="Usuario" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv7#mpage7#gtu15#ln269" name="Link23" to="sv7#mpage7#dau9" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+    <ModuleInstanceUnit id="sv7#mpage7#miu48" name="CambiarIdioma" linkOrder="sv7#mpage7#miu48#ln270" gr:x="90" gr:y="112" moduleId="mov1#ctm2">
+      <Link id="sv7#mpage7#miu48#ln270" name="CambiaIdioma" to="sv7#scu68" type="normal" validate="true">
+        <LinkParameter id="sv7#mpage7#miu48#ln270#par935" name="languageOID_id" source="mov1#ctm2#ocu2#ocp1" target="sv7#scu68.id"/>
+      </Link>
+    </ModuleInstanceUnit>
+  </ContentUnits>
+  <layout:CustomLocation name="zona-usuario" layout:frameLayout="WRDefault/Empty">
+    <layout:Attribute unitId="sv7#mpage7#dau9" attribute="userName" mode="value"/>
+  </layout:CustomLocation>
+  <layout:CustomLocation name="zona-logout">
+    <layout:Link unitId="sv7#mpage7#dau9" link="sv7#mpage7#dau9#ln268" styleClass="desconecta">
+      <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+      <layout:LayoutParameter name="show" value="icon" type="link"/>
+      <layout:LayoutParameter name="icon-folder" value="StyleRealAMobile/images/" type="link"/>
+      <layout:LayoutParameter name="icon-extension" value="gif" type="link"/>
+      <layout:LayoutParameter name="icon-name" value="btnSalirI" type="link"/>
+    </layout:Link>
+  </layout:CustomLocation>
+  <layout:CustomLocation name="zona-idiomas">
+    <layout:Unit unitId="sv7#mpage7#miu48">
+      <layout:Link link="sv7#mpage7#miu48#ln270"/>
+    </layout:Unit>
+  </layout:CustomLocation>
+</MasterPage>

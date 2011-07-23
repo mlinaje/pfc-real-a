@@ -1,0 +1,114 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4" name="PublicoMobile" homePage="sv4#page66" landmarks="sv4#page66" secure="false" localized="true" layout:pageLayout="StyleRealAMobile/Inicial" layout:style="StyleRealAMobile">
+  <OperationUnits>
+    <CreateUnit id="sv4#cru10" name="Crear Usuario" gr:x="-232" gr:y="367" bulk="false" entity="User">
+      <OKLink id="sv4#cru10#oln66" name="OKCrearUsuario" to="sv4#cnu3">
+        <LinkParameter id="sv4#cru10#oln66#par73" name="oid_KeyCondition3 [oid] [User] [Source]" source="userOIDArray" target="sv4#cnu3#su9#kcond5.userOID"/>
+        <LinkParameter id="sv4#cru10#oln66#par75" name="1_KeyCondition4 [oid] [Group] [Target]" target="sv4#cnu3#su16#kcond31.groupOID" sourceValue="1"/>
+      </OKLink>
+      <KOLink id="sv4#cru10#kln45" name="KOCrearUsuario" to="sv4#page65#miu26">
+        <LinkParameter id="sv4#cru10#kln45#par76" name="error.crear.usuario_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.crear.usuario"/>
+      </KOLink>
+    </CreateUnit>
+    <ConnectUnit id="sv4#cnu3" name="ConcetarUsuarioGrupo" gr:x="-257" gr:y="194" relationship="User2Group">
+      <SourceSelector id="sv4#cnu3#su9" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#cnu3#su9#kcond5" name="KeyCondition3" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv4#cnu3#su16" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#cnu3#su16#kcond31" name="KeyCondition4" predicate="in" implied="false"/>
+      </TargetSelector>
+      <KOLink id="sv4#cnu3#kln46" name="KOCrearUsuarioGrupo" to="sv4#page65#miu26">
+        <LinkParameter id="sv4#cnu3#kln46#par85" name="error.crear.usuario_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.crear.usuario"/>
+      </KOLink>
+      <OKLink id="sv4#cnu3#oln68" name="OKCrearUsuarioGrupo" to="sv4#page67#miu27" preserveForm="true">
+        <LinkParameter id="sv4#cnu3#oln68#par87" name="informacion.usuario.creado_Mensaje" target="mov1#ctm3#icu3#icp4" sourceValue="informacion.usuario.creado"/>
+      </OKLink>
+    </ConnectUnit>
+    <ScriptUnit id="sv4#scu32" name="ValidarCamposUsuario" gr:x="-94" gr:y="501" script="ValidarCamposUsuario.groovy">
+      <KOLink id="sv4#scu32#kln47" name="KOValidar" to="sv4#page65#miu26"/>
+      <OKLink id="sv4#scu32#oln71" name="OKValidar" to="sv4#mlu3">
+        <LinkParameter id="sv4#scu32#oln71#par88" name="contrasenia_clave" source="result(contrasenia)" target="sv4#mlu3.clave"/>
+        <LinkParameter id="sv4#scu32#oln71#par89" name="Bienvenido a Real-A_Subject" target="sv4#mlu3.subject" sourceValue="Bienvenido a Real-A"/>
+        <LinkParameter id="sv4#scu32#oln71#par90" name="email_To" source="result(email)" target="sv4#mlu3.to"/>
+        <LinkParameter id="sv4#scu32#oln71#par91" name="usuario_usuario" source="result(usuario)" target="sv4#mlu3.usuario"/>
+        <LinkParameter id="sv4#scu32#oln71#par92" name="contrasenia_PASSING" source="result(contrasenia)" passing="true"/>
+        <LinkParameter id="sv4#scu32#oln71#par93" name="email_PASSING" source="result(email)" passing="true"/>
+        <LinkParameter id="sv4#scu32#oln71#par105" name="usuario_PASSING" source="result(usuario)" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <PasswordUnit id="sv4#pwu6" name="GenerarPassword" gr:x="124" gr:y="500" passwordSize="8">
+      <OKLink id="sv4#pwu6#oln72" name="OKGenerarClave" to="sv4#scu32">
+        <LinkParameter id="sv4#pwu6#oln72#par116" name="Generated Password_confirmarContrasenia" source="password" target="sv4#scu32.confirmarContrasenia"/>
+        <LinkParameter id="sv4#pwu6#oln72#par117" name="Generated Password_contrasenia" source="password" target="sv4#scu32.contrasenia"/>
+        <LinkParameter id="sv4#pwu6#oln72#par119" name="Su direcci&#243;n de correo electr&#243;nico_PASSING_email" sourceLinkParameter="sv4#page63#enu15#ln138#par459" target="sv4#scu32.email"/>
+        <LinkParameter id="sv4#pwu6#oln72#par120" name="Elija su nombre de usuario_PASSING_usuario" sourceLinkParameter="sv4#page63#enu15#ln138#par458" target="sv4#scu32.usuario"/>
+      </OKLink>
+    </PasswordUnit>
+    <MailUnit id="sv4#mlu3" name="EnviarContrase&#241;a" gr:x="-242" gr:y="500" format="html" template="MailSubscripcion.mt" smtpServer="smtp2">
+      <OKLink id="sv4#mlu3#oln73" name="OKEnvioContrasenia" to="sv4#cru10">
+        <LinkParameter id="sv4#mlu3#oln73#par122" name="email_PASSING_email" sourceLinkParameter="sv4#scu32#oln71#par93" target="sv4#cru10.email"/>
+        <LinkParameter id="sv4#mlu3#oln73#par176" name="1_Group.oid(defaultGroup)" target="sv4#cru10.User2DefaultGroup.groupOID" sourceValue="1"/>
+        <LinkParameter id="sv4#mlu3#oln73#par186" name="contrasenia_PASSING_password" sourceLinkParameter="sv4#scu32#oln71#par92" target="sv4#cru10.password"/>
+        <LinkParameter id="sv4#mlu3#oln73#par187" name="usuario_PASSING_userName" sourceLinkParameter="sv4#scu32#oln71#par105" target="sv4#cru10.userName"/>
+      </OKLink>
+      <KOLink id="sv4#mlu3#kln48" name="KOEnvioContrasenia" to="sv4#page65#miu26">
+        <LinkParameter id="sv4#mlu3#kln48#par200" name="Failure Reasons_Mensaje" source="failureReasons" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+      <Property id="sv4#mlu3#prop9" name="mail.smtp.starttls.required" value="true"/>
+      <Property id="sv4#mlu3#prop10" name="mail.smtp.starttls.enable" value="true"/>
+      <Property id="sv4#mlu3#prop11" name="mail.smtp.auth" value="true"/>
+      <Property id="sv4#mlu3#prop12" name="mail.smtp.port" value="587"/>
+    </MailUnit>
+    <PasswordUnit id="sv4#pwu9" name="GenerarPassword" gr:x="290" gr:y="496" passwordSize="8">
+      <OKLink id="sv4#pwu9#oln74" name="OKGenerarClave" to="sv4#scu33">
+        <LinkParameter id="sv4#pwu9#oln74#par280" name="Generated Password_contrasenia" source="password" target="sv4#scu33.contrasenia"/>
+        <LinkParameter id="sv4#pwu9#oln74#par281" name="e-mail_PASSING_email" sourceLinkParameter="sv4#page64#enu18#ln148#par460" target="sv4#scu33.email"/>
+      </OKLink>
+    </PasswordUnit>
+    <ModifyUnit id="sv4#mfu8" name="modificarClaveUsuario" gr:x="649" gr:y="348" entity="User">
+      <Selector id="sv4#mfu8#su38" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#mfu8#su38#acond4" name="AttCondition1" predicate="eq" booleanOperator="or" implied="false" attributes="password"/>
+      </Selector>
+      <KOLink id="sv4#mfu8#kln49" name="KOModificarContrasenia" to="sv4#page61#miu24">
+        <LinkParameter id="sv4#mfu8#kln49#par284" name="error.modificar.usuario.contrase&#241;a_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.modificar.usuario.contrase&#241;a"/>
+      </KOLink>
+      <OKLink id="sv4#mfu8#oln75" name="OKModificarContrasenia" to="sv4#mlu5">
+        <LinkParameter id="sv4#mfu8#oln75#par300" name="contrasenia_PASSING_clave" sourceLinkParameter="sv4#scu33#oln77#par428" target="sv4#mlu5.clave"/>
+        <LinkParameter id="sv4#mfu8#oln75#par306" name="Nueva Contrase&#241;a_Subject" target="sv4#mlu5.subject" sourceValue="Password Real-A"/>
+        <LinkParameter id="sv4#mfu8#oln75#par351" name="email_PASSING_To" sourceLinkParameter="sv4#scu33#oln77#par441" target="sv4#mlu5.to"/>
+        <LinkParameter id="sv4#mfu8#oln75#par420" name="usuario_PASSING_usuario" sourceLinkParameter="sv4#scu33#oln77#par442" target="sv4#mlu5.usuario"/>
+      </OKLink>
+    </ModifyUnit>
+    <MailUnit id="sv4#mlu5" name="EnviarNuevaContrase&#241;a" gr:x="646" gr:y="211" format="html" smtpServer="smtp2" template="MailPassword.mt">
+      <OKLink id="sv4#mlu5#oln76" name="OKEnvioNueva" to="sv4#page68#miu28" preserveForm="true">
+        <LinkParameter id="sv4#mlu5#oln76#par423" name="informacion.contrasenia.enviada_Mensaje" target="mov1#ctm3#icu3#icp4" sourceValue="informacion.contrasenia.enviada"/>
+      </OKLink>
+      <KOLink id="sv4#mlu5#kln50" name="KOEnvioNueva" to="sv4#page61#miu24">
+        <LinkParameter id="sv4#mlu5#kln50#par424" name="Failure Reasons_Mensaje" source="failureReasons" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+      <Property id="sv4#mlu5#prop17" name="mail.smtp.starttls.required" value="true"/>
+      <Property id="sv4#mlu5#prop18" name="mail.smtp.starttls.enable" value="true"/>
+      <Property id="sv4#mlu5#prop19" name="mail.smtp.auth" value="true"/>
+      <Property id="sv4#mlu5#prop20" name="mail.smtp.port" value="587"/>
+    </MailUnit>
+    <ScriptUnit id="sv4#scu33" name="comprobarCorreo" gr:x="472" gr:y="495" script="ComprobarCorreo.groovy">
+      <KOLink id="sv4#scu33#kln51" name="KOCorreo" to="sv4#page61#miu24">
+        <LinkParameter id="sv4#scu33#kln51#par425" name="message_Mensaje" source="result(message)" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+      <OKLink id="sv4#scu33#oln77" name="OKCorreo" to="sv4#mfu8">
+        <LinkParameter id="sv4#scu33#oln77#par426" name="contrasenia_password" source="result(contrasenia)" target="sv4#mfu8.password"/>
+        <LinkParameter id="sv4#scu33#oln77#par427" name="email_AttCondition1" source="result(email)" target="sv4#mfu8#su38#acond4"/>
+        <LinkParameter id="sv4#scu33#oln77#par428" name="contrasenia_PASSING" source="result(contrasenia)" passing="true"/>
+        <LinkParameter id="sv4#scu33#oln77#par441" name="email_PASSING" source="result(email)" passing="true"/>
+        <LinkParameter id="sv4#scu33#oln77#par442" name="usuario_PASSING" source="result(usuario)" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <LoginUnit id="sv4#lgu1" name="Login" gr:x="138" gr:y="79">
+      <KOLink id="sv4#lgu1#kln52" name="KOLogin" to="sv4#page66#scu35">
+        <LinkParameter id="sv4#lgu1#kln52#par456" name="error.usuario.contrasenia.invalidos_mensaje" target="sv4#page66#scu35.mensaje" sourceValue="error.usuario.contrasenia.invalidos"/>
+      </KOLink>
+    </LoginUnit>
+    <ScriptUnit id="sv4#scu34" name="CambiarIdioma" gr:x="-78" gr:y="62" script="CambiarIdioma.groovy">
+      <OKLink id="sv4#scu34#oln78" name="OKLink48" to="sv4#mpage4" automaticCoupling="true" preserveForm="true" gr:bendpoints="0,-62,156,-51"/>
+    </ScriptUnit>
+  </OperationUnits>
+</SiteView>

@@ -1,0 +1,70 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1209" gr:y="810" id="sv3#page10" name="Mantenimiento de Idioma">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv3#page10#enu11" name="Idioma" fieldOrder="sv3#page10#enu11#fld11 sv3#page10#enu11#fld12 sv3#page10#enu11#fld13 sv3#page10#enu11#fld14" linkOrder="sv3#page10#enu11#ln26 sv3#page10#enu11#ln30 sv3#page10#enu11#ln42 sv3#page10#enu11#ln99">
+      <Field id="sv3#page10#enu11#fld10" name="oid" type="integer" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="sv3#page10#enu11#fld11" name="descripcion" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv3#page10#enu11#fld12" name="language" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv3#page10#enu11#fld13" name="country" type="string" modifiable="true" preloaded="true"/>
+      <Field id="sv3#page10#enu11#fld14" name="flag" type="blob" modifiable="true" preloaded="true" contentType="image"/>
+      <Link id="sv3#page10#enu11#ln26" name="Cancelar" to="sv3#page9" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv3#page10#enu11#ln30" name="Modificar" to="sv3#scu3" type="normal" validate="true" ajaxEnabled="true" ajaxCloseWindow="false" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">
+        <LinkParameter id="sv3#page10#enu11#ln30#par134" name="country_Country" source="sv3#page10#enu11#fld13" target="sv3#scu3.Country"/>
+        <LinkParameter id="sv3#page10#enu11#ln30#par146" name="descripcion_descripcion" source="sv3#page10#enu11#fld11" target="sv3#scu3.descripcion"/>
+        <LinkParameter id="sv3#page10#enu11#ln30#par147" name="flag_flag" source="sv3#page10#enu11#fld14" target="sv3#scu3.flag"/>
+        <LinkParameter id="sv3#page10#enu11#ln30#par148" name="oid_id" source="sv3#page10#enu11#fld10" target="sv3#scu3.id"/>
+        <LinkParameter id="sv3#page10#enu11#ln30#par149" name="language_Language" source="sv3#page10#enu11#fld12" target="sv3#scu3.Language"/>
+      </Link>
+      <Link id="sv3#page10#enu11#ln42" name="Crear" to="sv3#scu3" type="normal" validate="true" gr:bendpoints="50,94,-86,-63" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true" ajaxWindowModal="true">
+        <LinkParameter id="sv3#page10#enu11#ln42#par155" name="country_Country" source="sv3#page10#enu11#fld13" target="sv3#scu3.Country"/>
+        <LinkParameter id="sv3#page10#enu11#ln42#par156" name="descripcion_descripcion" source="sv3#page10#enu11#fld11" target="sv3#scu3.descripcion"/>
+        <LinkParameter id="sv3#page10#enu11#ln42#par167" name="flag_flag" source="sv3#page10#enu11#fld14" target="sv3#scu3.flag"/>
+        <LinkParameter id="sv3#page10#enu11#ln42#par175" name="language_Language" source="sv3#page10#enu11#fld12" target="sv3#scu3.Language"/>
+      </Link>
+      <Link id="sv3#page10#enu11#ln99" name="Borrar" to="sv3#scu10" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="false">
+        <LinkParameter id="sv3#page10#enu11#ln99#par191" name="pregunta.admin.borrar.usuario_mensaje" target="sv3#scu10.mensaje" sourceValue="pregunta.borrar.idioma"/>
+        <LinkParameter id="sv3#page10#enu11#ln99#par245" name="oid_PASSING" source="sv3#page10#enu11#fld10" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Unit unitId="sv3#page10#enu11" manualLinks="true">
+          <layout:Field field="sv3#page10#enu11#fld11"/>
+          <layout:Field field="sv3#page10#enu11#fld12"/>
+          <layout:Field field="sv3#page10#enu11#fld13"/>
+          <layout:Field field="sv3#page10#enu11#fld14" layout:fieldLayout="StyleRealA/CampoBandera">
+            <layout:LayoutParameter name="input-size" value="50" type="field"/>
+          </layout:Field>
+        </layout:Unit>
+      </layout:Cell>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell>
+        <layout:Grid>
+          <layout:Row>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page10#enu11" link="sv3#page10#enu11#ln42" layout:linkVisibilityCondition="sv3#page10#cexpr3" styleClass="btnAceptar"/>
+              <layout:Link unitId="sv3#page10#enu11" link="sv3#page10#enu11#ln30" styleClass="btnAceptar" layout:linkVisibilityCondition="sv3#page10#cexpr3" layout:linkVisibilityConditionNegated="true"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page10#enu11" link="sv3#page10#enu11#ln26" styleClass="btnCancelar"/>
+            </layout:Cell>
+            <layout:Cell>
+              <layout:Link unitId="sv3#page10#enu11" link="sv3#page10#enu11#ln99" styleClass="btnEliminar" layout:linkVisibilityCondition="sv3#page10#cexpr3" layout:linkVisibilityConditionNegated="true"/>
+            </layout:Cell>
+          </layout:Row>
+          <layout:Row>
+            <layout:Cell/>
+            <layout:Cell/>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+    </layout:Row>
+  </layout:Grid>
+  <ConditionExpression id="sv3#page10#cexpr3" name="estaCreando">
+    <TextValue xml:space="preserve">return (null == imagenId)</TextValue>
+  </ConditionExpression>
+  <Variable id="sv3#page10#var10" name="imagenId" unitId="sv3#page10#enu11" parameter="sv3#page10#enu11#fld10" type="integer"/>
+</Page>

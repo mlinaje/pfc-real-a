@@ -1,0 +1,334 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="AccesoAdministrador" protected="true" localized="true" landmarks="sv3#page59 sv3#page32 sv3#page9 sv3#page7" homePage="sv3#page144">
+  <OperationUnits>
+    <LogoutUnit gr:x="-280" gr:y="6" id="sv3#lou2" name="Logout" landmark="false" siteView="sv1"/>
+    <ScriptUnit id="sv3#scu6" name="ObtenerQueryImagenes" gr:x="514" gr:y="1171" script="ObtenerQueryImagenes.groovy">
+      <OKLink id="sv3#scu6#oln18" name="OKObtenerRuta" to="sv3#page7#pwu14" preserveForm="false"/>
+    </ScriptUnit>
+    <CreateUnit id="sv3#cru5" name="CrearComparacionTmp" gr:x="132" gr:y="1420" entity="ent7" deleteAllBefore="true">
+      <OKLink id="sv3#cru5#oln16" name="OKcreaComp" to="sv3#page18#pwu1" preserveForm="false">
+        <LinkParameter id="sv3#cru5#oln16#par163" name="oid_current oid" source="ent7#att27Array" target="sv3#page18#pwu1.current.ent7#att27"/>
+      </OKLink>
+    </CreateUnit>
+    <ScriptUnit id="sv3#scu9" name="ObtenerComparacionImagenes" gr:x="112" gr:y="1170" script="ObtenerComparacionImagenes.groovy">
+      <OKLink id="sv3#scu9#oln24" name="OKComparar" to="sv3#cru5" preserveForm="false">
+        <LinkParameter id="sv3#scu9#oln24#par19" name="nombreSalida_imagen" source="result(nombreSalida)" target="sv3#cru5.ent7#att31"/>
+        <LinkParameter id="sv3#scu9#oln24#par23" name="nombreSalida_imagen [file name]" source="result(nombreSalida)" target="sv3#cru5.ent7#att31_name"/>
+        <LinkParameter id="sv3#scu9#oln24#par24" name="rutaSalida_ruta" source="result(rutaSalida)" target="sv3#cru5.ent7#att29"/>
+      </OKLink>
+    </ScriptUnit>
+    <PasswordUnit gr:x="549" gr:y="1777" id="sv3#pwu21" name="GenerarPassword" passwordSize="8" linkOrder="sv3#pwu21#ln92">
+      <Link id="sv3#pwu21#ln92" name="pasaContrasenia" to="sv3#page45#enu10" type="transport" validate="true" gr:bendpoints="-41,150,-42,-229" preserveForm="true">
+        <LinkParameter id="sv3#pwu21#ln92#par328" name="Generated Password_password" source="password" target="sv3#page45#enu10#fld23_slot"/>
+        <LinkParameter id="sv3#pwu21#ln92#par164" name="email_PASSING_email" sourceLinkParameter="sv3#page45#enu10#ln90#par138" target="sv3#page45#enu10#fld24_slot"/>
+        <LinkParameter id="sv3#pwu21#ln92#par165" name="Group_PASSING_Group - Preselection" sourceLinkParameter="sv3#page45#enu10#ln90#par139" target="sv3#page45#enu10#sfld1_presel"/>
+        <LinkParameter id="sv3#pwu21#ln92#par166" name="oid_PASSING_oid" sourceLinkParameter="sv3#page45#enu10#ln90#par140" target="sv3#page45#enu10#fld26_slot"/>
+        <LinkParameter id="sv3#pwu21#ln92#par168" name="userName_PASSING_userName" sourceLinkParameter="sv3#page45#enu10#ln90#par141" target="sv3#page45#enu10#fld21_slot"/>
+      </Link>
+    </PasswordUnit>
+    <ScriptUnit gr:x="703" gr:y="2282" id="sv3#scu23" name="validarCamposUsuario" script="ValidarCamposManteUsuarios.groovy">
+      <OKLink id="sv3#scu23#oln51" name="OKValidaCampos" to="sv3#inn4">
+        <LinkParameter id="sv3#scu23#oln51#par335" name="grupo_PASSING" source="result(grupo)" passing="true"/>
+        <LinkParameter id="sv3#scu23#oln51#par344" name="id_Input" source="result(id)" target="sv3#inn4.isnotnull"/>
+        <LinkParameter id="sv3#scu23#oln51#par345" name="contrasenia_PASSING" source="result(contrasenia)" passing="true"/>
+        <LinkParameter id="sv3#scu23#oln51#par346" name="email_PASSING" source="result(email)" passing="true"/>
+        <LinkParameter id="sv3#scu23#oln51#par347" name="id_PASSING" source="result(id)" passing="true"/>
+        <LinkParameter id="sv3#scu23#oln51#par349" name="usuario_PASSING" source="result(usuario)" passing="true"/>
+      </OKLink>
+      <KOLink id="sv3#scu23#kln36" name="KOValidaCampos" to="sv3#page46#miu20"/>
+    </ScriptUnit>
+    <ModifyUnit gr:x="531" gr:y="2411" id="sv3#mfu6" name="modificarUsuario" entity="User">
+      <Selector id="sv3#mfu6#su28" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu6#su28#kcond23" name="KeyCondition23" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu6#oln52" name="OKModificarUsuario" to="sv3#rcnu1">
+        <LinkParameter id="sv3#mfu6#oln52#par334" name="oid_KeyCondition24 [oid] [User] [Source]" source="userOIDArray" target="sv3#rcnu1#su29#kcond24.userOID"/>
+        <LinkParameter id="sv3#mfu6#oln52#par357" name="grupo_PASSING_KeyCondition25 [oid] [Group] [Target]" sourceLinkParameter="sv3#inn4#oln54#par356" target="sv3#rcnu1#su30#kcond25.groupOID"/>
+      </OKLink>
+      <KOLink id="sv3#mfu6#kln35" name="KOModificarUsuario" to="sv3#page46#miu20">
+        <LinkParameter id="sv3#mfu6#kln35#par338" name="error.modificar.usuario_Mensaje" sourceValue="error.modificar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </ModifyUnit>
+    <ReconnectUnit gr:x="344" gr:y="2406" id="sv3#rcnu1" name="reconectarGrupo" relationship="User2DefaultGroup">
+      <SourceSelector id="sv3#rcnu1#su29" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#rcnu1#su29#kcond24" name="KeyCondition24" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#rcnu1#su30" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#rcnu1#su30#kcond25" name="KeyCondition25" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv3#rcnu1#oln53" name="OKreconectaGrupo" to="sv3#page47#gctu20"/>
+      <KOLink id="sv3#rcnu1#kln34" name="KOreconectaGrupo" to="sv3#page46#miu20">
+        <LinkParameter id="sv3#rcnu1#kln34#par337" name="error.modificar.usuario_Mensaje" sourceValue="error.modificar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </ReconnectUnit>
+    <IsNotNullUnit gr:x="732" gr:y="2424" id="sv3#inn4" name="idUsuario">
+      <OKLink id="sv3#inn4#oln54" name="OKidNoNulo" to="sv3#mfu6">
+        <LinkParameter id="sv3#inn4#oln54#par350" name="email_PASSING_email" sourceLinkParameter="sv3#scu23#oln51#par346" target="sv3#mfu6.email"/>
+        <LinkParameter id="sv3#inn4#oln54#par352" name="grupo_PASSING_Group.oid(defaultGroup)" sourceLinkParameter="sv3#scu23#oln51#par335" target="sv3#mfu6.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv3#inn4#oln54#par353" name="id_PASSING_KeyCondition23 [oid]" sourceLinkParameter="sv3#scu23#oln51#par347" target="sv3#mfu6#su28#kcond23.userOID"/>
+        <LinkParameter id="sv3#inn4#oln54#par354" name="contrasenia_PASSING_password" sourceLinkParameter="sv3#scu23#oln51#par345" target="sv3#mfu6.password"/>
+        <LinkParameter id="sv3#inn4#oln54#par355" name="usuario_PASSING_userName" sourceLinkParameter="sv3#scu23#oln51#par349" target="sv3#mfu6.userName"/>
+        <LinkParameter id="sv3#inn4#oln54#par356" name="grupo_PASSING" sourceLinkParameter="sv3#scu23#oln51#par335" passing="true"/>
+      </OKLink>
+      <KOLink id="sv3#inn4#kln37" name="KOidEsNulo" to="sv3#cru6">
+        <LinkParameter id="sv3#inn4#kln37#par358" name="email_PASSING_email" sourceLinkParameter="sv3#scu23#oln51#par346" target="sv3#cru6.email"/>
+        <LinkParameter id="sv3#inn4#kln37#par359" name="grupo_PASSING_Group.oid(defaultGroup)" sourceLinkParameter="sv3#scu23#oln51#par335" target="sv3#cru6.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="sv3#inn4#kln37#par360" name="contrasenia_PASSING_password" sourceLinkParameter="sv3#scu23#oln51#par345" target="sv3#cru6.password"/>
+        <LinkParameter id="sv3#inn4#kln37#par361" name="usuario_PASSING_userName" sourceLinkParameter="sv3#scu23#oln51#par349" target="sv3#cru6.userName"/>
+        <LinkParameter id="sv3#inn4#kln37#par362" name="grupo_PASSING" sourceLinkParameter="sv3#scu23#oln51#par335" passing="true"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="867" gr:y="2278" id="sv3#cru6" name="crearusuario" entity="User">
+      <OKLink id="sv3#cru6#oln55" name="OKCreaUsuario" to="sv3#cnu2">
+        <LinkParameter id="sv3#cru6#oln55#par363" name="oid_KeyCondition26 [oid] [User] [Source]" source="userOIDArray" target="sv3#cnu2#su31#kcond26.userOID"/>
+        <LinkParameter id="sv3#cru6#oln55#par364" name="grupo_PASSING_KeyCondition27 [oid] [Group] [Target]" sourceLinkParameter="sv3#inn4#kln37#par362" target="sv3#cnu2#su32#kcond27.groupOID"/>
+      </OKLink>
+      <KOLink id="sv3#cru6#kln38" name="KOCreaUsuario" to="sv3#page48#miu21">
+        <LinkParameter id="sv3#cru6#kln38#par365" name="error.modificar.usuario_Mensaje" sourceValue="error.modificar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </CreateUnit>
+    <ConnectUnit gr:x="846" gr:y="2096" id="sv3#cnu2" name="conectarGrupo" relationship="User2DefaultGroup">
+      <SourceSelector id="sv3#cnu2#su31" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#cnu2#su31#kcond26" name="KeyCondition26" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#cnu2#su32" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#cnu2#su32#kcond27" name="KeyCondition27" predicate="in" implied="false"/>
+      </TargetSelector>
+      <KOLink id="sv3#cnu2#kln39" name="KOconectaGrupo" to="sv3#page48#miu21">
+        <LinkParameter id="sv3#cnu2#kln39#par366" name="error.modificar.usuario_Mensaje" sourceValue="error.modificar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+      <OKLink id="sv3#cnu2#oln56" name="OKconectaGrupo" to="sv3#page24#gctu25"/>
+    </ConnectUnit>
+    <DisconnectUnit gr:x="846" gr:y="1821" id="sv3#dcnu3" name="desconectarGrupo" relationship="User2DefaultGroup">
+      <SourceSelector id="sv3#dcnu3#su33" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dcnu3#su33#kcond28" name="KeyCondition28" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#dcnu3#su34" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dcnu3#su34#kcond29" name="KeyCondition29" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv3#dcnu3#oln59" name="OKDesconectarUsuario" to="sv3#page24#gctu25"/>
+      <KOLink id="sv3#dcnu3#kln41" name="KOBorrar" to="sv3#page48#miu21">
+        <LinkParameter id="sv3#dcnu3#kln41#par404" name="error.eliminar.usuario_Mensaje" sourceValue="error.eliminar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </DisconnectUnit>
+    <DeleteUnit gr:x="712" gr:y="1906" id="sv3#dlu6" name="borrarUsuario" entity="User">
+      <Selector id="sv3#dlu6#su35" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu6#su35#kcond30" name="KeyCondition30" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu6#oln58" name="OKBorrar" to="sv3#dcnu3">
+        <LinkParameter id="sv3#dlu6#oln58#par400" name="defaultGroup.oid_PASSING_KeyCondition29 [oid] [Group] [Target]" sourceLinkParameter="sv3#page51#gctu24#ln112#par399" target="sv3#dcnu3#su34#kcond29.groupOID"/>
+        <LinkParameter id="sv3#dlu6#oln58#par402" name="oid_PASSING_KeyCondition28 [oid] [User] [Source]" sourceLinkParameter="sv3#page51#gctu24#ln112#par401" target="sv3#dcnu3#su33#kcond28.userOID"/>
+      </OKLink>
+      <KOLink id="sv3#dlu6#kln40" name="KOBorra" to="sv3#page48#miu21">
+        <LinkParameter id="sv3#dlu6#kln40#par403" name="error.eliminar.usuario_Mensaje" sourceValue="error.eliminar.usuario" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </DeleteUnit>
+    <ScriptUnit id="sv3#scu24" name="controlMensaje" gr:x="680" gr:y="1703" script="ControlMensajes.groovy">
+      <OKLink id="sv3#scu24#oln57" name="OKPasaMensaje" to="sv3#page51#gctu24">
+        <LinkParameter id="sv3#scu24#oln57#par396" name="defaultGroup.oid_PASSING" sourceLinkParameter="sv3#page45#enu10#ln110#par391" passing="true"/>
+        <LinkParameter id="sv3#scu24#oln57#par397" name="oid_PASSING" sourceLinkParameter="sv3#page45#enu10#ln110#par395" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <DeleteUnit id="sv3#dlu7" name="BorrarImagen" gr:x="329" gr:y="740" entity="ent2">
+      <Selector id="sv3#dlu7#su21" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu7#su21#kcond17" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="sv3#dlu7#kln8" name="KOBorrar" to="sv3#page43#miu15">
+        <LinkParameter id="sv3#dlu7#kln8#par192" name="error.borrar.imagen_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.eliminar.imagen"/>
+      </KOLink>
+      <OKLink id="sv3#dlu7#oln23" name="OkBorrar" to="sv3#page35#gctu28"/>
+    </DeleteUnit>
+    <IsNotNullUnit id="sv3#inn3" name="IdObjetoEsNulo" gr:x="787" gr:y="201" emptyStringAsNull="true">
+      <KOLink id="sv3#inn3#kln13" name="ACrear" to="sv3#cru7">
+        <LinkParameter id="sv3#inn3#kln13#par198" name="Descripci&#243;n_PASSING_descripcion" sourceLinkParameter="sv3#page44#enu17#ln60#par274" target="sv3#cru7.ent4#att30"/>
+      </KOLink>
+      <OKLink id="sv3#inn3#oln25" name="AModificar" to="sv3#mfu5">
+        <LinkParameter id="sv3#inn3#oln25#par241" name="Input Value_KeyCondition14 [oid]" source="inputValue" target="sv3#mfu5#su24#kcond19.ent4#att24"/>
+        <LinkParameter id="sv3#inn3#oln25#par242" name="Descripci&#243;n_PASSING_descripcion" sourceLinkParameter="sv3#page44#enu17#ln60#par274" target="sv3#mfu5.ent4#att30"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <CreateUnit id="sv3#cru7" name="CrearObjeto" gr:x="796" gr:y="308" entity="ent4">
+      <OKLink id="sv3#cru7#oln27" name="OkCrear" to="sv3#page49#gctu30">
+        <LinkParameter id="sv3#cru7#oln27#par289" name="oid_PASSING" source="ent4#att24Array" passing="true"/>
+        <LinkParameter id="sv3#cru7#oln27#par290" name="descripcion_PASSING" source="ent4#att30Array" passing="true"/>
+      </OKLink>
+      <KOLink id="sv3#cru7#kln14" name="KOCrear" to="sv3#page53#miu16">
+        <LinkParameter id="sv3#cru7#kln14#par292" name="error.crear.objeto_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.crear.objeto"/>
+      </KOLink>
+    </CreateUnit>
+    <DeleteUnit id="sv3#dlu8" name="BorrarObjeto" gr:x="902" gr:y="99" entity="ent4">
+      <Selector id="sv3#dlu8#su23" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu8#su23#kcond18" name="KeyCondition15" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu8#oln30" name="OkBorrar" to="sv3#page26#gctu27"/>
+      <KOLink id="sv3#dlu8#kln15" name="KOBorrar" to="sv3#page58#miu17">
+        <LinkParameter id="sv3#dlu8#kln15#par304" name="error.eliminar.objeto_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.eliminar.objeto"/>
+      </KOLink>
+    </DeleteUnit>
+    <ModifyUnit id="sv3#mfu5" name="ModificarObjeto" gr:x="915" gr:y="296" entity="ent4">
+      <Selector id="sv3#mfu5#su24" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu5#su24#kcond19" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu5#oln34" name="OKModificar" to="sv3#page26#gctu27" customDescriptor="false"/>
+      <KOLink id="sv3#mfu5#kln16" name="KOModificar" to="sv3#page53#miu16">
+        <LinkParameter id="sv3#mfu5#kln16#par308" name="error.modificar.objeto_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.modificar.objeto"/>
+      </KOLink>
+    </ModifyUnit>
+    <ScriptUnit id="sv3#scu11" name="controlMensaje" gr:x="599" gr:y="640" script="ControlMensajes.groovy">
+      <OKLink id="sv3#scu11#oln43" name="OKPasaMensaje" to="sv3#page50#gctu31">
+        <LinkParameter id="sv3#scu11#oln43#par310" name="oid_PASSING" sourceLinkParameter="sv3#page44#pwu16#ln71#par286" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit id="sv3#scu20" name="controlMensaje" gr:x="652" gr:y="-48" script="ControlMensajes.groovy">
+      <OKLink id="sv3#scu20#oln45" name="OKPasaMensaje" to="sv3#page60#gctu34">
+        <LinkParameter id="sv3#scu20#oln45#par312" name="oid_PASSING" sourceLinkParameter="sv3#page44#enu17#ln69#par279" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <CreateUnit id="sv3#cru9" name="CrearImagen" gr:x="16" gr:y="574" entity="ent2">
+      <OKLink id="sv3#cru9#oln46" name="OkCrearImagen" to="sv3#page52#gctu32"/>
+      <KOLink id="sv3#cru9#kln17" name="KOCrearImagen" to="sv3#page43#miu15">
+        <LinkParameter id="sv3#cru9#kln17#par314" name="error.crear.imagen_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.crear.imagen"/>
+      </KOLink>
+    </CreateUnit>
+    <ScriptUnit id="sv3#scu22" name="ObtienePathCompleto" gr:x="137" gr:y="578" script="ObtenerPathCompleto.groovy">
+      <OKLink id="sv3#scu22#oln47" name="OKPath" to="sv3#cru9">
+        <LinkParameter id="sv3#scu22#oln47#par315" name="pathCompleto_ruta" source="result(pathCompleto)" target="sv3#cru9.ent2#att26"/>
+        <LinkParameter id="sv3#scu22#oln47#par316" name="imagen_PASSING_imagen" sourceLinkParameter="sv3#page44#enu16#ln58#par247" target="sv3#cru9.ent2#att28"/>
+        <LinkParameter id="sv3#scu22#oln47#par317" name="imagen_PASSING_imagen [file name]" sourceLinkParameter="sv3#page44#enu16#ln58#par247" target="sv3#cru9.ent2#att28_name"/>
+        <LinkParameter id="sv3#scu22#oln47#par318" name="oid_PASSING_Objeto.oid(PlantillaToObjeto)" sourceLinkParameter="sv3#page44#enu16#ln58#par270" target="sv3#cru9.rel6#role4.ent4#att24"/>
+      </OKLink>
+    </ScriptUnit>
+    <CreateUnit id="sv3#cru3" name="CrearImagenTmp" gr:x="696" gr:y="1167" entity="ent3" deleteAllBefore="true">
+      <OKLink id="sv3#cru3#oln6" name="OKCrearImagen" to="sv3#scu6" preserveForm="false">
+        <LinkParameter id="sv3#cru3#oln6#par4" name="imagen_imagenEntrada" source="ent3#att17Array" target="sv3#scu6.imagenEntrada"/>
+      </OKLink>
+    </CreateUnit>
+    <ScriptUnit id="sv3#scu5" name="ObtienePathCompleto" gr:x="511" gr:y="1019" script="ObtenerPathCompleto.groovy">
+      <OKLink id="sv3#scu5#oln11" name="OKPath" to="sv3#cru3" preserveForm="false">
+        <LinkParameter id="sv3#scu5#oln11#par9" name="imagen_PASSING_imagen" sourceLinkParameter="sv3#page7#enu2#ln3#par15" target="sv3#cru3.ent3#att17"/>
+        <LinkParameter id="sv3#scu5#oln11#par11" name="imagen_PASSING_imagen [file name]" sourceLinkParameter="sv3#page7#enu2#ln3#par15" target="sv3#cru3.ent3#att17_name"/>
+        <LinkParameter id="sv3#scu5#oln11#par13" name="pathCompleto_ruta" source="result(pathCompleto)" target="sv3#cru3.ent3#att16"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit gr:x="1276" gr:y="999" id="sv3#scu3" name="ValidarCamposIdioma" script="ValidarCamposIdioma.groovy">
+      <OKLink id="sv3#scu3#oln14" name="OKValidarIdioma" to="sv3#inn1">
+        <LinkParameter id="sv3#scu3#oln14#par34" name="id_Input" source="result(id)" target="sv3#inn1.isnotnull"/>
+        <LinkParameter id="sv3#scu3#oln14#par35" name="Country_PASSING" source="result(Country)" passing="true"/>
+        <LinkParameter id="sv3#scu3#oln14#par39" name="descripcion_PASSING" source="result(descripcion)" passing="true"/>
+        <LinkParameter id="sv3#scu3#oln14#par44" name="flag_PASSING" source="result(flag)" passing="true"/>
+        <LinkParameter id="sv3#scu3#oln14#par49" name="id_PASSING" source="result(id)" passing="true"/>
+        <LinkParameter id="sv3#scu3#oln14#par50" name="Language_PASSING" source="result(Language)" passing="true"/>
+      </OKLink>
+      <KOLink id="sv3#scu3#kln18" name="KOValidarIdioma" to="sv3#page14#miu9"/>
+    </ScriptUnit>
+    <IsNotNullUnit gr:x="1304" gr:y="1186" id="sv3#inn1" name="idIdioma">
+      <KOLink id="sv3#inn1#kln19" name="KOCrearIdioma" to="sv3#cru1">
+        <LinkParameter id="sv3#inn1#kln19#par99" name="Country_PASSING_country" sourceLinkParameter="sv3#scu3#oln14#par35" target="sv3#cru1.ent10#att46"/>
+        <LinkParameter id="sv3#inn1#kln19#par107" name="descripcion_PASSING_descripcion" sourceLinkParameter="sv3#scu3#oln14#par39" target="sv3#cru1.ent10#att44"/>
+        <LinkParameter id="sv3#inn1#kln19#par108" name="flag_PASSING_flag" sourceLinkParameter="sv3#scu3#oln14#par44" target="sv3#cru1.ent10#att47"/>
+        <LinkParameter id="sv3#inn1#kln19#par109" name="flag_PASSING_flag [file name]" sourceLinkParameter="sv3#scu3#oln14#par44" target="sv3#cru1.ent10#att47_name"/>
+        <LinkParameter id="sv3#inn1#kln19#par110" name="Language_PASSING_language" sourceLinkParameter="sv3#scu3#oln14#par50" target="sv3#cru1.ent10#att45"/>
+      </KOLink>
+      <OKLink id="sv3#inn1#oln17" name="OKModificarIdioma" to="sv3#mfu1">
+        <LinkParameter id="sv3#inn1#oln17#par112" name="Country_PASSING_country" sourceLinkParameter="sv3#scu3#oln14#par35" target="sv3#mfu1.ent10#att46"/>
+        <LinkParameter id="sv3#inn1#oln17#par113" name="descripcion_PASSING_descripcion" sourceLinkParameter="sv3#scu3#oln14#par39" target="sv3#mfu1.ent10#att44"/>
+        <LinkParameter id="sv3#inn1#oln17#par114" name="flag_PASSING_flag" sourceLinkParameter="sv3#scu3#oln14#par44" target="sv3#mfu1.ent10#att47"/>
+        <LinkParameter id="sv3#inn1#oln17#par126" name="flag_PASSING_flag [file name]" sourceLinkParameter="sv3#scu3#oln14#par44" target="sv3#mfu1.ent10#att47_name"/>
+        <LinkParameter id="sv3#inn1#oln17#par129" name="Language_PASSING_language" sourceLinkParameter="sv3#scu3#oln14#par50" target="sv3#mfu1.ent10#att45"/>
+        <LinkParameter id="sv3#inn1#oln17#par170" name="id_PASSING_KeyCondition2 [oid]" sourceLinkParameter="sv3#scu3#oln14#par49" target="sv3#mfu1#su12#kcond2.ent10#att25"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="1126" gr:y="1121" id="sv3#cru1" name="CrearIdioma" entity="ent10">
+      <KOLink id="sv3#cru1#kln21" name="KOCrear" to="sv3#page14#miu9">
+        <LinkParameter id="sv3#cru1#kln21#par111" name="error.crear.idioma_Mensaje" sourceValue="error.crear.idioma" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+      <OKLink id="sv3#cru1#oln19" name="OKCrear" to="sv3#page17#gctu4"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="906" gr:y="1171" id="sv3#mfu1" name="ModificarIdioma" entity="ent10">
+      <Selector id="sv3#mfu1#su12" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu1#su12#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="sv3#mfu1#kln26" name="KOCrear" to="sv3#page14#miu9">
+        <LinkParameter id="sv3#mfu1#kln26#par133" name="error.modificar.idioma_Mensaje" sourceValue="error.modificar.idioma" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+      <OKLink id="sv3#mfu1#oln20" name="OKModificar" to="sv3#page17#gctu4"/>
+    </ModifyUnit>
+    <ScriptUnit id="sv3#scu10" name="controlMensaje" gr:x="1209" gr:y="700" script="ControlMensajes.groovy">
+      <OKLink id="sv3#scu10#oln21" name="OKPasaMensaje" to="sv3#page19#gctu9">
+        <LinkParameter id="sv3#scu10#oln21#par275" name="oid_PASSING" sourceLinkParameter="sv3#page10#enu11#ln99#par245" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <DeleteUnit gr:x="1214" gr:y="575" id="sv3#dlu1" name="BorrarIdioma" entity="ent10">
+      <Selector id="sv3#dlu1#su15" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu1#su15#kcond14" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu1#oln22" name="OKBorrarImagen" to="sv3#page20#gctu10" automaticCoupling="true"/>
+      <KOLink id="sv3#dlu1#kln31" name="KOBorrarImagen" to="sv3#page22#miu13">
+        <LinkParameter id="sv3#dlu1#kln31#par294" name="error.borrar.imagen_Mensaje" sourceValue="error.borrar.idioma" target="mov1#ctm1#icu2#icp2"/>
+      </KOLink>
+    </DeleteUnit>
+    <ScriptUnit id="sv3#scu27" name="CambiarIdioma" gr:x="-190" gr:y="8" script="CambiarIdioma.groovy">
+      <OKLink id="sv3#scu27#oln49" name="OKCambiaIdioma" to="sv3#mpage2" automaticCoupling="true" preserveForm="true"/>
+    </ScriptUnit>
+    <ScriptUnit id="sv3#scu12" name="controlMensaje" gr:x="-7" gr:y="-10" script="ControlMensajes.groovy">
+      <OKLink id="sv3#scu12#oln60" name="OKPasaMensaje" to="sv3#page28#gctu14">
+        <LinkParameter id="sv3#scu12#oln60#par476" name="oid_PASSING" sourceLinkParameter="sv3#page25#enu12#ln131#par475" passing="true"/>
+      </OKLink>
+    </ScriptUnit>
+    <ScriptUnit id="sv3#scu25" name="ValidarCamposDescripcion" gr:x="-184" gr:y="231" script="ValidarCamposDescripciones.groovy">
+      <OKLink id="sv3#scu25#oln61" name="OKValidarDescri" to="sv3#inn5">
+        <LinkParameter id="sv3#scu25#oln61#par136" name="id_Input" source="result(id)" target="sv3#inn5.isnotnull"/>
+        <LinkParameter id="sv3#scu25#oln61#par154" name="descripcion_PASSING" source="result(descripcion)" passing="true"/>
+        <LinkParameter id="sv3#scu25#oln61#par179" name="id_PASSING" source="result(id)" passing="true"/>
+        <LinkParameter id="sv3#scu25#oln61#par447" name="idioma_PASSING" source="result(idioma)" passing="true"/>
+        <LinkParameter id="sv3#scu25#oln61#par448" name="informacion_PASSING" source="result(informacion)" passing="true"/>
+        <LinkParameter id="sv3#scu25#oln61#par480" name="objeto_PASSING" source="result(objeto)" passing="true"/>
+      </OKLink>
+      <KOLink id="sv3#scu25#kln32" name="KOValidarDescri" to="sv3#page31#miu18"/>
+    </ScriptUnit>
+    <IsNotNullUnit id="sv3#inn5" name="idDescripcion" gr:x="-148" gr:y="334">
+      <KOLink id="sv3#inn5#kln33" name="KOCrearDescri" to="sv3#cru4">
+        <LinkParameter id="sv3#inn5#kln33#par449" name="descripcion_PASSING_descripcion" sourceLinkParameter="sv3#scu25#oln61#par154" target="sv3#cru4.ent9#att42"/>
+        <LinkParameter id="sv3#inn5#kln33#par450" name="idioma_PASSING_Idioma.oid(DescripcionesToIdiomas)" sourceLinkParameter="sv3#scu25#oln61#par447" target="sv3#cru4.rel11#role13.ent10#att25"/>
+        <LinkParameter id="sv3#inn5#kln33#par451" name="informacion_PASSING_informacion" sourceLinkParameter="sv3#scu25#oln61#par448" target="sv3#cru4.ent9#att43"/>
+        <LinkParameter id="sv3#inn5#kln33#par481" name="objeto_PASSING_Objeto.oid(DescripcionesToObjeto)" sourceLinkParameter="sv3#scu25#oln61#par480" target="sv3#cru4.rel7#role6.ent4#att24"/>
+      </KOLink>
+      <OKLink id="sv3#inn5#oln62" name="OKModificarDescri" to="sv3#mfu7">
+        <LinkParameter id="sv3#inn5#oln62#par452" name="descripcion_PASSING_descripcion" sourceLinkParameter="sv3#scu25#oln61#par154" target="sv3#mfu7.ent9#att42"/>
+        <LinkParameter id="sv3#inn5#oln62#par453" name="idioma_PASSING_Idioma.oid(DescripcionesToIdiomas)" sourceLinkParameter="sv3#scu25#oln61#par447" target="sv3#mfu7.rel11#role13.ent10#att25"/>
+        <LinkParameter id="sv3#inn5#oln62#par454" name="informacion_PASSING_informacion" sourceLinkParameter="sv3#scu25#oln61#par448" target="sv3#mfu7.ent9#att43"/>
+        <LinkParameter id="sv3#inn5#oln62#par455" name="id_PASSING_KeyCondition2 [oid]" sourceLinkParameter="sv3#scu25#oln61#par179" target="sv3#mfu7#su20#kcond15.ent9#att38"/>
+        <LinkParameter id="sv3#inn5#oln62#par482" name="objeto_PASSING_Objeto.oid(DescripcionesToObjeto)" sourceLinkParameter="sv3#scu25#oln61#par480" target="sv3#mfu7.rel7#role6.ent4#att24"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <ModifyUnit id="sv3#mfu7" name="ModificarDescripcion" gr:x="-170" gr:y="445" entity="ent9">
+      <Selector id="sv3#mfu7#su20" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu7#su20#kcond15" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="sv3#mfu7#kln42" name="KOCrear" to="sv3#page31#miu18">
+        <LinkParameter id="sv3#mfu7#kln42#par407" name="error.modificar.idioma_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.modificar.descripcion"/>
+      </KOLink>
+      <OKLink id="sv3#mfu7#oln63" name="OKModificar" to="sv3#page27#gctu13"/>
+    </ModifyUnit>
+    <DeleteUnit id="sv3#dlu4" name="BorrarDescripcion" gr:x="173" gr:y="-307" entity="ent9">
+      <Selector id="sv3#dlu4#su36" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu4#su36#kcond20" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu4#oln64" name="OKBorrarDescri" to="sv3#page30#gctu15" automaticCoupling="true"/>
+      <KOLink id="sv3#dlu4#kln43" name="KOBorrarDescri" to="sv3#page23#miu14">
+        <LinkParameter id="sv3#dlu4#kln43#par408" name="error.borrar.imagen_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.borrar.descripcion"/>
+      </KOLink>
+    </DeleteUnit>
+    <CreateUnit id="sv3#cru4" name="CrearDescripcion" gr:x="-7" gr:y="327" entity="ent9">
+      <KOLink id="sv3#cru4#kln44" name="KOCrear" to="sv3#page31#miu18">
+        <LinkParameter id="sv3#cru4#kln44#par409" name="error.crear.idioma_Mensaje" target="mov1#ctm1#icu2#icp2" sourceValue="error.crear.descripcion"/>
+      </KOLink>
+      <OKLink id="sv3#cru4#oln65" name="OKCrear" to="sv3#page27#gctu13"/>
+    </CreateUnit>
+    <ScriptUnit gr:x="94" gr:y="1070" id="sv3#scu29" name="ObtenerIdiomaActual" script="ObtenerIdiomaActual.groovy">
+      <OKLink id="sv3#scu29#oln67" name="OKObtenerIdioma" to="sv3#page62#dau4">
+        <LinkParameter id="sv3#scu29#oln67#par135" name="idIdioma_condicionIdioma [oid]" source="result(idIdioma)" target="sv3#page62#dau4#su40#rcond10.ent10#att25"/>
+        <LinkParameter id="sv3#scu29#oln67#par137" name="idobjeto_PASSING_condicionObjeto [oid]" sourceLinkParameter="sv3#page7#pwu14#ln10#par118" target="sv3#page62#dau4#su40#rcond11.ent4#att24"/>
+      </OKLink>
+    </ScriptUnit>
+  </OperationUnits>
+</SiteView>
