@@ -1,0 +1,94 @@
+#?delimiters [%, %], [%=, %]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>  
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %> 
+<%@ taglib prefix="webratio" uri="http://www.webratio.com/2006/TagLib/JSP20" %>  
+<%@ taglib prefix="FCK" uri="http://fckeditor.net/tags-fckeditor" %>
+<%@ page contentType="text/html; charset=UTF-8"%> 
+<webratio:Page page="<wr:PageId/>"/>
+<html>
+<head>
+  <title><wr:PageTitle/></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <wr:LinkedResources/>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="MDIBody">
+	<wr:PageForm>
+	<div class="AreaTotal">
+		<div id="lyAreaTrabajo" class="AreaFondo">
+			[% def homePage = getById(page.selectSingleNode("ancestor::SiteView").valueOf("@homePage")) %]  
+			<div class="cabecera">
+				<img src="StyleRealAMobile/images/cabecera.jpg" />
+			</div>
+		
+			<div id="lyBarraMenu" class="BarraMenu" >
+				<div id="mnArchivo" class="OpcionMenu">
+					<ul>
+						<wr:LandmarkMenu level="1">
+							<wr:Current>
+								<li class="selected"><wr:Label/></li>
+							</wr:Current>
+							<wr:NonCurrent>
+	  							<li><a href="<wr:URL/>"><wr:Label/></a></li>
+		 					</wr:NonCurrent>
+						</wr:LandmarkMenu>
+					</ul>
+				</div>
+			</div>
+
+			<div id="lyToolBar" class="BarraHerramientas">
+				<wr:CustomLocation name="zona-botones-generales"/>						
+			</div>
+			
+			<div id="lyToolBarShadow" class="BarraHerramientasSombra"></div>
+	
+	    	<div id="box">				
+				<div id="content">	
+					<wr:Grid/>
+				</div>
+			</div>
+
+			<div class="datosIdioma">
+				<wr:CustomLocation name="zona-idiomas"/>	
+			</div>
+
+		</div>
+		<div id="lyPiePagina" class="Layout_PiePagina">
+			<table border=0 width="100%"  >
+				<tr>
+					<td id="textPie"  class="textoPie">	
+						<SPAN class="negrita"><bean:message key="nombre.aplicacion"/></SPAN>   <bean:message key="texto.pie.pagina"/>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+			
+	</wr:PageForm>    
+
+<script type="text/javascript">
+  window.onLoad = redimensionaDif();
+ 
+  window.onresize = function() {
+    redimensionaDif();
+  }
+  
+  function redimensionaDif(){
+    var altoPantalla = ( window.innerHeight )? window.innerHeight : document.documentElement.clientHeight; 
+  
+    altoPantalla = altoPantalla - 145; 
+  
+    if(altoPantalla<100){ 
+      altoPantalla = 100;
+    }    
+    document.getElementById("content").style.height = altoPantalla+"px";  
+  } 
+</script>
+
+</body>
+
+</html>
