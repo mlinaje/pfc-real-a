@@ -1,0 +1,1 @@
+link /DLL obtenersurf.obj "\PFC\postgreSQL\8.4\lib\postgres.lib" "C:\PFC\OpenCV2.1\lib\cv210.lib" "C:\PFC\OpenCV2.1\lib\cvaux210.lib" "C:\PFC\OpenCV2.1\lib\cxcore210.lib" "C:\PFC\OpenCV2.1\lib\highgui210.lib" "C:\PFC\OpenCV2.1\lib\cv210d.lib" "C:\PFC\OpenCV2.1\lib\cvaux210d.lib" "C:\PFC\OpenCV2.1\lib\cxcore210d.lib" "C:\PFC\OpenCV2.1\lib\highgui210d.lib"
