@@ -15,14 +15,26 @@ import net.sourceforge.wurfl.core.WURFLManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class RedireccionAdmin extends HttpServlet {
+public class Redireccion extends HttpServlet {
 
  	private static final long serialVersionUID = 1L;
  	
- 	/** Constantes jsp's a redireccionar **/
- 	private final String jspNormal = "indexNormalAdmin.jsp";
- 	private final String jspMobile = "indexMobileAdmin.jsp";
+ 	/** Constantes jsp's a redireccionar Publico**/
+ 	private final String jspPublicaNormal = "indexNormalPublica.jsp";
+ 	private final String jspPublicaMobile = "indexMobilePublica.jsp";
+
+ 	/** Constantes jsp's a redireccionar Usuario**/
+ 	private final String jspUsuarioNormal = "indexNormalUsuario.jsp";
+ 	private final String jspUsuarioMobile = "indexMobileUsuario.jsp";
+
+ 	/** Constantes jsp's a redireccionar Admin**/
+ 	private final String jspAdminNormal = "indexNormalAdmin.jsp";
+ 	private final String jspAdminMobile = "indexMobileAdmin.jsp";
  	
+ 	/** Constantes tipo de entrada **/
+ 	private final String USUARIO = "USUARIO";
+ 	private final String ADMIN = "ADMIN";
+
  	/** Logger */
     private final Log log = LogFactory.getLog(getClass());
 
@@ -39,12 +51,26 @@ public class RedireccionAdmin extends HttpServlet {
 	        String isWirelessDevice = device.getCapability("is_wireless_device");
 	        String deviceClaimsWebSupport = device.getCapability("device_claims_web_support");
 	        
+	        String entrada = getServletConfig().getInitParameter("entrada");
+
 	        if (log.isInfoEnabled()) log.info("******************************************************************");
-	        if (log.isInfoEnabled()) log.info("* RedireccionAdmin.processRequest*********************************");
+	        if (log.isInfoEnabled()) log.info("* Redireccion.processRequest*******************************");
+	        if (log.isInfoEnabled()) log.info("Entrada:" + entrada);
 	        if (log.isInfoEnabled()) log.info("Device: " + device.getId());
 	        if (log.isInfoEnabled()) log.info("isWirelessDevice: " + isWirelessDevice);
 	        if (log.isInfoEnabled()) log.info("deviceClaimsWebSupport: " + deviceClaimsWebSupport);
 	        if (log.isInfoEnabled()) log.info("userAgent: " + userAgent);
+	        	        
+	        String jspNormal = jspPublicaNormal;
+	        String jspMobile = jspPublicaMobile;
+	        if(entrada.equals(USUARIO)){
+		        jspNormal = jspUsuarioNormal;
+		        jspMobile = jspUsuarioMobile;
+	        	
+	        } else if (entrada.equals(ADMIN)){
+		        jspNormal = jspAdminNormal;
+		        jspMobile = jspAdminMobile;
+	        }
 	        
 	        if(isWirelessDevice.equalsIgnoreCase("false") && deviceClaimsWebSupport.equalsIgnoreCase("true")) {
 	        	request.getRequestDispatcher(jspNormal).forward(request,response);
@@ -54,7 +80,7 @@ public class RedireccionAdmin extends HttpServlet {
 		        if (log.isInfoEnabled()) log.info("redireccion: " + jspMobile);
 	        }	        
 	        
-	        if (log.isInfoEnabled()) log.info("* FIN RedireccionAdmin.processRequest*****************************");
+	        if (log.isInfoEnabled()) log.info("* FIN Redireccion.processRequest***************************");
 	        if (log.isInfoEnabled()) log.info("******************************************************************");
 
         } catch (CapabilityNotDefinedException e) {
