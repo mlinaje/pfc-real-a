@@ -67,7 +67,7 @@
     <Attribute id="ent2#att26" name="ruta" type="string" db:column="ruta"/>
     <Attribute id="ent2#att28" name="imagen" type="blob" contentType="image" db:column="imagen"/>
   </Entity>
-  <Entity id="ent6" name="Puntoscaracteristicos" gr:x="638" gr:y="177" db:table="puntoscaracteristicos" db:database="db1">
+  <Entity id="ent6" name="Puntoscaracteristicos" gr:x="417" gr:y="418" db:table="puntoscaracteristicos" db:database="db1">
     <Attribute id="ent6#att6" name="oid" type="integer" key="true" db:idGenerator="identity" db:column="oid"/>
     <Attribute id="ent6#att9" name="x" type="float" key="false" db:column="x"/>
     <Attribute id="ent6#att10" name="y" type="float" key="false" db:column="y"/>
@@ -97,12 +97,12 @@
       <db:JoinColumn attribute="ent2#att5" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity id="ent3" name="Tmpimagen" attributeOrder="ent3#att7 ent3#att16 ent3#att17" gr:x="700" gr:y="11" duration="volatile" db:table="plantilla" db:database="db1">
+  <Entity id="ent3" name="Tmpimagen" attributeOrder="ent3#att7 ent3#att16 ent3#att17" gr:x="16" gr:y="754" duration="volatile" db:table="plantilla" db:database="db1">
     <Attribute id="ent3#att7" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent3#att16" name="ruta" type="string" db:column="ruta"/>
     <Attribute id="ent3#att17" name="imagen" type="blob" contentType="image" uploadPath="ImagenTemporal" deletePolicy="delete" db:column="imagen"/>
   </Entity>
-  <Entity gr:x="824" gr:y="234" id="ent5" name="TmpBusqueda" duration="volatile" attributeOrder="ent5#att23 ent5#att20 ent5#att18 ent5#att21 ent5#att22 ent5#att37 ent5#att39">
+  <Entity gr:x="458" gr:y="755" id="ent5" name="TmpBusqueda" duration="volatile" attributeOrder="ent5#att23 ent5#att20 ent5#att18 ent5#att21 ent5#att22 ent5#att37 ent5#att39">
     <Attribute id="ent5#att20" name="descripcion" type="string" db:column="descripcion"/>
     <Attribute id="ent5#att21" name="imagen" type="blob" contentType="image" deletePolicy="none" db:column="imagen"/>
     <Attribute id="ent5#att22" name="coincidencias" type="integer"/>
@@ -112,12 +112,12 @@
     <Attribute id="ent5#att39" name="rutaquery" type="string" db:column="ruta"/>
     <Attribute id="ent5#att3" name="idobjeto" key="false" type="integer" db:column="oid"/>
   </Entity>
-  <Entity id="ent7" name="TmpComparacion" duration="volatile" attributeOrder="ent7#att27 ent7#att29 ent7#att31" gr:x="824" gr:y="9" db:table="plantilla" db:database="db1">
+  <Entity id="ent7" name="TmpComparacion" duration="volatile" attributeOrder="ent7#att27 ent7#att29 ent7#att31" gr:x="136" gr:y="754" db:table="plantilla" db:database="db1">
     <Attribute id="ent7#att27" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent7#att29" name="ruta" type="string" db:column="ruta"/>
     <Attribute id="ent7#att31" name="imagen" type="blob" contentType="image" uploadPath="ImagenTemporal" deletePolicy="delete" db:column="imagen"/>
   </Entity>
-  <Entity gr:x="824" gr:y="120" id="ent8" name="TmpControlMensaje" duration="volatile" attributeOrder="ent8#att32 ent8#att33 ent8#att34">
+  <Entity gr:x="278" gr:y="754" id="ent8" name="TmpControlMensaje" duration="volatile" attributeOrder="ent8#att32 ent8#att33 ent8#att34">
     <Attribute id="ent8#att32" key="true" name="oid" type="integer"/>
     <Attribute id="ent8#att33" name="mensaje" type="string"/>
     <Attribute id="ent8#att34" name="timeStamp" type="timestamp"/>
@@ -135,7 +135,7 @@
       <db:JoinColumn attribute="ent9#att38" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity id="ent10" name="Idioma" duration="persistent" attributeOrder="ent10#att25 ent10#att44 ent10#att45 ent10#att46 ent10#att47" gr:x="438" gr:y="378" db:database="db1" db:table="idioma">
+  <Entity id="ent10" name="Idioma" duration="persistent" attributeOrder="ent10#att25 ent10#att44 ent10#att45 ent10#att46 ent10#att47" gr:x="221" gr:y="561" db:database="db1" db:table="idioma">
     <Attribute id="ent10#att25" name="oid" key="true" type="integer" db:column="oid"/>
     <Attribute id="ent10#att44" name="descripcion" type="string" db:column="descripcion"/>
     <Attribute id="ent10#att45" name="language" type="string" db:column="language"/>

@@ -63,15 +63,29 @@
 
   <servlet>
   	<servlet-name>RedireccionPublivoServlet</servlet-name>
-  	<servlet-class>es.reala.redireccion.RedireccionPublico</servlet-class>
+  	<servlet-class>es.reala.redireccion.Redireccion</servlet-class>
+    <init-param>
+      <param-name>entrada</param-name>
+      <param-value>PUBLICO</param-value>
+    </init-param>
   </servlet>
+
   <servlet>
   	<servlet-name>RedireccionUsuarioServlet</servlet-name>
-  	<servlet-class>es.reala.redireccion.RedireccionUsuario</servlet-class>
+  	<servlet-class>es.reala.redireccion.Redireccion</servlet-class>
+    <init-param>
+      <param-name>entrada</param-name>
+      <param-value>USUARIO</param-value>
+    </init-param>
   </servlet>
+  
   <servlet>
   	<servlet-name>RedireccionAdminServlet</servlet-name>
-  	<servlet-class>es.reala.redireccion.RedireccionAdmin</servlet-class>
+  	<servlet-class>es.reala.redireccion.Redireccion</servlet-class>
+    <init-param>
+      <param-name>entrada</param-name>
+      <param-value>ADMIN</param-value>
+    </init-param>
   </servlet>  
 
   <servlet-mapping>
