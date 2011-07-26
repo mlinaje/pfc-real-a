@@ -409,7 +409,7 @@ c_obtener_imagen_coincidencias(PG_FUNCTION_ARGS)
 
 	CvMemStorage* storage = cvCreateMemStorage(0);
 
-    static CvScalar color = {0,255,0};
+    static CvScalar color = {255,255,255};
    	CvSize imgSize1;   // tamanio para escalar la imagen de entrada1
 	CvSize imgSize2;   // tamanio para escalar la imagen de entrada2
 	CvSize salidaSize; // tamanio de la imagen de salida
