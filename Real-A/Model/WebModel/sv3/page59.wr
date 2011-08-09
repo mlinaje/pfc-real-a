@@ -23,8 +23,6 @@
         <layout:Unit unitId="sv3#page59#hinu1">
           <layout:LayoutParameter name="show-first-attribute-name" value="top" type="unit"/>
           <layout:LayoutParameter name="show-branch-attribute-name" value="none" type="unit"/>
-          <layout:LayoutParameter name="image-width" value="50" type="attribute"/>
-          <layout:LayoutParameter name="image-height" value="50" type="attribute"/>
           <layout:Link link="sv3#page59#hinu1#ln82">
             <layout:LayoutParameter name="link-style" value="normal" type="link"/>
             <layout:LayoutParameter name="show" value="icon" type="link"/>
@@ -57,6 +55,8 @@
           <layout:LayoutParameter name="show" value="icon &amp; text" type="link"/>
           <layout:Attribute attribute="ent4#att30"/>
           <layout:Attribute attribute="ent2#att28"/>
+          <layout:LayoutParameter name="image-width" value="140" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="105" type="attribute"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>

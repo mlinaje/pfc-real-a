@@ -23,7 +23,7 @@ if(null != mensaje && mensaje != ""){
 	}
 	/*************************************************************************************/
 
-  if (log.isInfoEnabled()) log.info("mensaje:" + mensaje);
+  	if (log.isInfoEnabled()) log.info("mensaje:" + mensaje);
 
 	def tmpEntityId = "ent8";
 	VirtualEntityTable tmpTable = new VirtualEntityTable(tmpEntityId, sessionContext, service)

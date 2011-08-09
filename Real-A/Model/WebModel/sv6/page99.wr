@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page99" name="cerrarAjax" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" layout:frameLayout="WRDefault/Empty" layout:linkLayout="StyleRealAMobile/CerrarAjax" gr:x="249" gr:y="-174">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page99" name="cerrarAjax" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" layout:frameLayout="WRDefault/Empty" layout:linkLayout="StyleRealAMobile/CerrarAjax" gr:x="469" gr:y="-174">
   <ContentUnits>
     <NoOpContentUnit id="sv6#page99#gctu48" name="cerrarAjax" gr:x="0" gr:y="0" linkOrder="sv6#page99#gctu48#ln164">
       <Link id="sv6#page99#gctu48#ln164" name="Aceptar" to="sv6#area1#page39" type="normal" validate="true" preserveForm="true" ajaxEnabled="true" ajaxCloseWindow="true"/>

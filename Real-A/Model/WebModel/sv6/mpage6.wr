@@ -1,4 +1,4 @@
-<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#mpage6" name="Usuario" gr:x="951" gr:y="19">
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#mpage6" name="Usuario" gr:x="1171" gr:y="19">
   <ContentUnits>
     <DataUnit id="sv6#mpage6#dau7" name="Usuario" linkOrder="sv6#mpage6#dau7#ln204" gr:x="3" gr:y="144" entity="User" displayAttributes="userName">
       <Selector id="sv6#mpage6#dau7#su63" defaultPolicy="fill" booleanOperator="and">

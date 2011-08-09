@@ -31,7 +31,7 @@ Defines the name of the image to use. If omitted the name of the link is used.
 	}
 	
 %]
-<a title="[%= getAlternativeText() %]" id="[%= getLinkId(link) %]" class="[%=styleClass%]" href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>"[%if (link["newWindow"] == "true") { %][%if (newWindowType == "normal") { %]target="_blank" [% } else { %] onclick="window.open('<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>' ,'', '[%= newWindowOptions %]'); return false; [% } %][% } else { %]onclick="return confirm('<c:out value="${_wr_message}"/>')" [% } %]>
+<a title="[%= getAlternativeText() %]" id="[%= getLinkId(link) %]" class="[%=styleClass%]" href="<webratio:Link link="[%= getLinkId(link) %]" position="[%= position %]"/>">
 	<img title="[%= getAlternativeText() %]" alt="[%= getAlternativeText() %]" src="[%=folder%][%= getIconName() %][%=extension%]" border="0"/>
 </a>
  
