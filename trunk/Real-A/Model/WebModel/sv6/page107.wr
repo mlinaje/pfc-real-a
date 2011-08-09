@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page107" name="Error" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="630" gr:y="321">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page107" name="Error" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="850" gr:y="321">
   <ContentUnits>
     <ModuleInstanceUnit id="sv6#page107#miu44" name="Error" linkOrder="sv6#page107#miu44#ln249" gr:x="0" gr:y="0" moduleId="mov1#ctm1">
       <Link id="sv6#page107#miu44#ln249" name="Aceptar" to="sv6#page92" type="normal" automaticCoupling="true" validate="true" preserveForm="true"/>

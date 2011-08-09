@@ -152,8 +152,6 @@ where o.id = :objetoId  </QueryText>
           <layout:LayoutParameter name="show-bullet" value="false" type="unit"/>
           <layout:LayoutParameter name="use-alternate" value="true" type="unit"/>
           <layout:LayoutParameter name="button-position" value="bottom" type="unit"/>
-          <layout:LayoutParameter name="image-width" value="50" type="attribute"/>
-          <layout:LayoutParameter name="image-height" value="50" type="attribute"/>
           <layout:Link link="sv3#page44#pwu16#ln71">
             <layout:LayoutParameter name="link-style" value="normal" type="link"/>
             <layout:LayoutParameter name="show" value="icon" type="link"/>
@@ -182,6 +180,8 @@ where o.id = :objetoId  </QueryText>
             <layout:LayoutParameter name="show" value="icon" type="link"/>
             <layout:LayoutParameter name="icon-name" value="Last" type="link"/>
           </layout:Link>
+          <layout:LayoutParameter name="image-width" value="150" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="113" type="attribute"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>

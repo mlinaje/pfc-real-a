@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page94" name="Pregunta" layout:pageLayout="WRDefault/Empty" gr:x="949" gr:y="300" layout:frameLayout="WRDefault/Empty">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page94" name="Pregunta" layout:pageLayout="WRDefault/Empty" gr:x="1169" gr:y="300" layout:frameLayout="WRDefault/Empty">
   <ContentUnits>
     <NoOpContentUnit id="sv6#page94#gctu44" name="Botones" linkOrder="sv6#page94#gctu44#ln216 sv6#page94#gctu44#ln217" gr:x="16" gr:y="97">
       <Link id="sv6#page94#gctu44#ln216" name="Cancelar" to="sv6#page92" type="normal" automaticCoupling="true" validate="true" preserveForm="false" ajaxEnabled="true" ajaxCloseWindow="true" gr:bendpoints="-283,-1,364,-136"/>

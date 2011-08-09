@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page89" name="Pregunta" layout:pageLayout="WRDefault/Empty" gr:x="-71" gr:y="-187" layout:frameLayout="WRDefault/Empty">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page89" name="Pregunta" layout:pageLayout="WRDefault/Empty" gr:x="149" gr:y="-154" layout:frameLayout="WRDefault/Empty">
   <ContentUnits>
     <NoOpContentUnit id="sv6#page89#gctu43" name="Botones" linkOrder="sv6#page89#gctu43#ln207 sv6#page89#gctu43#ln162" gr:x="21" gr:y="0">
       <Link id="sv6#page89#gctu43#ln207" name="Aceptar" to="sv6#dlu13" type="normal" validate="true" ajaxEnabled="true" ajaxOpenWindow="true" ajaxCloseWindow="true" ajaxWindowAutoResizing="true" ajaxWindowModal="true" ajaxWindowShowEffect="Element.show" ajaxWindowHideEffect="Element.hide" ajaxOpenWaitingDialog="true">

@@ -59,8 +59,8 @@ extern int no_such_variable
 /* Define el tamaño de las imagenes*/
 //const int tamanio_mayor = 320; 
 //const int tamanio_menor = 240;
-const int tamanio_mayor = 160; 
-const int tamanio_menor = 120;
+const int tamanio_mayor = 280; 
+const int tamanio_menor = 210;
 
 /* Constante para activar/desactivar mensajes NOTICE */
 const bool mostrar_notices = false;
