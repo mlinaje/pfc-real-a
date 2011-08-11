@@ -69,7 +69,7 @@
     <Attribute id="ent2#att28" name="imagen" type="blob" contentType="image" db:column="imagen"/>
   </Entity>
   <Entity id="ent6" name="Puntoscaracteristicos" gr:x="418" gr:y="388" db:database="db1" db:table="puntoscaracteristicos">
-    <Attribute id="ent6#att6" name="oid" type="integer" key="true" db:column="oid"/>
+    <Attribute id="ent6#att6" name="oid" type="integer" key="true" db:column="oid" db:idGenerator="identity"/>
     <Attribute id="ent6#att9" name="x" type="float" key="false" db:column="x"/>
     <Attribute id="ent6#att10" name="y" type="float" key="false" db:column="y"/>
     <Attribute id="ent6#att11" name="escala" type="integer" key="false" db:column="escala"/>

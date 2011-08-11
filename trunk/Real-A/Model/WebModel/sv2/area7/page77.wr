@@ -23,8 +23,6 @@
     <layout:Row>
       <layout:Cell>
         <layout:Unit unitId="sv2#area7#page77#pwu25">
-          <layout:LayoutParameter name="image-width" value="50" type="attribute"/>
-          <layout:LayoutParameter name="image-height" value="50" type="attribute"/>
           <layout:Link link="sv2#area7#page77#pwu25#ln371">
             <layout:LayoutParameter name="link-style" value="normal" type="link"/>
             <layout:LayoutParameter name="show" value="icon" type="link"/>
@@ -41,6 +39,8 @@
           </layout:Link>
           <layout:Attribute attribute="ent1#att2"/>
           <layout:Attribute attribute="ent1#att8"/>
+          <layout:LayoutParameter name="image-width" value="150" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="113" type="attribute"/>
         </layout:Unit>
       </layout:Cell>
     </layout:Row>
