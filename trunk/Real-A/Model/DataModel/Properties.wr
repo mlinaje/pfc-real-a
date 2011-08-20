@@ -46,8 +46,7 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="Real-A" type="PostgreSQL 8" url="jdbc:postgresql://localhost:5432/Real-A" username="postgres" cryptedPassword="true" password="ZmFycmFwYQ==" schema="public">
-  </db:Database>
+  <db:Database id="db1" name="Real-A" type="PostgreSQL 8" url="jdbc:postgresql://localhost:5432/Real-A" username="postgres" cryptedPassword="true" password="ZmFycmFwYQ==" schema="public"/>
   <Entity gr:x="32" gr:y="213" id="ent1" name="Imagen" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att4 ent1#att8 ent1#att35" db:database="db1" db:table="imagen">
     <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent1#att2" name="imagen" type="blob" contentType="image" deletePolicy="delete" storageType="file" uploadPolicy="managed" db:column="imagen"/>
