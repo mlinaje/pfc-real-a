@@ -210,6 +210,7 @@
   <Entry key="Obtener Imagen">Take a image</Entry>
   <Entry key="obtener.foto">Take a photo</Entry>
   <Entry key="obtener.sonido">Comment Record</Entry>
+  <Entry key="ObtenerIdiomaActual">Take a Language</Entry>
   <Entry key="ObtenerSonido">Comment Record</Entry>
   <Entry key="oid">Id</Entry>
   <Entry key="orientacion">Orientation</Entry>
