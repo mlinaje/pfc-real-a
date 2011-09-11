@@ -1,0 +1,2 @@
+#?delimiters [%, %], [%=, %]
+<input title="<bean:message key="descarga.api.bridge"/>" onclick="location.href='APIBridge_v1_1.sis'" class="bthAltaPersona"  id="descargaApiBridge" name="descargaApiBridge" type="button" value="<bean:message key="descarga.api.bridge"/>">

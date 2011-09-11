@@ -1,5 +1,7 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page100" name="Real-A" landmark="true" layout:linkDisableConditionNegated="true" ajaxEnabled="false" gr:x="499" gr:y="-1576">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv6#page100" name="Real-A" landmark="true" layout:linkDisableConditionNegated="true" ajaxEnabled="false" gr:x="499" gr:y="-1658">
+  <ContentUnits>
+    <NoOpContentUnit gr:x="7" gr:y="0" id="sv6#page100#gctu2u" name="descargarApiBridge"/>
+  </ContentUnits>
   <layout:Grid>
     <layout:Row>
       <layout:Cell>
@@ -109,7 +111,7 @@
     </layout:Row>
   </layout:Grid>
   <layout:LayoutParameter name="link-style" value="button" type="link"/>
-  <Alternative id="sv6#page100#alt3" name="Real-A" defaultPage="sv6#page100#alt3#page101" gr:x="0" gr:y="0">
+  <Alternative id="sv6#page100#alt3" name="Real-A" defaultPage="sv6#page100#alt3#page101" gr:x="0" gr:y="82">
     <Page id="sv6#page100#alt3#page101" name="Real-A" gr:x="0" gr:y="0">
       <ContentUnits>
         <EntryUnit id="sv6#page100#alt3#page101#enu35" name="Obtener Foto" linkOrder="sv6#page100#alt3#page101#enu35#ln234" gr:x="0" gr:y="114">
@@ -121,7 +123,7 @@
           </Link>
           <Field id="sv6#page100#alt3#page101#enu35#fld57" name="usuario" type="integer" modifiable="false" preloaded="true" hidden="true"/>
         </EntryUnit>
-        <GetUnit id="sv6#page100#alt3#page101#gtu8" name="Usuario" gr:x="7" gr:y="0" contextParameters="UserCtxParam">
+        <GetUnit id="sv6#page100#alt3#page101#gtu8" name="Usuario" gr:x="8" gr:y="0" contextParameters="UserCtxParam">
           <Link id="sv6#page100#alt3#page101#gtu8#ln159" name="Link156" to="sv6#page100#alt3#page101#enu35" type="transport" validate="true">
             <LinkParameter id="sv6#page100#alt3#page101#gtu8#ln159#par470" name="UserCtxParam.oid_usuario" source="sv6#page100#alt3#page101#gtu8.UserCtxParam" target="sv6#page100#alt3#page101#enu35#fld57_slot"/>
           </Link>
@@ -216,4 +218,7 @@
   <ConditionExpression id="sv6#page100#cexpr21" name="hayFicheroSonido">
     <TextValue xml:space="preserve">return(null != ficheroSonido)</TextValue>
   </ConditionExpression>
+  <layout:CustomLocation name="zona-botones-generales">
+    <layout:Unit unitId="sv6#page100#gctu2u" layout:unitLayout="StyleRealAMobile/DescargarApiBridge" layout:frameLayout="WRDefault/Empty"/>
+  </layout:CustomLocation>
 </Page>
