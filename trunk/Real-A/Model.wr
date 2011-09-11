@@ -77,4 +77,5 @@
   <BundleKey name="error.crear.descripcion"/>
   <BundleKey name="pregunta.borrar.descripcion"/>
   <BundleKey name="error.borrar.descripcion"/>
+  <BundleKey name="descarga.api.bridge"/>
 </WebProject>
