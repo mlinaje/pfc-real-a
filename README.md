@@ -1,3 +1,6 @@
+https://youtu.be/VdbTeURFqMo
+https://youtu.be/zKzmfiXbGfo
+
 Proyecto Fin de Carrera: Real-A: una aproximación RIA a la realidad aumentada en móviles usando MDD
 
 Real-A: an RIA approach to mobile augmented reality using MDD.
