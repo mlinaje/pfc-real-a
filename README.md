@@ -1,3 +1,5 @@
+Proyecto Fin de Carrera: Real-A: una aproximación RIA a la realidad aumentada en móviles usando MDD
+
 Real-A: an RIA approach to mobile augmented reality using MDD.
 
 Real-A aims to be a Web application that allows to exploit the possibilities of mobile augmented reality using MDD, in particular WebRatio, by checking the current limitations, due to the fragmentation of mobile platforms, and the difficulty of access to the features of the phones, essential in this type of applications the camera, GPS, etc. given the need to access the context surrounding the user at any time, and provide augmented information from the world around him.
